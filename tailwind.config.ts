@@ -6,13 +6,13 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '72px',
-        md: '12px',
+        DEFAULT: '12px',
+        lg: '72px',
       },
     },
     screens: {
       sm: '390px',
-      lg: '1200px',
+      lg: '1296px',
     },
     extend: {
       backgroundImage: {
@@ -22,6 +22,7 @@ const config: Config = {
         recommendBG: 'url(/images/recommend/recommendBG.png)',
       },
       borderRadius: {
+        8: '8px',
         12: '12px',
         16: '16px',
         20: '20px',
@@ -67,6 +68,7 @@ const config: Config = {
         53: '53px',
         54: '54px',
         60: '60px',
+        66: '66px',
         74: '74px',
         80: '80px',
         90: '90px',
@@ -77,6 +79,8 @@ const config: Config = {
         118: '118px',
         120: '120px',
         126: '126px',
+        130: '130px',
+        154: '154px',
         155: '155px',
         276: '276px',
         680: '680px',
@@ -107,6 +111,7 @@ const config: Config = {
       variants: ['responsive', 'hover'],
     }),
     require('tailwindcss-textshadow'),
+    require('@tailwindcss/container-queries'),
     function ({ addComponents }: any) {
       addComponents({
         '.container': {

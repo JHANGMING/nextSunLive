@@ -3,7 +3,7 @@ import { featureData } from './data'
 
 const FarmFeature = () => {
   return (
-    <section className=" bg-farmFeatureBG  pt-114 pb-120 mb-120">
+    <section className=" bg-farmFeatureBG bg-no-repeat pt-114 pb-130 mb-120">
       <ul className="container grid grid-cols-12 gap-24">
         {featureData.map((data) => {
           const { src, alt, width, height, title, subTitle, descFirst, descSecond } = data

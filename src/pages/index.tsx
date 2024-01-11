@@ -1,8 +1,12 @@
+
+import HomeSwiper from '@/common/components/homeSwiper'
 import Banner from '@/modules/Home/banner'
 import FarmFeature from '@/modules/Home/farmFeature'
 import FriendlyFarm from '@/modules/Home/friendlyFarm'
 import Image from 'next/image'
+import Link from 'next/link'
 import { BsHandIndex } from 'react-icons/bs'
+
 
 export default function Home() {
   return (
@@ -96,15 +100,14 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <button type="button" className="flex items-center justify-end gap-8 self-start col-start-11 col-end-13 ">
-            <p>直播一覽</p>
-            <BsHandIndex className=" rotate-90 w-44 h-44 bg-primary-yellow rounded-full text-white p-10" />
-          </button>
+          <Link href="/live" className="flex items-center justify-end gap-8 self-start col-start-11 col-end-13">
+            <p className="font-bold">直播一覽</p>
+            <BsHandIndex className=" rotate-90 w-44 h-44 bg-primary-red hover:bg-primary-yellow  text-white px-10 rounded-full" />
+          </Link>
         </div>
       </section>
       <section className=" bg-recommendBG h-[877px] bg-bottom bg-no-repeat bg-white pt-100">
-        <div className="container flex flex-col items-center relative">
-          <Image src="/images/recommend/recommendFruit.png" alt="recommendFruit" width={1131} height={554} className=" absolute top-0 left-[7%]" />
+        <div className="container flex flex-col items-center">
           <h2 className=" text-primary-red mb-16">熱賣推薦！農夫獻上最溫暖的美味</h2>
           <h4 className=" text-primary-green mb-40">讓您品味安心的每一口</h4>
           <Image src="/images/recommend/recommendPersonImg.png" alt="recommendPersonImg" width={265} height={297} className="mb-40" />
@@ -125,6 +128,125 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <section className="bg-white pt-24 pb-100">
+        <div className="container">
+          <Link href="/live" className="flex items-center justify-end gap-8 self-start col-start-11 col-end-13 mb-40">
+            <p className="font-bold">商品一覽</p>
+            <BsHandIndex className=" rotate-90 w-44 h-44 bg-primary-red hover:bg-primary-yellow  text-white px-10 rounded-full" />
+          </Link>
+          <ul className="grid grid-cols-12 gap-24">
+            <li className=" col-span-4 flex flex-col gap-16">
+              <Image src="/images/product/product1.png" alt="product1" width={416} height={381} className="" />
+              <div className="flex gap-16 justify-center">
+                <Image src="/images/h1_logo.png" alt="productIcon" width={32} height={32} className="w-32 h-32" />
+                <h3>紫禧有機天使茄</h3>
+              </div>
+              <p className="px-24">採摘自有機農園，紫禧有機天使茄散發著深邃的紫色，宛如天使的羽翼。</p>
+              <div className=" flex justify-between px-24">
+                <div className="flex gap-16">
+                  <p className=" text-primary-red py-6 w-66 rounded-8 border border-primary-red text-center font-bold">價格</p>
+                  <h4>299</h4>
+                </div>
+                <Link href="/cart" className=" bg-primary-red flex gap-8 py-8 px-16 rounded-8">
+                  <BsHandIndex className="w-24 h-24 rotate-90 text-primary-yellow" />
+                  <p className=" text-white">加入購物車</p>
+                </Link>
+              </div>
+            </li>
+            <li className=" col-span-4 flex flex-col gap-16">
+              <Image src="/images/product/product1.png" alt="product1" width={416} height={381} className="" />
+              <div className="flex gap-16 justify-center">
+                <Image src="/images/h1_logo.png" alt="productIcon" width={32} height={32} className="w-32 h-32" />
+                <h3>紫禧有機天使茄</h3>
+              </div>
+              <p className="px-24">採摘自有機農園，紫禧有機天使茄散發著深邃的紫色，宛如天使的羽翼。</p>
+              <div className=" flex justify-between px-24">
+                <div className="flex gap-16">
+                  <p className=" text-primary-red py-6 w-66 rounded-8 border border-primary-red text-center font-bold">價格</p>
+                  <h4>299</h4>
+                </div>
+                <Link href="/cart" className=" bg-primary-red flex gap-8 py-8 px-16 rounded-8">
+                  <BsHandIndex className="w-24 h-24 rotate-90 text-primary-yellow" />
+                  <p className=" text-white">加入購物車</p>
+                </Link>
+              </div>
+            </li>
+            <li className=" col-span-4 flex flex-col gap-16">
+              <Image src="/images/product/product1.png" alt="product1" width={416} height={381} className="" />
+              <div className="flex gap-16 justify-center">
+                <Image src="/images/h1_logo.png" alt="productIcon" width={32} height={32} className="w-32 h-32" />
+                <h3>紫禧有機天使茄</h3>
+              </div>
+              <p className="px-24">採摘自有機農園，紫禧有機天使茄散發著深邃的紫色，宛如天使的羽翼。</p>
+              <div className=" flex justify-between px-24">
+                <div className="flex gap-16">
+                  <p className=" text-primary-red py-6 w-66 rounded-8 border border-primary-red text-center font-bold">價格</p>
+                  <h4>299</h4>
+                </div>
+                <Link href="/cart" className=" bg-primary-red flex gap-8 py-8 px-16 rounded-8">
+                  <BsHandIndex className="w-24 h-24 rotate-90 text-primary-yellow" />
+                  <p className=" text-white">加入購物車</p>
+                </Link>
+              </div>
+            </li>
+            <li className=" col-span-4 flex flex-col gap-16">
+              <Image src="/images/product/product1.png" alt="product1" width={416} height={381} className="" />
+              <div className="flex gap-16 justify-center">
+                <Image src="/images/h1_logo.png" alt="productIcon" width={32} height={32} className="w-32 h-32" />
+                <h3>紫禧有機天使茄</h3>
+              </div>
+              <p className="px-24">採摘自有機農園，紫禧有機天使茄散發著深邃的紫色，宛如天使的羽翼。</p>
+              <div className=" flex justify-between px-24">
+                <div className="flex gap-16">
+                  <p className=" text-primary-red py-6 w-66 rounded-8 border border-primary-red text-center font-bold">價格</p>
+                  <h4>299</h4>
+                </div>
+                <Link href="/cart" className=" bg-primary-red flex gap-8 py-8 px-16 rounded-8">
+                  <BsHandIndex className="w-24 h-24 rotate-90 text-primary-yellow" />
+                  <p className=" text-white">加入購物車</p>
+                </Link>
+              </div>
+            </li>
+            <li className=" col-span-4 flex flex-col gap-16">
+              <Image src="/images/product/product1.png" alt="product1" width={416} height={381} className="" />
+              <div className="flex gap-16 justify-center">
+                <Image src="/images/h1_logo.png" alt="productIcon" width={32} height={32} className="w-32 h-32" />
+                <h3>紫禧有機天使茄</h3>
+              </div>
+              <p className="px-24">採摘自有機農園，紫禧有機天使茄散發著深邃的紫色，宛如天使的羽翼。</p>
+              <div className=" flex justify-between px-24">
+                <div className="flex gap-16">
+                  <p className=" text-primary-red py-6 w-66 rounded-8 border border-primary-red text-center font-bold">價格</p>
+                  <h4>299</h4>
+                </div>
+                <Link href="/cart" className=" bg-primary-red flex gap-8 py-8 px-16 rounded-8">
+                  <BsHandIndex className="w-24 h-24 rotate-90 text-primary-yellow" />
+                  <p className=" text-white">加入購物車</p>
+                </Link>
+              </div>
+            </li>
+            <li className=" col-span-4 flex flex-col gap-16">
+              <Image src="/images/product/product1.png" alt="product1" width={416} height={381} className="" />
+              <div className="flex gap-16 justify-center">
+                <Image src="/images/h1_logo.png" alt="productIcon" width={32} height={32} className="w-32 h-32" />
+                <h3>紫禧有機天使茄</h3>
+              </div>
+              <p className="px-24">採摘自有機農園，紫禧有機天使茄散發著深邃的紫色，宛如天使的羽翼。</p>
+              <div className=" flex justify-between px-24">
+                <div className="flex gap-16">
+                  <p className=" text-primary-red py-6 w-66 rounded-8 border border-primary-red text-center font-bold">價格</p>
+                  <h4>299</h4>
+                </div>
+                <Link href="/cart" className=" bg-primary-red flex gap-8 py-8 px-16 rounded-8">
+                  <BsHandIndex className="w-24 h-24 rotate-90 text-primary-yellow" />
+                  <p className=" text-white">加入購物車</p>
+                </Link>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <HomeSwiper imgData="farmerDatas" />
     </main>
   )
 }

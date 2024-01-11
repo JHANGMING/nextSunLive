@@ -6,10 +6,12 @@
 @import "bannerSwiper.scss";
 @layer base {
   body {
+    max-width: 1440px;
+    margin: 0 auto;
     font-family: 'Noto Sans TC';
     line-height: 1.5;
     letter-spacing: 1.5px;
-    @apply bg-lightWhite container
+    @apply bg-lightWhite
   }
 
   h1 {

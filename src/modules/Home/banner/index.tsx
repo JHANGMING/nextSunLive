@@ -26,8 +26,8 @@ const Banner = () => {
           <SwiperSlide key={data.alt}>{({ isVisible }) => <Image {...data} className={`object-cover transition-transform duration-[8000ms] ease-in-out ${isVisible ? 'scale-150' : 'scale-125'}`} />}</SwiperSlide>
         ))}
       </Swiper>
-      <Image src="/images/banner/bannerMotionLeft.png" alt="bannerMotionLeft" width={546} height={136} className=" absolute bottom-0 left-0 z-20" />
-      <Image src="/images/banner/bannerMotionRight.png" alt="bannerMotionRight" width={489} height={136} className=" absolute bottom-0 right-0 z-20" />
+      <Image src="/images/grassMotionLeft.png" alt="bannerMotionLeft" width={546} height={136} className=" absolute bottom-0 left-0 z-20" />
+      <Image src="/images/grassMotionRight.png" alt="bannerMotionRight" width={489} height={136} className=" absolute bottom-0 right-0 z-20" />
     </section>
   )
 }
