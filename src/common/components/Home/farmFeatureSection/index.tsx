@@ -1,20 +1,20 @@
 import Image from 'next/image'
-import { featureData } from './data'
+import { featureData, featureIcon } from './data'
 
-const FarmFeature = () => {
+const FarmFeatureSection = () => {
   return (
     <section className=" bg-farmFeatureBG bg-no-repeat pt-114 pb-130 mb-120">
       <ul className="container grid grid-cols-12 gap-24">
         {featureData.map((data) => {
-          const { src, alt, width, height, title, subTitle, descFirst, descSecond } = data
+          const { image, title, subTitle, descFirst, descSecond, featureIconLeft, featureIconRight } = data
           return (
             <li className=" col-span-4 flex flex-col justify-center items-center" key={title}>
               <div className="flex gap-16 mb-16">
-                <Image src="/images/friendlyFarm/featureIconLeft.png" alt="featureIconLeft" width={19.8} height={59.5} />
+                <Image {...featureIcon[featureIconLeft]} />
                 <h4 className=" text-primary-red">{title}</h4>
-                <Image src="/images/friendlyFarm/featureIconRight.png" alt="featureIconRight" width={19.8} height={59.5} />
+                <Image {...featureIcon[featureIconRight]} />
               </div>
-              <Image src={src} alt={alt} width={width} height={height} className="mb-16 h-276 object-cover" />
+              <Image {...image} className="mb-16 h-276 object-cover" />
               <h5 className=" text-primary-red mb-8">{subTitle}</h5>
               <p>
                 {descFirst}
@@ -29,4 +29,4 @@ const FarmFeature = () => {
   )
 }
 
-export default FarmFeature
+export default FarmFeatureSection

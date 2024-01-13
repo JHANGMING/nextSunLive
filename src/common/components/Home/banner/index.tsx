@@ -1,15 +1,20 @@
+import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectFade } from 'swiper/modules'
+import { grassMotionSet } from '@/constants/globaIIcon'
+import { bannerImgData } from './data'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/zoom'
-import { Autoplay, EffectFade } from 'swiper/modules'
-import Image from 'next/image'
-import { bannerImgData } from './data'
 import BannerTitle from './BannerTitle'
+import BannerInput from '../../Input/BannerInput'
 const Banner = () => {
   return (
     <section className="relative mb-120">
-      <BannerTitle />
+      <div className="absolute top-1/2 left-1/2 z-10 text-center transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-16">
+        <BannerTitle />
+        <BannerInput />
+      </div>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -26,8 +31,8 @@ const Banner = () => {
           <SwiperSlide key={data.alt}>{({ isVisible }) => <Image {...data} className={`object-cover transition-transform duration-[8000ms] ease-in-out ${isVisible ? 'scale-150' : 'scale-125'}`} />}</SwiperSlide>
         ))}
       </Swiper>
-      <Image src="/images/grassMotionLeft.png" alt="bannerMotionLeft" width={546} height={136} className=" absolute bottom-0 left-0 z-20" />
-      <Image src="/images/grassMotionRight.png" alt="bannerMotionRight" width={489} height={136} className=" absolute bottom-0 right-0 z-20" />
+      <Image {...grassMotionSet.grassMotionLeft} width={546} height={136} className=" absolute bottom-0 left-0 z-20" />
+      <Image {...grassMotionSet.grassMotionRight} width={489} height={136} className=" absolute bottom-0 right-0 z-20" />
     </section>
   )
 }
