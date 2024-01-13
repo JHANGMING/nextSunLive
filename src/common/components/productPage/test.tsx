@@ -1,6 +1,10 @@
 const Test = () => {
-  return ( <>
-  test</> );
+  return (
+    <>
+      test
+      <h3>222</h3>
+    </>
+  )
 }
- 
-export default Test;
+
+export default Test
