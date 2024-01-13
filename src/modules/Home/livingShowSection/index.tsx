@@ -2,14 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { BsHandIndex } from 'react-icons/bs'
 import LivingProduct from './LivingProduct'
-import { globalIconSet } from '@/constants/globaIIcon'
+import LogoImg from '@/common/components/LogoImg'
 const LivingShowSection = () => {
   return (
     <section className=" bg-liveBG bg-no-repeat bg-bottom flex h-[528px]">
       <ul className="container grid grid-cols-12 gap-24 mb-46">
         <li className=" col-span-6 relative">
           <Image src="/images/home/live/liveShow.png" alt="liveShow" width={636} height={482} className="h-[482px]" />
-          <Image {...globalIconSet.logoImage} width={50} height={50} className=" absolute left-1/2 -top-30 transform -translate-x-1/2" />
+          <LogoImg widthProps={50} heightProps={50} classProps="absolute left-1/2 -top-30 transform -translate-x-1/2" />
         </li>
         <li className=" col-span-6">
           <div className="grid grid-cols-6 gap-y-116 gap-x-24">

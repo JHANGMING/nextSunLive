@@ -1,14 +1,14 @@
 import Image from 'next/image'
-import { globalIconSet } from '@/constants/globaIIcon'
 import Button from '../../common/components/Button'
 import { ProductCardProps } from './data'
+import LogoImg from '@/common/components/LogoImg'
 
 const ProductCard = ({ productImg, title, des, originalPrice, salePrice }: ProductCardProps) => {
   return (
     <li className=" col-span-4 flex flex-col gap-16">
-      <Image {...productImg} width={416} height={381} className=" hover:opacity-50 border-dashed border-4 border-primary-yellow rounded-20" />
+      <Image src={productImg.src} alt={productImg.alt} width={416} height={381} className=" hover:opacity-50 border-dashed border-4 border-primary-yellow rounded-20" />
       <div className="flex gap-16 justify-center">
-        <Image {...globalIconSet.logoImage} width={32} height={32} className=" w-32 h-32 " />
+        <LogoImg widthProps={32} heightProps={32} classProps="w-32 h-32" />
         <h3>{title}</h3>
       </div>
       <p className="px-24">{des}</p>

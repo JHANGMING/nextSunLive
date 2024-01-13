@@ -7,14 +7,16 @@ const FarmFeatureSection = () => {
       <ul className="container grid grid-cols-12 gap-24">
         {featureData.map((data) => {
           const { image, title, subTitle, descFirst, descSecond, featureIconLeft, featureIconRight } = data
+          const IconLeft = featureIcon[featureIconLeft]
+          const IconRight = featureIcon[featureIconRight]
           return (
             <li className=" col-span-4 flex flex-col justify-center items-center" key={title}>
               <div className="flex gap-16 mb-16">
-                <Image {...featureIcon[featureIconLeft]} />
+                <Image src={IconLeft.src} alt={IconLeft.alt} width={IconLeft.width} height={IconLeft.height} />
                 <h4 className=" text-primary-red">{title}</h4>
-                <Image {...featureIcon[featureIconRight]} />
+                <Image src={IconRight.src} alt={IconRight.alt} width={IconRight.width} height={IconRight.height} />
               </div>
-              <Image {...image} className="mb-16 h-276 object-cover" />
+              <Image src={image.src} alt={image.alt} width={image.width} height={image.height} className="mb-16 h-276 object-cover" />
               <h5 className=" text-primary-red mb-8">{subTitle}</h5>
               <p>
                 {descFirst}

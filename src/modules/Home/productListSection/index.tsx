@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { BsHandIndex } from 'react-icons/bs'
-import { globalIconSet } from '@/constants/globaIIcon'
 import LinkToProduct from '@/common/components/LinkToProduct'
 import Button from '@/common/components/Button'
 import ProductList from '@/modules/product/ProductList'

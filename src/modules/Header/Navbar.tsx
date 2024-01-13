@@ -1,17 +1,16 @@
-import Image from 'next/image'
+
 import Link from 'next/link'
 import { logoData, navBarDatas } from './data'
-import { globalIconSet } from '@/constants/globaIIcon'
+import LogoImg from '@/common/components/LogoImg'
+
 
 const NavBar = () => {
   return (
     <ul className="flex w-824 items-center justify-between">
       <li>
         <Link href="/" className="flex items-center gap-16 group">
-          <Image {...globalIconSet.logoImage} width={50} height={50}  className="group-shake" />
-          <p className="text-28 font-bold leading-normal text-primary-green">
-            {logoData.title}
-          </p>
+          <LogoImg widthProps={50} heightProps={50} classProps="group-shake" />
+          <p className="text-28 font-bold leading-normal text-primary-green">{logoData.title}</p>
         </Link>
       </li>
       {navBarDatas.map((data) => {

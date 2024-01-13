@@ -1,12 +1,4 @@
-export const globalIconSet = {
-  logoImage: {
-    src: '/images/logo.png',
-    alt: 'Logo',
-  },
-  grassMotion:{
 
-  }
-}
 export const grassMotionSet={
   grassMotionLeft:{
     src:"/images/grassMotionLeft.png",

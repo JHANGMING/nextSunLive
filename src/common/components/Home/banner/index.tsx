@@ -9,6 +9,7 @@ import 'swiper/css/zoom'
 import BannerTitle from './BannerTitle'
 import BannerInput from '../../Input/BannerInput'
 const Banner = () => {
+  const { grassMotionLeft, grassMotionRight } = grassMotionSet
   return (
     <section className="relative mb-120">
       <div className="absolute top-1/2 left-1/2 z-10 text-center transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-16">
@@ -28,11 +29,11 @@ const Banner = () => {
         className="bannerSwiper"
       >
         {bannerImgData.map((data) => (
-          <SwiperSlide key={data.alt}>{({ isVisible }) => <Image {...data} className={`object-cover transition-transform duration-[8000ms] ease-in-out ${isVisible ? 'scale-150' : 'scale-125'}`} />}</SwiperSlide>
+          <SwiperSlide key={data.alt}>{({ isVisible }) => <Image src={data.src} alt={data.alt} width={data.width} height={data.height} className={`object-cover transition-transform duration-[8000ms] ease-in-out ${isVisible ? 'scale-150' : 'scale-125'}`} />}</SwiperSlide>
         ))}
       </Swiper>
-      <Image {...grassMotionSet.grassMotionLeft} width={546} height={136} className=" absolute bottom-0 left-0 z-20" />
-      <Image {...grassMotionSet.grassMotionRight} width={489} height={136} className=" absolute bottom-0 right-0 z-20" />
+      <Image src={grassMotionLeft.src} alt={grassMotionLeft.alt} width={546} height={136} className=" absolute bottom-0 left-0 z-20" />
+      <Image src={grassMotionRight.src} alt={grassMotionRight.alt} width={489} height={136} className=" absolute bottom-0 right-0 z-20" />
     </section>
   )
 }

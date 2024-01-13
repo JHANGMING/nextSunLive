@@ -1,6 +1,6 @@
-import { globalIconSet } from '@/constants/globaIIcon'
-import Image from 'next/image'
+
 import { useEffect, useState } from 'react'
+import LogoImg from './LogoImg'
 
 const ScrollPageTop = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -25,10 +25,10 @@ const ScrollPageTop = () => {
       window.removeEventListener('scroll', toggleVisibility)
     }
   }, [])
-  const isVisibleClass = isVisible ? 'opacity-100' : 'opacity-0';
+  const isVisibleClass = isVisible ? 'opacity-100' : 'opacity-0'
   return (
     <div className={`${isVisibleClass} fixed bottom-40 right-40 flex flex-col gap-8 items-center cursor-pointer shake z-30 transition-opacity duration-1000 ease-in-out`} onClick={scrollToTop}>
-      <Image {...globalIconSet.logoImage} width={50} height={50} />
+      <LogoImg widthProps={50} heightProps={50} />
       <p className=" text-primary-red bg-primary-yellow w-35 py-2 rounded-8 text-12 text-center">Top</p>
     </div>
   )

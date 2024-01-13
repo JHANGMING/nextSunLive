@@ -30,7 +30,7 @@ const HomeSwiper = ({ imgData }: HomeSwiperPropsType) => {
       >
         {imgDatas.map((data) => (
           <SwiperSlide key={data.alt}>
-            <Image {...data} width={378} height={282} className=" object-cover" />
+            <Image src={data.src} alt={data.alt} width={378} height={282} className=" object-cover" />
           </SwiperSlide>
         ))}
       </Swiper>
