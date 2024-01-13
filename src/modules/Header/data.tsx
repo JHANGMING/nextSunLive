@@ -1,6 +1,6 @@
 export const navBarDatas = [
   {
-    src: '/about',
+    src: '/',
     title: '關於我們',
     subTitle: 'About',
   },
@@ -16,12 +16,5 @@ export const navBarDatas = [
   },
 ];
 export const logoData = {
-  title: 'Sun',
-  subTitle: 'Live',
-  image: {
-    src: '/images/h1_logo.png',
-    alt: 'logo',
-    width: 50,
-    height: 50,
-  },
+  title: '搶鮮購'
 }

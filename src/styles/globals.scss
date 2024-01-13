@@ -1,15 +1,18 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "farm.scss";
-@import "bannerSwiper.scss";
+@import 'homeSwiper.scss';
+@import 'bannerSwiper.scss';
+@import 'header.scss';
 @layer base {
   body {
+    max-width: 1440px;
+    margin: 0 auto;
     font-family: 'Noto Sans TC';
     line-height: 1.5;
     letter-spacing: 1.5px;
-    @apply bg-lightWhite container
+    scroll-behavior: smooth;
+    @apply bg-lightWhite;
   }
 
   h1 {
@@ -25,9 +28,10 @@
     @apply text-24 font-bold;
   }
   h5 {
-    @apply text-20 ;
+    @apply text-20;
   }
   h6 {
     @apply text-18 font-bold;
   }
 }
+

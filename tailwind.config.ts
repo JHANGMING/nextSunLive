@@ -6,24 +6,26 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '72px',
-        md: '12px',
+        DEFAULT: '12px',
+        lg: '72px',
       },
     },
     screens: {
       sm: '390px',
-      lg: '1200px',
+      lg: '1296px',
     },
     extend: {
       backgroundImage: {
-        friendlyFarmBG: 'url(/images/friendlyFarm/friendlyFarmBG.png)',
-        farmFeatureBG: 'url(/images/friendlyFarm/farmFeatureBG.png)',
-        liveBG: 'url(/images/live/liveBG.png)',
-        recommendBG: 'url(/images/recommend/recommendBG.png)',
+        friendlyFarmBG: 'url(/images/home/friendlyFarm/friendlyFarmBG.png)',
+        farmFeatureBG: 'url(/images/home/friendlyFarm/farmFeatureBG.png)',
+        liveBG: 'url(/images/home/live/liveBG.png)',
+        recommendBG: 'url(/images/home/recommend/recommendBG.png)',
       },
       borderRadius: {
+        8: '8px',
         12: '12px',
         16: '16px',
+        18: '18px',
         20: '20px',
         25: '25px',
         50: '50px',
@@ -39,6 +41,8 @@ const config: Config = {
         lightWhite: '#FBF9F3',
       },
       spacing: {
+        2: '2px',
+        3: '3px',
         4: '4px',
         6: '6px',
         8: '8px',
@@ -56,6 +60,7 @@ const config: Config = {
         28: '28px',
         30: '30px',
         32: '32px',
+        35: '35px',
         36: '36px',
         38: '38px',
         40: '40px',
@@ -67,16 +72,20 @@ const config: Config = {
         53: '53px',
         54: '54px',
         60: '60px',
+        66: '66px',
         74: '74px',
         80: '80px',
+        84: '84px',
         90: '90px',
         100: '100px',
-        111: '111px',
+        112: '112px',
         114: '114.5px',
         116: '116px',
         118: '118px',
         120: '120px',
         126: '126px',
+        130: '130px',
+        154: '154px',
         155: '155px',
         276: '276px',
         680: '680px',
@@ -96,6 +105,9 @@ const config: Config = {
       textShadow: {
         bannerTitle: '0px 4px 4px rgba(0, 0, 0, 0.25)',
       },
+      boxShadow: {
+        headerIcon: '3px 3px 0px 1px rgba(0, 0, 0, 0.05)',
+      },
       writingMode: {
         vertical: 'vertical-rl',
         verticalLr: 'vertical-lr',
@@ -107,6 +119,7 @@ const config: Config = {
       variants: ['responsive', 'hover'],
     }),
     require('tailwindcss-textshadow'),
+    require('@tailwindcss/container-queries'),
     function ({ addComponents }: any) {
       addComponents({
         '.container': {
