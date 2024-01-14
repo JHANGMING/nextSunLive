@@ -1,9 +1,13 @@
 import Image from 'next/image'
-import Button from '../../common/components/Button'
+import Button from '../Button'
 import { ProductCardProps } from './data'
 import LogoImg from '@/common/components/LogoImg'
 
 const ProductCard = ({ productImg, title, des, originalPrice, salePrice }: ProductCardProps) => {
+  const handlerAddCart=()=>{
+    console.log('2222');
+    
+  }
   return (
     <li className=" col-span-4 flex flex-col gap-16">
       <Image src={productImg.src} alt={productImg.alt} width={416} height={381} className=" hover:opacity-50 border-dashed border-4 border-primary-yellow rounded-20" />
@@ -18,7 +22,7 @@ const ProductCard = ({ productImg, title, des, originalPrice, salePrice }: Produ
           <h4>{salePrice}</h4>
           <span className=" text-lightGray font-bold text-20 line-through">{originalPrice}</span>
         </div>
-        <Button category="addCart">加入購物車</Button>
+        <Button category="addCart" onClick={handlerAddCart}>加入購物車</Button>
       </div>
     </li>
   )

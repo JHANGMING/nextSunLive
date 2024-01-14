@@ -1,3 +1,5 @@
+import { PageCategoryType } from "@/common/Layout/data";
+
 export const navBarDatas = [
   {
     src: '/',
@@ -5,16 +7,27 @@ export const navBarDatas = [
     subTitle: 'About',
   },
   {
-    src: '/live',
+    src: '/liveStream',
     title: '直播特惠',
     subTitle: 'Live',
   },
   {
-    src: '/products',
+    src: '/productShop',
     title: '商品總覽',
     subTitle: 'Products',
   },
-];
+]
 export const logoData = {
   title: '搶鮮購'
+}
+
+export const pageSet: PageSet = {
+  landingPage: true,
+  liveStreamPage: true,
+  productPage: true,
+  loginPage: false,
+  registerPage: false,
+}
+export type PageSet= {
+  [key in PageCategoryType]?: boolean
 }
