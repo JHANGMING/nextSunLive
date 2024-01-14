@@ -1,4 +1,4 @@
-import HomeSwiper from '@/common/components/homeSwiper'
+import HomeSwiper from '@/common/components/HomeSwiper'
 import ScrollPageTop from '@/common/components/ScrollPageTop'
 import ComingProductsSection from '@/modules/Home/ComingProductsSection'
 import Banner from '@/common/components/Home/banner'
