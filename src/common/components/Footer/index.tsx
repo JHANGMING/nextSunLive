@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { grassMotionSet } from "@/constants/globaIIcon";
-import { icons } from "./data";
 import LogoImg from "../LogoImg";
+import { icons } from "./data";
 
 const Footer = () => {
   const { grassMotionLeft, grassMotionRight } = grassMotionSet
