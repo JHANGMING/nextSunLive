@@ -1,4 +1,6 @@
-const DefaultInput = ({ type, labelText,inputText, icon,id }) => {
+import { DefaultInputProps } from "./data";
+
+const DefaultInput = ({ type, labelText,inputText, icon,id }:DefaultInputProps) => {
   return (
     <div>
       <label htmlFor={id} className=" text-20 font-bold block mb-8">
