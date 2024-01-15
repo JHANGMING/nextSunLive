@@ -13,13 +13,14 @@ const ScrollPageTop = () => {
 
   const toggleVisibility = () => {
     if (typeof window === 'undefined') return
-    const pageSet = window.pageYOffset > 300 ? true : false
-    setIsVisible(pageSet)
+    const checkScroll = () => {
+      setIsVisible(window.pageYOffset > 300)
+    }
+    window.requestAnimationFrame(checkScroll)
   }
 
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility)
-
     return () => {
       window.removeEventListener('scroll', toggleVisibility)
     }

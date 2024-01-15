@@ -1,16 +1,12 @@
 import Layout from '@/common/Layout'
-import Register from '@/modules/Auth/Register'
+import RegisterPage from '@/modules/Auth/RegisterPage'
 
-const RegisterPage = () => {
+const Register = () => {
   return (
-    <Layout pageCategory="authPage">
-      <section className=" bg-authBG pt-180 pb-62 flex justify-center bg-no-repeat ">
-        <div className="bg-white rounded-20 flex flex-col py-40">
-          <Register />
-        </div>
-      </section>
+    <Layout pageCategory="authPage" classStyle='px-165 pb-40'>
+      <RegisterPage />
     </Layout>
   )
 }
 
-export default RegisterPage
+export default Register

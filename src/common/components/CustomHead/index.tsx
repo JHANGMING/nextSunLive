@@ -2,8 +2,8 @@ import Head from 'next/head'
 import { CustomHeadProps, dataSet, defaultMeta } from './data'
 
 export default function CustomHead({ pageCategory }: CustomHeadProps) {
+  if(!dataSet[pageCategory]) return null
   const { defaultTitle, defaultDescription, defaultImage } = defaultMeta
-
   const pageTitle = dataSet[pageCategory].title
   const pageDescription = dataSet[pageCategory].desc
   const pageImage = dataSet[pageCategory].image
@@ -25,7 +25,7 @@ export default function CustomHead({ pageCategory }: CustomHeadProps) {
         <meta property="discord:invite_image:width" content="1200" />
         <meta property="discord:invite_image:height" content="600" />
         {/* Facebook */}
-        <meta property="og:site_name" content="拍拍" />
+        <meta property="og:site_name" content="搶先購" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={pageCanonicalUrl || 'https://vercel.app/'} />
         <meta property="og:title" content={pageTitle || defaultTitle} />

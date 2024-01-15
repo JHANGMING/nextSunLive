@@ -9,7 +9,7 @@ const LivingShowSection = () => {
       <ul className="container grid grid-cols-12 gap-24 mb-46">
         <li className=" col-span-6 relative">
           <Image src="/images/home/live/liveShow.png" alt="liveShow" width={636} height={482} className="h-[482px]" />
-          <LogoImg widthProps={50} heightProps={50} classProps="absolute left-1/2 -top-30 transform -translate-x-1/2" />
+          <LogoImg widthProps={50} heightProps={50} classProps="absolute left-1/2 -top-30 transform -translate-x-1/2 fade-animation" />
         </li>
         <li className=" col-span-6">
           <div className="grid grid-cols-6 gap-y-116 gap-x-24">

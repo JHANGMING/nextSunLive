@@ -4,6 +4,7 @@ import { grassMotionSet } from '@/constants/globaIIcon'
 import { icons } from './data'
 import LogoImg from '../Logo/LogoImg'
 import ScrollPageTop from '../ScrollPageTop'
+import GlobalLink from '../GlobalLink'
 
 const Footer = () => {
   const { grassMotionLeft, grassMotionRight } = grassMotionSet
@@ -20,9 +21,9 @@ const Footer = () => {
           <ul className="flex gap-16">
             {icons.map((icon) => (
               <li key={icon.alt}>
-                <Link href={icon.path}>
-                  <Image src={icon.src} alt={icon.alt} width={40} height={40} className=" hover:opacity-80" />
-                </Link>
+                <GlobalLink href={icon.path} openInNewTab={true}>
+                  <Image src={icon.src} alt={`Follow us on ${icon.alt}`} width={40} height={40} className=" hover:opacity-80" />
+                </GlobalLink>
               </li>
             ))}
           </ul>
