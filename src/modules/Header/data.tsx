@@ -25,8 +25,7 @@ export const pageSet: PageSet = {
   landingPage: true,
   liveStreamPage: true,
   productPage: true,
-  loginPage: false,
-  registerPage: false,
+  authPage: false,
 }
 export type PageSet= {
   [key in PageCategoryType]?: boolean

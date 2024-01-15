@@ -1,17 +1,12 @@
-
 import Link from 'next/link'
-import { logoData, navBarDatas } from './data'
-import LogoImg from '@/common/components/LogoImg'
-
+import { navBarDatas } from './data'
+import Logo from '@/common/components/Logo'
 
 const NavBar = () => {
   return (
     <ul className="flex w-824 items-center justify-between">
       <li>
-        <Link href="/" className="flex items-center gap-16 group">
-          <LogoImg widthProps={50} heightProps={50} classProps="group-shake" />
-          <p className="text-28 font-bold leading-normal text-primary-green">{logoData.title}</p>
-        </Link>
+        <Logo/>
       </li>
       {navBarDatas.map((data) => {
         const { src, title, subTitle } = data

@@ -29,7 +29,7 @@ const Banner = () => {
         className="bannerSwiper"
       >
         {bannerImgData.map((data) => (
-          <SwiperSlide key={data.alt}>{({ isVisible }) => <Image src={data.src} alt={data.alt} width={data.width} height={data.height} className={`object-cover transition-transform duration-[8000ms] ease-in-out ${isVisible ? 'scale-150' : 'scale-125'}`} />}</SwiperSlide>
+          <SwiperSlide key={data.alt}>{({ isVisible }) => <Image src={data.src} alt={data.alt} width={data.width} height={data.height} className={`object-cover transition-transform duration-[25000ms] ease-in-out ${isVisible ? 'scale-125' : 'scale-100'}`} />}</SwiperSlide>
         ))}
       </Swiper>
       <Image src={grassMotionLeft.src} alt={grassMotionLeft.alt} width={546} height={136} className=" absolute bottom-0 left-0 z-20" />

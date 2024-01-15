@@ -1,22 +1,19 @@
+import AddToCartButton from './AddToCartButton'
+import AuthButton from './AuthButton'
+import { ButtonPropsType } from './data'
 
-import { ReactNode } from 'react'
-import { BsHandIndex } from 'react-icons/bs'
-type ButtonPropsType = {
-  category: string
-  path?: string
-  onClick?: () => void
-  children?: ReactNode
-}
-const Button = ({ category,path, onClick, children }: ButtonPropsType) => {
-  if (category==="addCart") {
+const Button = ({ category, path, onClick, children, classStyle }: ButtonPropsType) => {
+  if (category === 'addCart') {
+    return <AddToCartButton onClick={onClick}>{children}</AddToCartButton>
+  }
+  if (category === 'auth') {
     return (
-      <button type="button" className=" bg-primary-red flex gap-8 py-8 px-16 rounded-8 border-dashed border border-white cursor-pointer" onClick={onClick}>
-        <BsHandIndex className="w-24 h-24 rotate-90 text-primary-yellow" />
-        <p className=" text-white">{children}</p>
-      </button>
+      <AuthButton onClick={onClick} classStyle={classStyle}>
+        {children}
+      </AuthButton>
     )
   }
   return null
 }
 
-export default Button;
+export default Button

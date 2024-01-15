@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { BsHandIndex } from 'react-icons/bs'
 import LivingProduct from './LivingProduct'
-import LogoImg from '@/common/components/LogoImg'
+import LogoImg from '@/common/components/Logo/LogoImg'
 const LivingShowSection = () => {
   return (
     <section className=" bg-liveBG bg-no-repeat bg-bottom flex h-[528px]">

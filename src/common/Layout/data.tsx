@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export type PageCategoryType = 'liveStreamPage' | 'productPage' | 'landingPage' | 'loginPage' | 'registerPage'
+export type PageCategoryType = 'liveStreamPage' | 'productPage' | 'landingPage' | 'authPage' 
 
 
 export type LayoutPropsType = {

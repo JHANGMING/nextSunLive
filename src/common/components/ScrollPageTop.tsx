@@ -1,6 +1,5 @@
-
 import { useEffect, useState } from 'react'
-import LogoImg from './LogoImg'
+import LogoImg from './Logo/LogoImg'
 
 const ScrollPageTop = () => {
   const [isVisible, setIsVisible] = useState(false)

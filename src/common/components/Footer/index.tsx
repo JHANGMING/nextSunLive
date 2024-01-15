@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import { grassMotionSet } from "@/constants/globaIIcon";
-import { icons } from "./data";
-import LogoImg from "../LogoImg";
-import ScrollPageTop from "../ScrollPageTop";
+import Image from 'next/image'
+import Link from 'next/link'
+import { grassMotionSet } from '@/constants/globaIIcon'
+import { icons } from './data'
+import LogoImg from '../Logo/LogoImg'
+import ScrollPageTop from '../ScrollPageTop'
 
 const Footer = () => {
   const { grassMotionLeft, grassMotionRight } = grassMotionSet
@@ -32,9 +32,9 @@ const Footer = () => {
         </li>
       </ul>
       <p className=" bg-lightWhite text-center py-24">© SunLive - 線上直播當季農產品</p>
-      <ScrollPageTop/>
+      <ScrollPageTop />
     </footer>
   )
 }
- 
-export default Footer;
+
+export default Footer

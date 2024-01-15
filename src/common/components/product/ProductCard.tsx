@@ -1,12 +1,11 @@
 import Image from 'next/image'
 import Button from '../Button'
 import { ProductCardProps } from './data'
-import LogoImg from '@/common/components/LogoImg'
+import LogoImg from '@/common/components/Logo/LogoImg'
 
 const ProductCard = ({ productImg, title, des, originalPrice, salePrice }: ProductCardProps) => {
-  const handlerAddCart=()=>{
-    console.log('2222');
-    
+  const handlerAddCart = () => {
+    console.log('2222')
   }
   return (
     <li className=" col-span-4 flex flex-col gap-16">
@@ -22,7 +21,9 @@ const ProductCard = ({ productImg, title, des, originalPrice, salePrice }: Produ
           <h4>{salePrice}</h4>
           <span className=" text-lightGray font-bold text-20 line-through">{originalPrice}</span>
         </div>
-        <Button category="addCart" onClick={handlerAddCart}>加入購物車</Button>
+        <Button category="addCart" onClick={handlerAddCart}>
+          加入購物車
+        </Button>
       </div>
     </li>
   )

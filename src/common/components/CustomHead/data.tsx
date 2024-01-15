@@ -21,8 +21,8 @@ export const dataSet: Record<string, dataType> = {
     url: '', //canonial
     image: '',
   },
-  loginPage: {
-    title: '會員登入',
+  authPage: {
+    title: '會員中心',
     desc: '加入搶鮮購，讓你購安心',
     url: '',
     image: '',

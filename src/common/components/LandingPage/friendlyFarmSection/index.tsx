@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import { dataSet } from './data'
-import LogoImg from '../../LogoImg'
+import LogoImg from '../../Logo/LogoImg'
 
 const FriendlyFarmSection = () => {
-  const {src,alt} = dataSet.image
+  const { src, alt } = dataSet.image
   return (
     <section className=" bg-friendlyFarmBG pt-112 pb-41">
       <div className="container">
