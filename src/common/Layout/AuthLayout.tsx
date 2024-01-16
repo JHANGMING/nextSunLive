@@ -1,11 +1,16 @@
-import { AuthLayoutProps } from "./data";
+import { AuthLayoutProps } from './data';
 
-const AuthLayout = ({ children ,classStyle}:AuthLayoutProps) => {
+const AuthLayout = ({ children, classStyle }: AuthLayoutProps) => {
   return (
-    <section className="bg-authBG pt-180 pb-62 flex justify-center bg-no-repeat">
-      <div className={`bg-white rounded-20 flex flex-col pt-40 w-[856px] h-[816px] ${classStyle}`}>{children}</div>
-    </section>
-  )
-}
- 
+    <main>
+      <section className="bg-authBG bg-cover bg-no-repeat bg-center pt-180 pb-62 flex justify-center w-full">
+        <div
+          className={`bg-white rounded-20 flex flex-col pt-40 w-[856px] h-[816px] ${classStyle}`}>
+          {children}
+        </div>
+      </section>
+    </main>
+  );
+};
+
 export default AuthLayout;

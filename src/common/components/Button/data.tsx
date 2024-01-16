@@ -1,11 +1,11 @@
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 
-type ButtonType = "button" | "submit"
+type ButtonType = 'button' | 'submit';
 export type ButtonPropsType = {
-  category?: string
-  path?: string
-  onClick?: () => void
-  children?: ReactNode
-  classStyle?: string
-  type?: ButtonType
-}
+  category?: string;
+  path?: string;
+  onClick?: () => void;
+  children?: ReactNode;
+  classStyle?: string;
+  type?: ButtonType;
+};

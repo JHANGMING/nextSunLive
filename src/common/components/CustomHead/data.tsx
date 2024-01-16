@@ -1,18 +1,17 @@
-import { PageCategoryType } from "@/common/Layout/data"
-
+import { PageCategoryType } from '@/common/Layout/data';
 
 type dataType = {
-  title: string
-  desc: string
-  url: string
-  image: string
-}
+  title: string;
+  desc: string;
+  url: string;
+  image: string;
+};
 
 export const defaultMeta: Record<string, string> = {
   defaultTitle: 'SunLive | 搶鮮購',
   defaultDescription: '我们提供最新鲜的農產品直播銷售服務，确保質量和時效。',
   defaultImage: '',
-}
+};
 
 export const dataSet: Record<string, dataType> = {
   landingPage: {
@@ -34,13 +33,13 @@ export const dataSet: Record<string, dataType> = {
     image: '',
   },
   liveStreamPage: {
-    title: '直播',
+    title: '直播特惠',
     desc: '管理會員資料',
     url: '',
     image: '',
   },
   productPage: {
-    title: '搶鮮購',
+    title: '商品總覽',
     desc: '創建新的揪團，開啟專屬於你的開團體驗',
     url: '',
     image: '',
@@ -52,8 +51,8 @@ export const dataSet: Record<string, dataType> = {
     url: '',
     image: '',
   },
-}
+};
 
 export type CustomHeadProps = {
-  pageCategory: PageCategoryType
-}
+  pageCategory: PageCategoryType;
+};

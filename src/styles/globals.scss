@@ -1,9 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'homeSwiper.scss';
-@import 'bannerSwiper.scss';
 @import 'header.scss';
+@import 'landingPage.scss';
 @layer base {
   body {
     max-width: 1440px;
@@ -33,5 +32,18 @@
   h6 {
     @apply text-18 font-bold;
   }
+  img{
+    object-fit: cover;
+  }
 }
-
+//productShop
+.ellipse {
+  width: 150px; 
+  height: 32px; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  @apply bg-primary-yellow bg-opacity-50
+}

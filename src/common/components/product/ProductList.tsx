@@ -1,8 +1,8 @@
-import ProductCard from './ProductCard'
-import { productData } from './data'
+import ProductCard from './ProductCard';
+import { productData } from './data';
 type ProductListProps = {
-  category: string
-}
+  category: string;
+};
 const ProductList = ({ category }: ProductListProps) => {
   if (category === 'landingPage') {
     return (
@@ -11,9 +11,9 @@ const ProductList = ({ category }: ProductListProps) => {
           <ProductCard key={data.title} {...data} />
         ))}
       </ul>
-    )
+    );
   }
   return null;
-}
+};
 
-export default ProductList
+export default ProductList;

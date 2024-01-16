@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -21,6 +21,8 @@ const config: Config = {
         liveBG: 'url(/images/home/live/liveBG.png)',
         recommendBG: 'url(/images/home/recommend/recommendBG.png)',
         authBG: 'url(/images/auth/authBG.png)',
+        shopBannerBG: 'url(/images/productShop/bannerBG.png)',
+        shopBannerBG_2rd: 'url(/images/productShop/bannerBG2.png)',
       },
       borderRadius: {
         8: '8px',
@@ -97,8 +99,10 @@ const config: Config = {
         155: '155px',
         165: '165px',
         180: '180px',
+        220: '220px',
         276: '276px',
         434: '434px',
+        459: '459px',
         680: '680px',
         824: '824px',
       },
@@ -139,8 +143,8 @@ const config: Config = {
             maxWidth: '1440px',
           },
         },
-      })
+      });
     },
   ],
-}
-export default config
+};
+export default config;

@@ -1,16 +1,16 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from 'swiper/modules'
-import Image from 'next/image'
-import { swiperData } from './data'
-import 'swiper/css'
-import 'swiper/css/effect-coverflow'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import 'swiper/css/autoplay'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import Image from 'next/image';
+import { swiperData } from './data';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 const HomeSwiper = ({ imgData }: HomeSwiperPropsType) => {
-  const data = swiperData[imgData]
-  if (!data) return null
-  const { spaceBetween, imgDatas } = data
+  const data = swiperData[imgData];
+  if (!data) return null;
+  const { spaceBetween, imgDatas } = data;
 
   return (
     <div className="homeSwiper">
@@ -26,19 +26,24 @@ const HomeSwiper = ({ imgData }: HomeSwiperPropsType) => {
         autoplay={{
           delay: 1, //幻燈片切換延遲
           disableOnInteraction: false, // 操作swiper，是否禁止
-        }}
-      >
+        }}>
         {imgDatas.map((data) => (
           <SwiperSlide key={data.alt}>
-            <Image src={data.src} alt={data.alt} width={378} height={282} className=" object-cover" />
+            <Image
+              src={data.src}
+              alt={data.alt}
+              width={378}
+              height={282}
+              className=" object-cover"
+            />
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
-  )
-}
+  );
+};
 
-export default HomeSwiper
+export default HomeSwiper;
 type HomeSwiperPropsType = {
-  imgData: keyof typeof swiperData
-}
+  imgData: keyof typeof swiperData;
+};

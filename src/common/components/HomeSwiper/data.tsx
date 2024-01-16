@@ -1,11 +1,11 @@
 type ImageData = {
-  src: string
-  alt: string
-}
+  src: string;
+  alt: string;
+};
 export type SwiperData = {
   spaceBetween: number;
   imgDatas: ImageData[];
-}
+};
 
 export const swiperData: { [key: string]: SwiperData } = {
   farmDatas: {
@@ -70,4 +70,4 @@ export const swiperData: { [key: string]: SwiperData } = {
       },
     ],
   },
-}
+};

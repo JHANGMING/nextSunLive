@@ -1,4 +1,4 @@
-import { PageCategoryType } from "@/common/Layout/data";
+import { PageCategoryType } from '@/common/Layout/data';
 
 export const navBarDatas = [
   {
@@ -16,17 +16,17 @@ export const navBarDatas = [
     title: '商品總覽',
     subTitle: 'Products',
   },
-]
+];
 export const logoData = {
-  title: '搶鮮購'
-}
+  title: '搶鮮購',
+};
 
 export const pageSet: PageSet = {
   landingPage: true,
   liveStreamPage: true,
   productPage: true,
   authPage: false,
-}
-export type PageSet= {
-  [key in PageCategoryType]?: boolean
-}
+};
+export type PageSet = {
+  [key in PageCategoryType]?: boolean;
+};

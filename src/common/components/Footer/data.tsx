@@ -19,4 +19,4 @@ export const icons = [
     alt: 'behanch',
     path: 'https://www.linkedin.com/feed/',
   },
-]
+];

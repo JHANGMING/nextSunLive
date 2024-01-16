@@ -1,13 +1,13 @@
 export type ProductCardProps = {
-  title: string
-  des: string
-  originalPrice: number
-  salePrice: number
+  title: string;
+  des: string;
+  originalPrice: number;
+  salePrice: number;
   productImg: {
-    src: string
-    alt: string
-  }
-}
+    src: string;
+    alt: string;
+  };
+};
 export const productData: ProductCardProps[] = [
   {
     title: '紫禧有機天使茄',
@@ -69,4 +69,4 @@ export const productData: ProductCardProps[] = [
       alt: 'product3',
     },
   },
-]
+];

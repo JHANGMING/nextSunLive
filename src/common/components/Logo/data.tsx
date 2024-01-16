@@ -1,9 +1,9 @@
 export type classStyleProps = {
-  classStyle?: string
-}
+  classStyle?: string;
+};
 
 export type LogoImgPrors = {
-  widthProps: number
-  heightProps: number
-  classProps?: string
-}
+  widthProps: number;
+  heightProps: number;
+  classProps?: string;
+};

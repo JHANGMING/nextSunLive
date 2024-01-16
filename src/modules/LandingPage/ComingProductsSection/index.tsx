@@ -1,8 +1,8 @@
-import LinkToProduct from '@/common/components/LandingPage/LinkToProduct'
-import Image from 'next/image'
-import Link from 'next/link'
-import { BsHandIndex } from 'react-icons/bs'
-import UpcomingProductsList from '../../../common/components/product/UpcomingProducts/UpcomingProductsList'
+import LinkToProduct from '@/common/components/LandingPage/LinkToProduct';
+import Image from 'next/image';
+import Link from 'next/link';
+import { BsHandIndex } from 'react-icons/bs';
+import UpcomingProductsList from '../../../common/components/product/UpcomingProducts/UpcomingProductsList';
 const ComingProductsSection = () => {
   return (
     <section className="container pt-80 pb-120">
@@ -15,13 +15,19 @@ const ComingProductsSection = () => {
             </p>
             <p></p>
           </div>
-          <Image src="/images/home/live/liveComingLogo.png" alt="liveComingLogo" width={276} height={276} className="w-[276px] h-[276px] object-cover" />
+          <Image
+            src="/images/home/live/liveComingLogo.png"
+            alt="liveComingLogo"
+            width={276}
+            height={276}
+            className="w-[276px] h-[276px] object-cover"
+          />
         </div>
         <UpcomingProductsList />
         <LinkToProduct path="/liveStream" />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ComingProductsSection
+export default ComingProductsSection;

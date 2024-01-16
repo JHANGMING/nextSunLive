@@ -44,19 +44,18 @@ export const productData: ProductDataProps[] = [
       alt: 'liveComingPerson3',
     },
   },
-]
+];
 type ProductImageType = {
-  src: string
-  alt: string
-}
+  src: string;
+  alt: string;
+};
 
 export type ProductDataProps = {
-  price: number
-  title: string
-  personName: string
-  date: string
-  classStyle:string
-  productImage: ProductImageType
-  personImage: ProductImageType
-}
-
+  price: number;
+  title: string;
+  personName: string;
+  date: string;
+  classStyle: string;
+  productImage: ProductImageType;
+  personImage: ProductImageType;
+};

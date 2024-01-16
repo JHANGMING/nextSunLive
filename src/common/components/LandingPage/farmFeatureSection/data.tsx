@@ -1,11 +1,25 @@
 type FeatureIconProps = {
-  src: string
-  alt: string
-  width: number
-  height: number
-}
-
-export const featureData = [
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+type featureImageType = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+type FeatureDataType = {
+  title: string;
+  subTitle: string;
+  descFirst: string;
+  descSecond: string;
+  featureIconLeft: string;
+  featureIconRight: string;
+  image: featureImageType;
+};
+export const featureData: FeatureDataType[]= [
   {
     title: '新鮮速遞',
     subTitle: '一鍵下單，新鮮速遞',
@@ -48,7 +62,7 @@ export const featureData = [
       height: 276,
     },
   },
-]
+];
 export const featureIcon: Record<string, FeatureIconProps> = {
   featureIconLeft: {
     src: '/images/home/friendlyFarm/featureIconLeft.png',
@@ -62,4 +76,4 @@ export const featureIcon: Record<string, FeatureIconProps> = {
     width: 19.8,
     height: 59.5,
   },
-}
+};

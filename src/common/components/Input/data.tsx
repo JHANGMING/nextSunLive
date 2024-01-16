@@ -1,9 +1,18 @@
-import { ReactNode } from 'react'
-
-export type DefaultInputProps = {
-  type: string
-  labelText: string
-  inputText: string
-  icon?: ReactNode // 使用 ReactNode 类型，以便可以传递 JSX 元素
-  id: string
+import { ReactNode } from 'react';
+import { UseFormRegister, FieldErrors, RegisterOptions } from 'react-hook-form';
+export type FormValues = {
+  email: string;
+  nickname: string;
+  password: string;
+  confirmPassword: string;
 }
+export type DefaultInputProps = {
+  type: 'email' | 'text' | 'password';
+  labelText: string;
+  inputText: string;
+  icon?: ReactNode;
+  id: keyof FormValues;
+  register?: UseFormRegister<FormValues>;
+  errors?: FieldErrors<FormValues>;
+  rules: RegisterOptions;
+};

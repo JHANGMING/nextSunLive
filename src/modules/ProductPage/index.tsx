@@ -1,6 +1,17 @@
+
+import Banner from "@/common/components/ProductPage/Banner";
+import CategorySection from "./CategorySection";
+import NewsUpdatesSection from './NewsUpdatesSection';
+
+
 const ProductPage = () => {
-  return ( <>
-  這是商品頁</> );
-}
- 
+  return (
+    <main>
+      <Banner />
+      <CategorySection />
+      <NewsUpdatesSection />
+    </main>
+  );
+};
+
 export default ProductPage;
