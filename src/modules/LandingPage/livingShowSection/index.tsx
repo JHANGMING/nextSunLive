@@ -45,9 +45,9 @@ const LivingShowSection = () => {
               </p>
               <Link
                 href="/liveStream"
-                className=" text-primary-red bg-white py-16 px-24 flex rounded-[20px] items-center gap-16 border border-dashed border-primary-red hover:outline hover:outline-8 hover:outline-primary-yellow group">
-                <BsHandIndex className=" rotate-90 w-24 h-24 transition-transform group-hover:translate-x-4" />
-                <h4>立刻加入直播</h4>
+                className="shiny-button text-primary-red bg-white py-16 px-24 flex rounded-[20px] items-center gap-16 border border-dashed border-primary-red hover:outline hover:outline-8 hover:outline-white group">
+                <BsHandIndex className=" rotate-90 w-24 h-24 transition-transform group-hover:translate-x-4 group-hover:text-mediumGray" />
+                <h4 className="group-hover:text-mediumGray">立刻加入直播</h4>
               </Link>
             </div>
           </div>
