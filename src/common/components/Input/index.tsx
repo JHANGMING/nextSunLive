@@ -23,7 +23,7 @@ const DefaultInput = ({
         placeholder={inputText}
         id={id}
         {...(register && register(id, rules))}
-        className={inputClassName}
+        className={`focus-visible:outline-primary-green ${inputClassName}`}
       />
       {errors && id in errors && (
         <p className=" text-primary-red mt-8">{errors[id]?.message}</p>

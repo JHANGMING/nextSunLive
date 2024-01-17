@@ -45,6 +45,7 @@ const config: Config = {
         lightWhite: '#FBF9F3',
       },
       spacing: {
+        1: '1px',
         2: '2px',
         3: '3px',
         4: '4px',

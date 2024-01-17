@@ -9,7 +9,7 @@ import GlobalLink from '../GlobalLink';
 const Footer = () => {
   const { grassMotionLeft, grassMotionRight } = grassMotionSet;
   return (
-    <footer className="pt-41">
+    <footer className="pt-41 bg-white">
       <ul className="flex gap-154 items-end">
         <li>
           <Image

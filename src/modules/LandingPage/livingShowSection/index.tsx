@@ -19,14 +19,13 @@ const LivingShowSection = () => {
             <iframe
               src="https://www.youtube.com/embed/6AGm5u58gRM"
               title="[貳獎] 無人知曉的台灣小農"
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen></iframe>
           </div>
           <LogoImg
             widthProps={50}
             heightProps={50}
-            classProps="absolute left-1/2 -top-30 transform -translate-x-1/2 fade-animation"
+            classProps="absolute left-1/2 -top-35 logo-shake"
           />
         </li>
         <li className=" col-span-6">

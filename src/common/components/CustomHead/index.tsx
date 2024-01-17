@@ -20,7 +20,7 @@ export default function CustomHead({ pageCategory }: CustomHeadProps) {
           content={pageDescription || defaultDescription}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/logo.png" />
+        <link rel="icon" href="/images/logo.svg" />
         {/* Line */}
         <meta property="line:app_id" content="LINE_APP_ID" />
         <meta property="line:multi_share" content="true" />

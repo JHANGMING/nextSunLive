@@ -11,7 +11,7 @@ const BannerInput = () => {
       <input
         type="text"
         placeholder="輸入水果、蔬菜"
-        className="w-680 h-48 rounded-12 border pl-16 "
+        className="w-680 h-48 rounded-12 border pl-16 focus-visible:outline-none"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />

@@ -24,7 +24,7 @@ const ProductCard = ({
       />
       <div className="flex gap-16 justify-center">
         <LogoImg widthProps={32} heightProps={32} classProps="w-32 h-32" />
-        <h3>{title}</h3>
+        <h3 className=' text-primary-green'>{title}</h3>
       </div>
       <p className="px-24">{des}</p>
       <div className=" flex justify-between px-24">

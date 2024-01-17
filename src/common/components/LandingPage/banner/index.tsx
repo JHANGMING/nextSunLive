@@ -46,14 +46,14 @@ const Banner = () => {
         alt={grassMotionLeft.alt}
         width={546}
         height={136}
-        className=" absolute bottom-0 left-0 z-20"
+        className=" absolute -bottom-1 left-0 z-20"
       />
       <Image
         src={grassMotionRight.src}
         alt={grassMotionRight.alt}
         width={489}
         height={136}
-        className=" absolute bottom-0 right-0 z-20"
+        className=" absolute -bottom-1 right-0 z-20"
       />
     </section>
   );

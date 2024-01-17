@@ -30,16 +30,15 @@
 }
 
 //livingShowSection LogoImg
-@keyframes fade {
-  0%,
-  100% {
-    opacity: 1;
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(-5deg);
   }
   50% {
-    opacity: 0;
+    transform: rotate(5deg);
   }
 }
 
-.fade-animation {
-  animation: fade 10s infinite;
+.logo-shake {
+  animation: shake 1s infinite;
 }

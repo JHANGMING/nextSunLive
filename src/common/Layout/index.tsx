@@ -5,8 +5,10 @@ import CustomHead from '../components/CustomHead';
 import AuthLayout from './AuthLayout';
 
 const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
+  const backgroundColorClass =
+    pageCategory === 'authPage' ? 'bg-white' : 'bg-lightWhite';
   return (
-    <>
+    <div className={backgroundColorClass}>
       <CustomHead pageCategory={pageCategory} />
       <Header pageCategory={pageCategory} />
       {pageCategory === 'authPage' ? (
@@ -15,7 +17,7 @@ const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
         children
       )}
       <Footer />
-    </>
+    </div>
   );
 };
 

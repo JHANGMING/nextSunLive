@@ -5,7 +5,7 @@ const LogoImg = ({ widthProps, heightProps, classProps }: LogoImgPrors) => {
   const classStyle = !!classProps ? `${classProps}` : '';
   return (
     <Image
-      src="/images/logo.png"
+      src="/images/logo.svg"
       alt="Logo"
       width={widthProps}
       height={heightProps}
