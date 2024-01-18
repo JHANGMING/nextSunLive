@@ -1,5 +1,5 @@
 export const dataSet = {
-  title: '歡迎來到友善農園',
+  title: '歡迎來到搶鮮購',
   content: [
     {
       subTitle: '一個友善農業的使者',
@@ -25,7 +25,7 @@ export const dataSet = {
     },
   ],
   image: {
-    src: '/images/home/friendlyFarm/friendlyFarmImg.png',
+    src: '/images/home/friendlyFarm/friendlyFarmImg.svg',
     alt: 'friendlyFarmImg',
   },
 };

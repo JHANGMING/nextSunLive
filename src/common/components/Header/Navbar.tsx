@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { navBarDatas } from './data';
 import Logo from '@/common/components/Logo';
-
+import { useRouter } from 'next/router';
 const NavBar = () => {
+  const router = useRouter();
   return (
     <ul className="flex w-824 items-center justify-between">
       <li>
@@ -10,8 +11,11 @@ const NavBar = () => {
       </li>
       {navBarDatas.map((data) => {
         const { src, title, subTitle } = data;
+        const isActive = router.pathname === src;
         return (
-          <li key={subTitle} className="text-center text-20 w-[20%]">
+          <li
+            key={subTitle}
+            className={`text-center font-bold text-20 w-[20%] ${isActive ? 'text-primary-green' : ''}`}>
             <Link href={src} className="relative hover-trigger">
               <p className="mb-1">{title}</p>
               <span>{subTitle}</span>

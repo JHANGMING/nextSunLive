@@ -35,7 +35,7 @@ const ResetPasswordPage = () => {
             },
           }}
         />
-        <Button type="submit" category="auth" classStyle="mb-60 bg-primary-red">
+        <Button type="submit" category="auth" btnStyle="mb-60 bg-primary-yellow">
           發送驗證信至信箱
         </Button>
       </form>

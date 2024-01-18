@@ -14,17 +14,21 @@ const UpcomingProduct = ({ ...data }: ProductDataProps) => {
 
   return (
     <li className={`flex gap-24 ${classStyle}`}>
-      <div className=" relative group">
+      <div className=" relative">
         <Image
           src={productImage.src}
           alt={productImage.alt}
           width={240}
           height={200}
-          className="border-2 border-dashed border-primary-red outline outline-8 outline-primary-red rounded-20 h-[200px] "
+          className="border-2 border-dashed border-primary-red outline outline-8 outline-primary-red rounded-20 h-[200px] opacity-60"
         />
-        <p className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white  text-primary-red opacity-0 group-hover:opacity-80 transition-opacity duration-500 w-[137px] h-48 rounded-18">
-          Coming Soon
-        </p>
+        <Image
+          src="/images/home/live/UpcomingIcon.svg"
+          alt="UpcomingIcon"
+          width={80}
+          height={80}
+          className="absolute left-0 top-0"
+        />
       </div>
       <div className="flex flex-col gap-24">
         <p className="border border-dashed border-primary-red text-primary-red rounded-50 py-10 w-[67px] text-center">

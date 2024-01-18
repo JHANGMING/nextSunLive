@@ -17,7 +17,7 @@ const PasswordlessLoginPage = () => {
     <div className="flex flex-col justify-between h-full relative">
       <ArrowLeft />
       <form className="flex flex-col gap-16" onSubmit={handleSubmit(onSubmit)}>
-        <h2 className="mb-40 text-center">會員登入</h2>
+        <h2 className="mb-40 text-center">無密碼快速登入</h2>
         <DefaultInput
           type="email"
           labelText="信箱"
@@ -37,8 +37,8 @@ const PasswordlessLoginPage = () => {
         <Button
           type="submit"
           category="auth"
-          classStyle="mb-60 bg-primary-green">
-          發送驗證信至信箱
+          btnStyle="mb-60 bg-primary-green text-white">
+          發送無密碼驗證信至信箱
         </Button>
       </form>
       <p className="flex justify-center">

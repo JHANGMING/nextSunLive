@@ -9,8 +9,9 @@
     margin: 0 auto;
     font-family: 'Noto Sans TC';
     line-height: 1.5;
-    letter-spacing: 1.5px;
+    
     scroll-behavior: smooth;
+    @apply tracking-widest
   }
 
   h1 {
@@ -45,4 +46,21 @@
   justify-content: center;
   text-align: center;
   @apply bg-primary-yellow bg-opacity-50
+}
+
+.text-with-lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+}
+
+.text-with-lines::before,
+.text-with-lines::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  margin: 0 10px;
+  @apply bg-darkGray;
 }

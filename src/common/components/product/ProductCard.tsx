@@ -14,7 +14,7 @@ const ProductCard = ({
     console.log('2222');
   };
   return (
-    <li className=" col-span-4 flex flex-col gap-16">
+    <li className=" col-span-4 flex flex-col gap-16 justify-between">
       <Image
         src={productImg.src}
         alt={productImg.alt}
@@ -24,7 +24,7 @@ const ProductCard = ({
       />
       <div className="flex gap-16 justify-center">
         <LogoImg widthProps={32} heightProps={32} classProps="w-32 h-32" />
-        <h3 className=' text-primary-green'>{title}</h3>
+        <h3 className=" text-primary-green">{title}</h3>
       </div>
       <p className="px-24">{des}</p>
       <div className=" flex justify-between px-24">
@@ -37,7 +37,11 @@ const ProductCard = ({
             {originalPrice}
           </span>
         </div>
-        <Button category="addCart" onClick={handlerAddCart}>
+        <Button
+          category="addCart"
+          onClick={handlerAddCart}
+          btnStyle="bg-primary-red border-white"
+          textStyle="text-white">
           加入購物車
         </Button>
       </div>

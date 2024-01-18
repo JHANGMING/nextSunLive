@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useForm, FieldErrors } from 'react-hook-form';
 
 //hook
-const useGapClass = (errors: FieldErrors<FormValues>) => {
+export const useGapClass = (errors: FieldErrors<FormValues>) => {
   const errorCount = Object.keys(errors).length;
 
   switch (errorCount) {
@@ -120,7 +120,10 @@ const RegisterPage = () => {
             },
           }}
         />
-        <Button type="submit" category="auth" classStyle="mt-16 bg-primary-red">
+        <Button
+          type="submit"
+          category="auth"
+          btnStyle="mt-16 bg-primary-yellow text-black">
           立即註冊
         </Button>
       </form>

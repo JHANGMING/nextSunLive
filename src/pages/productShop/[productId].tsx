@@ -1,10 +1,13 @@
+import Layout from '@/common/Layout';
+import ProductDetailPage from '@/modules/ProductDetailPage';
 import { useRouter } from 'next/router';
 
 const ProductDetail = () => {
-  const router = useRouter();
-  console.log(router.query);
-
-  return <>這是商品內文頁</>;
+  return (
+    <Layout pageCategory="productPage">
+      <ProductDetailPage />
+    </Layout>
+  );
 };
 
 export default ProductDetail;

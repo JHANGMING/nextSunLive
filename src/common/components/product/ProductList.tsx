@@ -6,7 +6,7 @@ type ProductListProps = {
 const ProductList = ({ category }: ProductListProps) => {
   if (category === 'landingPage') {
     return (
-      <ul className="grid grid-cols-12 gap-x-24 gap-y-84">
+      <ul className="grid grid-cols-12 auto-rows-min gap-x-24 gap-y-84">
         {productData.map((data) => (
           <ProductCard key={data.title} {...data} />
         ))}

@@ -4,6 +4,7 @@ import { FormValues } from '@/common/components/Input/data';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
+import { useGapClass } from './RegisterPage';
 const LoginPage = () => {
   const router = useRouter();
   const {
@@ -11,33 +12,23 @@ const LoginPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
+  const gapClass = useGapClass(errors);
   const handlerToPasswordlessPage = () => {
     router.push('/auth/passwordlessLogin');
   };
-  const onSubmit=(data:FormValues)=>{
+  const onSubmit = (data: FormValues) => {
     const { email, password } = data;
     const dataObj = {
       email: email.trim(),
       password: password.trim(),
     };
     console.log(dataObj);
-    
-    
-  }
+  };
   return (
     <>
-      <div className="px-55.5">
-        <h2 className="mb-60 text-center">會員登入</h2>
-        <Button
-          type="button"
-          category="auth"
-          classStyle="mt-16 mb-60 bg-primary-green mb-60 w-full"
-          onClick={handlerToPasswordlessPage}>
-          使用無密碼快速登入
-        </Button>
-      </div>
+      <h2 className="text-center">會員登入</h2>
       <form
-        className="flex flex-col gap-24 pt-60 border-t border-darkGray px-55.5"
+        className={`flex flex-col gap-24 px-55.5 ${gapClass}`}
         onSubmit={handleSubmit(onSubmit)}>
         <DefaultInput
           type="email"
@@ -82,19 +73,30 @@ const LoginPage = () => {
         <Button
           type="submit"
           category="auth"
-          classStyle="mt-16 mb-80 bg-primary-red">
+          btnStyle="mt-16 bg-primary-yellow text-black">
           立即登入
         </Button>
       </form>
-
-      <p className=" self-center text-center">
-        還未成為會員 ?
-        <Link
-          href="/auth/register"
-          className=" cursor-pointer text-primary-green font-bold">
-          立即註冊 !
-        </Link>
-      </p>
+      <div className="text-center text-18 text-with-lines text-darkGray">
+        或
+      </div>
+      <div className="px-55.5">
+        <Button
+          type="button"
+          category="auth"
+          btnStyle="mt-60 mb-60 bg-primary-green text-white mb-60 w-full"
+          onClick={handlerToPasswordlessPage}>
+          使用無密碼快速登入
+        </Button>
+        <p className=" self-center text-center">
+          還未成為會員 ?
+          <Link
+            href="/auth/register"
+            className=" cursor-pointer text-primary-green font-bold">
+            立即註冊 !
+          </Link>
+        </p>
+      </div>
     </>
   );
 };

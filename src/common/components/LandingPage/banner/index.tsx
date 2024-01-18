@@ -35,7 +35,7 @@ const Banner = () => {
                 alt={data.alt}
                 width={1440}
                 height={600}
-                className={`object-cover transition-transform duration-[25000ms] ease-in-out ${isVisible ? 'scale-125' : 'scale-100'}`}
+                className={`h-[600px] object-cover transition-transform duration-[25000ms] ease-in-out ${isVisible ? 'scale-125' : 'scale-100'}`}
               />
             )}
           </SwiperSlide>

@@ -7,13 +7,13 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-const HomeSwiper = ({ imgData }: HomeSwiperPropsType) => {
+const HomeSwiper = ({ imgData,classStyle }: HomeSwiperPropsType) => {
   const data = swiperData[imgData];
   if (!data) return null;
   const { spaceBetween, imgDatas } = data;
 
   return (
-    <div className="homeSwiper">
+    <div className={`homeSwiper ${classStyle}`}>
       <Swiper
         slidesPerView={'auto'}
         centeredSlides={false}
@@ -46,4 +46,5 @@ const HomeSwiper = ({ imgData }: HomeSwiperPropsType) => {
 export default HomeSwiper;
 type HomeSwiperPropsType = {
   imgData: keyof typeof swiperData;
+  classStyle?: string;
 };

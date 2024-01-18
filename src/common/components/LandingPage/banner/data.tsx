@@ -1,22 +1,22 @@
 export const bannerImgData = [
   {
-    src: '/images/home/banner/banner1.png',
+    src: '/images/home/banner/banner1.svg',
     alt: 'banner1',
   },
   {
-    src: '/images/home/banner/banner2.png',
+    src: '/images/home/banner/banner2.svg',
     alt: 'banner2',
   },
   {
-    src: '/images/home/banner/banner3.png',
+    src: '/images/home/banner/banner3.svg',
     alt: 'banner3',
   },
   {
-    src: '/images/home/banner/banner4.png',
+    src: '/images/home/banner/banner4.svg',
     alt: 'banner4',
   },
   {
-    src: '/images/home/banner/banner5.png',
+    src: '/images/home/banner/banner5.svg',
     alt: 'banner5',
   },
 ];

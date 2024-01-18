@@ -19,7 +19,7 @@ type FeatureDataType = {
   featureIconRight: string;
   image: featureImageType;
 };
-export const featureData: FeatureDataType[]= [
+export const featureData: FeatureDataType[] = [
   {
     title: '新鮮速遞',
     subTitle: '一鍵下單，新鮮速遞',
@@ -28,7 +28,7 @@ export const featureData: FeatureDataType[]= [
     featureIconLeft: 'featureIconLeft',
     featureIconRight: 'featureIconRight',
     image: {
-      src: '/images/home/friendlyFarm/featureImg1.png',
+      src: '/images/home/friendlyFarm/featureImg1.svg',
       alt: 'featureImg1',
       width: 414.5,
       height: 276,
@@ -42,7 +42,7 @@ export const featureData: FeatureDataType[]= [
     featureIconLeft: 'featureIconLeft',
     featureIconRight: 'featureIconRight',
     image: {
-      src: '/images/home/friendlyFarm/featureImg2.png',
+      src: '/images/home/friendlyFarm/featureImg2.svg',
       alt: 'featureImg2',
       width: 368,
       height: 276,
@@ -56,7 +56,7 @@ export const featureData: FeatureDataType[]= [
     featureIconLeft: 'featureIconLeft',
     featureIconRight: 'featureIconRight',
     image: {
-      src: '/images/home/friendlyFarm/featureImg3.png',
+      src: '/images/home/friendlyFarm/featureImg3.svg',
       alt: 'featureImg3',
       width: 276,
       height: 276,
@@ -67,13 +67,13 @@ export const featureIcon: Record<string, FeatureIconProps> = {
   featureIconLeft: {
     src: '/images/home/friendlyFarm/featureIconLeft.png',
     alt: 'featureIconLeft',
-    width: 19.8,
-    height: 59.5,
+    width: 30,
+    height: 60,
   },
   featureIconRight: {
     src: '/images/home/friendlyFarm/featureIconRight.png',
     alt: 'featureIconRight',
-    width: 19.8,
-    height: 59.5,
+    width: 30,
+    height: 60,
   },
 };

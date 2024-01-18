@@ -3,7 +3,44 @@ import Link from 'next/link';
 import { BsHandIndex } from 'react-icons/bs';
 import LivingProduct from './LivingProduct';
 import LogoImg from '@/common/components/Logo/LogoImg';
+import { useEffect, useRef } from 'react';
 const LivingShowSection = () => {
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const iframe = iframeRef.current;
+        if (!iframe) return;
+
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          // iframe 進入視野一半時播放
+          iframe.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            '*'
+          );
+        } else {
+          // iframe 離開視野時暫停
+          iframe.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            '*'
+          );
+        }
+      },
+      { threshold: 0.5 } // 這裡的 0.5 表示當元素有一半在視野中時觸發
+    );
+
+    if (iframeRef.current) {
+      observer.observe(iframeRef.current);
+    }
+
+    return () => {
+      if (iframeRef.current) {
+        observer.unobserve(iframeRef.current);
+      }
+    };
+  }, []);
   return (
     <section className=" bg-liveBG bg-no-repeat bg-bottom flex h-[528px]">
       <ul className="container grid grid-cols-12 gap-24 mb-46">
@@ -17,7 +54,8 @@ const LivingShowSection = () => {
           /> */}
           <div className="iframe-container">
             <iframe
-              src="https://www.youtube.com/embed/6AGm5u58gRM"
+              ref={iframeRef}
+              src="https://www.youtube.com/embed/6AGm5u58gRM?enablejsapi=1"
               title="[貳獎] 無人知曉的台灣小農"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen></iframe>
@@ -33,7 +71,7 @@ const LivingShowSection = () => {
             <LivingProduct />
             <div className="col-span-6 px-27 relative flex flex-col items-center">
               <Image
-                src="/images/home/live/limitTimeSale.png"
+                src="/images/home/live/limitTimeSale.svg"
                 alt="limitTimeSale"
                 width={138}
                 height={138}

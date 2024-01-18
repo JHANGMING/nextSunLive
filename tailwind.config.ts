@@ -22,7 +22,8 @@ const config: Config = {
         recommendBG: 'url(/images/home/recommend/recommendBG.png)',
         authBG: 'url(/images/auth/authBG.png)',
         shopBannerBG: 'url(/images/productShop/bannerBG.png)',
-        shopBannerBG_2rd: 'url(/images/productShop/bannerBG2.png)',
+        shopBannerBG_2rd: 'url(/images/productShop/bannerBG2.svg)',
+        detailBG: 'url(/images/productDetail/detailBG.svg)',
       },
       borderRadius: {
         8: '8px',
@@ -96,6 +97,8 @@ const config: Config = {
         120: '120px',
         126: '126px',
         130: '130px',
+        138: '138px',
+        140: '140px',
         154: '154px',
         155: '155px',
         165: '165px',

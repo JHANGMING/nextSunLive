@@ -8,4 +8,7 @@ export type ButtonPropsType = {
   children?: ReactNode;
   classStyle?: string;
   type?: ButtonType;
+  btnStyle?: string;
+  textStyle?: string;
+  showIcon?: boolean;
 };

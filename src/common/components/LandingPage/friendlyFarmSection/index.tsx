@@ -7,7 +7,7 @@ const FriendlyFarmSection = () => {
   return (
     <section className=" bg-friendlyFarmBG  pt-112 pb-41">
       <div className="container">
-        <div className="flex gap-16 justify-center items-center ">
+        <div className="flex gap-16 justify-center items-center mb-60">
           <h2 className="text-40 text-primary-green">{dataSet.title}</h2>
           <LogoImg widthProps={50} heightProps={50} classProps="h-50" />
         </div>
