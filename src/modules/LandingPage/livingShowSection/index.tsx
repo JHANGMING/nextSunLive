@@ -5,7 +5,7 @@ import LivingProduct from './LivingProduct';
 import LogoImg from '@/common/components/Logo/LogoImg';
 import { useEffect, useRef } from 'react';
 const LivingShowSection = () => {
-  const iframeRef = useRef(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -16,13 +16,13 @@ const LivingShowSection = () => {
         const entry = entries[0];
         if (entry.isIntersecting) {
           // iframe 進入視野一半時播放
-          iframe.contentWindow.postMessage(
+          iframeRef.current.contentWindow?.postMessage(
             '{"event":"command","func":"playVideo","args":""}',
             '*'
           );
         } else {
           // iframe 離開視野時暫停
-          iframe.contentWindow.postMessage(
+          iframeRef.current.contentWindow?.postMessage(
             '{"event":"command","func":"pauseVideo","args":""}',
             '*'
           );
