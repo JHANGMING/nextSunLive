@@ -1,7 +1,5 @@
 import LinkToProduct from '@/common/components/LandingPage/LinkToProduct';
 import Image from 'next/image';
-import Link from 'next/link';
-import { BsHandIndex } from 'react-icons/bs';
 import UpcomingProductsList from '../../../common/components/product/UpcomingProducts/UpcomingProductsList';
 const ComingProductsSection = () => {
   return (
@@ -24,7 +22,7 @@ const ComingProductsSection = () => {
           />
         </div>
         <UpcomingProductsList />
-        <LinkToProduct path="/liveStream" />
+        <LinkToProduct path="/liveStream" text="直播一覽" />
       </div>
     </section>
   );

@@ -5,11 +5,13 @@ import { icons } from './data';
 import LogoImg from '../Logo/LogoImg';
 import ScrollPageTop from '../ScrollPageTop';
 import GlobalLink from '../GlobalLink';
-
-const Footer = () => {
+type FooterProps = {
+  gapClassSyle:string
+};
+const Footer = ({ gapClassSyle }: FooterProps) => {
   const { grassMotionLeft, grassMotionRight } = grassMotionSet;
   return (
-    <footer className="pt-41 bg-white">
+    <footer className={`bg-white ${gapClassSyle}`}>
       <ul className="flex gap-154 items-end">
         <li>
           <Image
@@ -23,7 +25,7 @@ const Footer = () => {
         <li className="text-primary-green flex flex-col items-center mb-40">
           <LogoImg widthProps={32} heightProps={32} classProps="mb-8" />
           <h3>搶鮮購</h3>
-          <p className=" text-14 py-8">devqna@contact.com</p>
+          <p className=" text-14 py-8">freshgrab@contact.com</p>
           <ul className="flex gap-16">
             {icons.map((icon) => (
               <li key={icon.alt}>
@@ -50,7 +52,7 @@ const Footer = () => {
         </li>
       </ul>
       <p className=" bg-lightWhite text-center py-24">
-        © SunLive - 線上直播當季農產品
+        © 搶鮮購 - 線上直播搶購當季新鮮農產品
       </p>
       <ScrollPageTop />
     </footer>

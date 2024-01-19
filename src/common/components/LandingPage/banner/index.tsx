@@ -7,14 +7,14 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/zoom';
 import BannerTitle from './BannerTitle';
-import BannerInput from '../../Input/BannerInput';
+import SearchInput from '../../Input/SearchInput';
 const Banner = () => {
   const { grassMotionLeft, grassMotionRight } = grassMotionSet;
   return (
     <section className="relative mb-120">
       <div className="absolute top-1/2 left-1/2 z-10 text-center transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-16">
         <BannerTitle />
-        <BannerInput />
+        <SearchInput />
       </div>
       <Swiper
         spaceBetween={30}

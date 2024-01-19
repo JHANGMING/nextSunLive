@@ -7,6 +7,7 @@ import FriendlyFarmSection from '@/common/components/LandingPage/friendlyFarmSec
 import LivingShowSection from '@/modules/LandingPage/livingShowSection';
 import ProductListSection from '@/modules/LandingPage/productListSection';
 import RecommendSection from '@/common/components/LandingPage/RecommendSection';
+import FixedHeader from '@/common/components/Header/FixedHeader';
 const LandingPage = () => {
   return (
     <main>

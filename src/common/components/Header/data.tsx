@@ -25,8 +25,18 @@ export const pageSet: PageSet = {
   landingPage: true,
   liveStreamPage: true,
   productPage: true,
+  productDetailPage: true,
   authPage: false,
 };
+
+export const fixedPageSet: PageSet = {
+  landingPage: true,
+  liveStreamPage: true,
+  productPage: true,
+  productDetailPage: false,
+  authPage: false,
+};
+
 export type PageSet = {
   [key in PageCategoryType]?: boolean;
 };

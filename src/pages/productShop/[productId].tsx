@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 const ProductDetail = () => {
   return (
-    <Layout pageCategory="productPage">
+    <Layout pageCategory="productDetailPage">
       <ProductDetailPage />
     </Layout>
   );

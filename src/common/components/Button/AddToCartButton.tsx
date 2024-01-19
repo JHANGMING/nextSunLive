@@ -15,7 +15,7 @@ const AddToCartButton = ({
       {showIcon && (
         <BsHandIndex className="w-24 h-24 rotate-90 text-primary-yellow group-hover:translate-x-4" />
       )}
-      <p className={`${textStyle} tracking-widest`}>{children}</p>
+      <p className={`${textStyle} font-bold tracking-widest`}>{children}</p>
     </button>
   );
 };

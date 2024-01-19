@@ -5,9 +5,9 @@ import Button from '@/common/components/Button';
 import ProductList from '@/common/components/product/ProductList';
 const ProductListSection = () => {
   return (
-    <section className="bg-white pt-24 pb-100">
+    <section className="bg-white pt-24 pb-140">
       <div className="container">
-        <LinkToProduct path="/productShop" />
+        <LinkToProduct path="/productShop" text="商品一覽" />
         <ProductList category="landingPage" />
       </div>
     </section>

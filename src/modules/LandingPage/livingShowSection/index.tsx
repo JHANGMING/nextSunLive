@@ -15,20 +15,18 @@ const LivingShowSection = () => {
 
         const entry = entries[0];
         if (entry.isIntersecting) {
-          // iframe 進入視野一半時播放
           iframeRef.current.contentWindow?.postMessage(
             '{"event":"command","func":"playVideo","args":""}',
             '*'
           );
         } else {
-          // iframe 離開視野時暫停
           iframeRef.current.contentWindow?.postMessage(
             '{"event":"command","func":"pauseVideo","args":""}',
             '*'
           );
         }
       },
-      { threshold: 0.5 } // 這裡的 0.5 表示當元素有一半在視野中時觸發
+      { threshold: 0.5 }
     );
 
     if (iframeRef.current) {

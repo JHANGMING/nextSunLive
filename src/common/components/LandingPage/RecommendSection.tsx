@@ -5,9 +5,11 @@ const RecommendSection = () => {
     <section className=" bg-recommendBG h-[877px] bg-bottom bg-no-repeat bg-white pt-100">
       <div className="container flex flex-col items-center">
         <h2 className=" text-primary-red mb-16">
-          熱賣推薦！農夫獻上最溫暖的美味
+          除了直播！快來看看小農熱門商品
         </h2>
-        <h4 className=" text-primary-green mb-40">讓您品味安心的每一口</h4>
+        <h4 className=" text-primary-green mb-40">
+          滿滿小農愛心，讓您每一口都吃得安心
+        </h4>
         <Image
           src="/images/home/recommend/recommendPersonImg.png"
           alt="recommendPersonImg"

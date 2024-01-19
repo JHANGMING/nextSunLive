@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 export type PageCategoryType =
   | 'liveStreamPage'
   | 'productPage'
+  | "productDetailPage"
   | 'landingPage'
   | 'authPage';
 

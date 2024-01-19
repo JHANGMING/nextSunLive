@@ -3,20 +3,23 @@ import Footer from '../components/Footer';
 import { LayoutPropsType } from './data';
 import CustomHead from '../components/CustomHead';
 import AuthLayout from './AuthLayout';
+import FixedHeader from '../components/Header/FixedHeader';
 
 const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
   const backgroundColorClass =
     pageCategory === 'authPage' ? 'bg-white' : 'bg-lightWhite';
+  const gapClassSyle = pageCategory === 'productPage' ? 'pt-60' : 'pt-42';
   return (
     <div className={backgroundColorClass}>
       <CustomHead pageCategory={pageCategory} />
       <Header pageCategory={pageCategory} />
+      <FixedHeader pageCategory={pageCategory} />
       {pageCategory === 'authPage' ? (
         <AuthLayout classStyle={classStyle}>{children}</AuthLayout>
       ) : (
         children
       )}
-      <Footer />
+      <Footer gapClassSyle={gapClassSyle} />
     </div>
   );
 };
