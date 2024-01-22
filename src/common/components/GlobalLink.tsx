@@ -12,13 +12,18 @@ const GlobalLink = ({
   openInNewTab,
   children,
 }: GlobalLinkProps) => {
+  const handerAddtoCart=()=>{
+    console.log('嫁入購物車');
+    
+  }
   if (openInNewTab) {
     return (
       <a
         className={className}
         href={href}
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+        onClick={handerAddtoCart}>
         {children}
       </a>
     );

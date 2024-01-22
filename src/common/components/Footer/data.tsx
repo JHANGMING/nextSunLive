@@ -20,3 +20,15 @@ export const icons = [
     path: 'https://www.linkedin.com/feed/',
   },
 ];
+
+type pageSetType = {
+  [key: string]: boolean;
+};
+export const swiperSet: pageSetType = {
+  authPage: false,
+  productDetailPage: true,
+  liveStreamPage: true,
+  liveStreamView: true,
+  productPage: true,
+  landingPage: true,
+};

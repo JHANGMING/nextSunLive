@@ -3,7 +3,7 @@ import { featureData, featureIcon } from './data';
 
 const FarmFeatureSection = () => {
   return (
-    <section className=" bg-farmFeatureBG bg-no-repeat bg-center pt-114 pb-130 mb-120">
+    <section className=" bg-farmFeatureBG bg-repeat-x bg-center pt-114 pb-130 mb-120">
       <ul className="container grid grid-cols-12 gap-24">
         {featureData.map((data) => {
           const {

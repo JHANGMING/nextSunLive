@@ -1,6 +1,6 @@
 import PaginatedProductList from './PaginatedProductList';
 import ProductCard from './ProductCard';
-import { productData } from './data';
+import { allproductData, productData } from './data';
 type ProductListProps = {
   category: string;
 };
@@ -14,7 +14,9 @@ const numberToChinese = (number:number) => {
   ];
   return chineseNumbers[number] || number;
 };
-const ProductList = ({ category }: ProductListProps) => {
+const ProductList = ({
+  category,
+}: ProductListProps) => {
   switch (category) {
     case 'landingPage':
       return (
@@ -70,8 +72,39 @@ const ProductList = ({ category }: ProductListProps) => {
           ))}
         </ul>
       );
+    case 'related':
+      return (
+        <ul className="grid grid-cols-12 auto-rows-min gap-x-24">
+          {productData.slice(0, 4).map((data) => (
+            <ProductCard
+              key={data.title}
+              {...data}
+              imgBorderStyle="border-primary-yellow"
+              buttonAtBottom={true}
+              cardGapThreeCol={false}
+            />
+          ))}
+        </ul>
+      );
+    case 'search':
+      return (
+        <ul className="grid grid-cols-12 auto-rows-min gap-24 ">
+          {productData.slice(0, 3).map((data, index) => (
+            <ProductCard
+              key={data.title}
+              {...data}
+              imgBorderStyle="border-primary-yellow"
+            />
+          ))}
+        </ul>
+      );
     case 'all':
-      return <PaginatedProductList data={productData} itemsPerPage={9} />;
+      return (
+        <PaginatedProductList
+          data={allproductData}
+          itemsPerPage={9}
+        />
+      );
 
     default:
       return null;

@@ -11,4 +11,5 @@ export type ButtonPropsType = {
   btnStyle?: string;
   textStyle?: string;
   showIcon?: boolean;
+  disabled?: boolean;
 };

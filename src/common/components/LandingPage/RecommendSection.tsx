@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const RecommendSection = () => {
   return (
-    <section className=" bg-recommendBG h-[877px] bg-bottom bg-no-repeat bg-white pt-100">
+    <section className=" bg-recommendBG h-[877px] bg-bottom bg-repeat-x bg-white pt-100">
       <div className="container flex flex-col items-center">
         <h2 className=" text-primary-red mb-16">
           除了直播！快來看看小農熱門商品

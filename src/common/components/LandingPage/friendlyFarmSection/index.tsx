@@ -5,7 +5,7 @@ import LogoImg from '../../Logo/LogoImg';
 const FriendlyFarmSection = () => {
   const { src, alt } = dataSet.image;
   return (
-    <section className=" bg-friendlyFarmBG  pt-112 pb-41">
+    <section className=" bg-friendlyFarmBG bg-repeat-x bg-center pt-112 pb-41">
       <div className="container">
         <div className="flex gap-16 justify-center items-center mb-60">
           <h2 className="text-40 text-primary-green">{dataSet.title}</h2>

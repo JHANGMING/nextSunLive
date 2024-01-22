@@ -1,9 +1,16 @@
-import FixedHeader from "@/common/components/Header/FixedHeader"
+
+import LiveBanner from '@/common/components/LiveStreamPage/LiveBanner';
+import LivingShowSection from '../LandingPage/LivingShowSection';
+import LiveProductSection from './LiveProductSection';
 
 const LiveStreamPage = () => {
   return (
     <>
-      2222
+      <LiveBanner />
+      <main>
+        <LivingShowSection isLivePage={true} />
+        <LiveProductSection />
+      </main>
     </>
   );
 };

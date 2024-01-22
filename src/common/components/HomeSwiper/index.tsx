@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import Image from 'next/image';
-import { swiperData } from './data';
+import { HomeSwiperPropsType, swiperData } from './data';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
@@ -44,7 +44,3 @@ const HomeSwiper = ({ imgData,classStyle }: HomeSwiperPropsType) => {
 };
 
 export default HomeSwiper;
-type HomeSwiperPropsType = {
-  imgData: keyof typeof swiperData;
-  classStyle?: string;
-};

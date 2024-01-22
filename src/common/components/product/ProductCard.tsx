@@ -15,15 +15,15 @@ const ProductCard = ({
   imgBorderStyle,
   priceBorderStyle,
   originalPriceStyle,
+  cardGapThreeCol=true,
   buttonAtBottom = false,
 }: ProductCardProps) => {
   const priceBorderClass =
     priceBorderStyle === 'white' ? 'border-white' : 'border-lightGray';
   const originalPriceClass =
     originalPriceStyle === 'white' ? 'text-white' : 'text-lightGray';
-  const handlerAddCart = () => {
-    console.log('2222');
-  };
+    const cardGapStyle=cardGapThreeCol?"col-span-4":"col-span-3";
+    const cardTitleStyle = cardGapThreeCol || "text-24"
   const [animation, setAnimation] = useState('product-card-enter');
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const ProductCard = ({
     };
   }, []);
   return (
-    <li className={`col-span-4 flex flex-col ${animation}`}>
+    <li className={`${cardGapStyle} flex flex-col ${animation}`}>
       <div className=" relative mb-16">
         <Image
           src={productImg.src}
@@ -53,7 +53,7 @@ const ProductCard = ({
 
       <div className="flex gap-16 justify-center mb-8">
         <LogoImg widthProps={32} heightProps={32} classProps="w-32 h-32" />
-        <h3 className=" text-primary-green">{title}</h3>
+        <h3 className={`text-primary-green ${cardTitleStyle}`}>{title}</h3>
       </div>
 
       {!buttonAtBottom && <p className="px-24 flex-grow mb-16">{des}</p>}
@@ -73,7 +73,6 @@ const ProductCard = ({
 
         <Button
           category="addCart"
-          onClick={handlerAddCart}
           btnStyle={`${buttonAtBottom ? 'w-full flex justify-center bg-primary-red border-white' : 'bg-primary-red border-white'}`}
           textStyle="text-white">
           加入購物車

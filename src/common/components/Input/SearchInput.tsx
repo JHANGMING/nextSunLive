@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
+import React from 'react';
 type SearchInputProps = {
   headerVisible?: boolean;
   onClick?: () => void;
 };
 const SearchInput = ({ headerVisible = false, onClick }: SearchInputProps) => {
   const [inputValue, setInputValue] = useState('');
+
   const handlerSearch = () => {
     if (inputValue) {
       console.log(inputValue);
@@ -13,9 +15,13 @@ const SearchInput = ({ headerVisible = false, onClick }: SearchInputProps) => {
 
     setInputValue('');
 
-    if (headerVisible && onClick && typeof onClick === 'function') {
-      onClick();
+    if (headerVisible) {
+      onClick?.();
     }
+  };
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key !== 'Enter') return;
+    handlerSearch();
   };
   const inputStyle =
     headerVisible === true
@@ -35,6 +41,7 @@ const SearchInput = ({ headerVisible = false, onClick }: SearchInputProps) => {
         className={`${inputStyle} border pl-16 focus-visible:outline-none tracking-widest`}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        onKeyPress={handleKeyPress}
       />
       <div
         className={` w-53 h-48 flex justify-center items-center absolute top-0 right-0 cursor-pointer hover:opacity-80 ${iconBackgoound} ${headerVisible ? 'fade-in' : ''}`}

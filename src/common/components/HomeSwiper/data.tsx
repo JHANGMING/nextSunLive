@@ -6,6 +6,10 @@ export type SwiperData = {
   spaceBetween: number;
   imgDatas: ImageData[];
 };
+export type HomeSwiperPropsType = {
+  imgData: keyof typeof swiperData;
+  classStyle?: string;
+};
 
 export const swiperData: { [key: string]: SwiperData } = {
   farmDatas: {

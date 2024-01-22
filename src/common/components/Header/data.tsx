@@ -7,12 +7,12 @@ export const navBarDatas = [
     subTitle: 'About',
   },
   {
-    src: '/liveStream',
+    src: '/livestream',
     title: '直播特惠',
     subTitle: 'Live',
   },
   {
-    src: '/productShop',
+    src: '/productshop',
     title: '商品總覽',
     subTitle: 'Products',
   },
@@ -24,6 +24,7 @@ export const logoData = {
 export const pageSet: PageSet = {
   landingPage: true,
   liveStreamPage: true,
+  liveStreamView: true,
   productPage: true,
   productDetailPage: true,
   authPage: false,
@@ -32,6 +33,7 @@ export const pageSet: PageSet = {
 export const fixedPageSet: PageSet = {
   landingPage: true,
   liveStreamPage: true,
+  liveStreamView: false,
   productPage: true,
   productDetailPage: false,
   authPage: false,

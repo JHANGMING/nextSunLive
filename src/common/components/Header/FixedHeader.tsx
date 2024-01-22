@@ -36,7 +36,7 @@ const FixedHeader = ({ pageCategory }: LayoutPropsType) => {
     return (
       
       <div
-        className={` ${isVisibleClass} h-98 fixed top-0 left-0 bg-white z-30 w-full flex justify-between items-center transition-opacity duration-1000 ease-in-out px-72`}>
+        className={` ${isVisibleClass} h-60 fixed top-0 left-0 bg-white z-30 w-full flex justify-between items-center transition-opacity duration-1000 ease-in-out px-72`}>
         <div className="w-400">
           {!isSearchActive && (
             <div
@@ -50,7 +50,7 @@ const FixedHeader = ({ pageCategory }: LayoutPropsType) => {
           )}
         </div>
         <div className=" flex justify-center">
-          <Logo />
+          <Logo widthProps={32} heightProps={32}/>
         </div>
         <div className="flex gap-40 items-center justify-end w-400">
           <CartAndLogin />
