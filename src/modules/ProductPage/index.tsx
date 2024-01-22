@@ -14,6 +14,7 @@ const ProductPage = () => {
     <>
       <Banner />
       <main>
+        
         {/* <SearchSection/> */}
         <CategorySection {...refs} />
         <DiscountedSection discountedProductsRef={refs.discountedProductsRef} />
