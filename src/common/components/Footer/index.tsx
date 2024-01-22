@@ -1,9 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { grassMotionSet } from '@/constants/globaIIcon';
 import { icons, swiperSet } from './data';
 import LogoImg from '../Logo/LogoImg';
-import ScrollPageTop from '../ScrollPageTop';
 import GlobalLink from '../GlobalLink';
 import HomeSwiper from '../HomeSwiper';
 type FooterProps = {
@@ -61,7 +59,6 @@ const Footer = ({ gapClassSyle, pageCategory }: FooterProps) => {
         <p className=" bg-lightWhite text-center py-24">
           © 搶鮮購 - 線上直播搶購當季新鮮農產品
         </p>
-        <ScrollPageTop />
       </footer>
     </>
   );

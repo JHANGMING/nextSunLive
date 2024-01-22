@@ -4,12 +4,14 @@ import { LayoutPropsType, colorWhiteSet, footerSet } from './data';
 import CustomHead from '../components/CustomHead';
 import AuthLayout from './AuthLayout';
 import FixedHeader from '../components/Header/FixedHeader';
+import ScrollPageTop from '../components/ScrollPageTop';
+import ContactService from '@/modules/ContactService';
 
 const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
   const backgroundColorClass = colorWhiteSet[pageCategory]
     ? 'bg-white'
     : 'bg-lightWhite';
-  const gapClassSyle = footerSet[pageCategory]  ? 'pt-60' : 'pt-42';
+  const gapClassSyle = footerSet[pageCategory] ? 'pt-60' : 'pt-42';
   return (
     <div className={backgroundColorClass}>
       <CustomHead pageCategory={pageCategory} />
@@ -20,6 +22,8 @@ const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
       ) : (
         children
       )}
+      <ContactService />
+      <ScrollPageTop />
       <Footer gapClassSyle={gapClassSyle} pageCategory={pageCategory} />
     </div>
   );

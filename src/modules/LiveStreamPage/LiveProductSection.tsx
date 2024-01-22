@@ -28,9 +28,9 @@ const LiveProductSection = () => {
                   className="absolute left-0 top-0"
                 />
                 <div className="bg-black/20 absolute left-0 top-0 w-full h-full rounded-16"></div>
-                <div className="absolute left-0 bottom-0 w-full py-16  opacity-80 flex flex-col items-center rounded-bl-20 rounded-br-20 bg-white/90">
+                <div className="absolute left-0 bottom-0 w-full py-16 gap-8  opacity-80 flex flex-col items-center rounded-bl-20 rounded-br-20 bg-white/90">
                   <h4 className=" text-primary-green">{data.title}</h4>
-                  <h6>
+                  <h6 className=" font-normal">
                     <span>小農</span>
                     {data.farmerName}
                   </h6>

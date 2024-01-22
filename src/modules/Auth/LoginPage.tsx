@@ -1,10 +1,10 @@
 import Button from '@/common/components/Button';
 import DefaultInput from '@/common/components/Input';
 import { FormValues } from '@/common/components/Input/data';
+import { useGapClass } from '@/common/hooks/useGapClass';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import { useGapClass } from './RegisterPage';
 const LoginPage = () => {
   const router = useRouter();
   const {

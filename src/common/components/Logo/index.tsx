@@ -6,6 +6,7 @@ const Logo = ({
   classStyle,
   widthProps = 50,
   heightProps = 50,
+  textSytle="text-28"
 }: classStyleProps) => {
   return (
     <Link href="/" className={`flex items-center gap-16 group ${classStyle}`}>
@@ -14,7 +15,7 @@ const Logo = ({
         heightProps={heightProps}
         classProps={`group-shake`}
       />
-      <p className="text-28 font-bold text-primary-green">搶鮮購</p>
+      <p className={`${textSytle} font-bold text-primary-green`}>搶鮮購</p>
     </Link>
   );
 };

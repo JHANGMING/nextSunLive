@@ -62,7 +62,7 @@ const LiveViewer = () => {
                 href="/cart"
                 openInNewTab={true}
                 className="cursor-pointer bg-primary-red text-white w-full rounded-8 text-center hover:opacity-60 ">
-                立即購買
+                加入購物車
               </GlobalLink>
             </div>
           </div>

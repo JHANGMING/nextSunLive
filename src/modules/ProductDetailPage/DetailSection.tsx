@@ -9,7 +9,7 @@ import {
 import { productData } from "./data";
 
 const DetailSection = () => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   const [selectedSpec, setSelectedSpec] = useState('small');
   const updateCount = (isIncrement:boolean) => {
    setQty((prevCount) => (isIncrement ? prevCount + 1 : prevCount - 1));
@@ -72,7 +72,7 @@ const DetailSection = () => {
         <div className="col-span-6 ml-16">
           <div className="flex items-center gap-16 mb-8">
             <LogoImg widthProps={32} heightProps={32} />
-            <h2>甜蜜時光有機草莓</h2>
+            <h2 className=" text-primary-green">甜蜜時光有機草莓</h2>
           </div>
           <p className=" text-18 mb-16">
             在我們溫網室內，透過完全無農藥的種植方式，獲得了友善驗證。

@@ -28,7 +28,7 @@ const ScrollPageTop = () => {
   const isVisibleClass = isVisible ? 'opacity-100' : 'opacity-0';
   return (
     <div
-      className={`${isVisibleClass} fixed bottom-40 right-40 flex flex-col gap-8 items-center cursor-pointer shake z-30 transition-opacity duration-1000 ease-in-out`}
+      className={`${isVisibleClass} fixed bottom-60 right-40 flex flex-col gap-8 items-center cursor-pointer shake z-30 transition-opacity duration-1000 ease-in-out`}
       onClick={scrollToTop}>
       <LogoImg widthProps={50} heightProps={50} />
       <p className=" text-primary-red bg-primary-yellow w-35 py-2 rounded-8 text-12 text-center">

@@ -30,6 +30,7 @@ const config: Config = {
         liveStreamBG: 'url(/images/liveStream/liveBG.png)',
       },
       borderRadius: {
+        6: '6px',
         8: '8px',
         12: '12px',
         16: '16px',
@@ -48,7 +49,7 @@ const config: Config = {
         lightGray: '#CCCCCC',
         blueGray: '#C6CDD5',
         darkGray: '#999999',
-        SoftGray:"#EEEEEE",
+        SoftGray: '#EEEEEE',
         blueWhite: '#FBFBFB',
         lightWhite: '#FBF9F3',
       },
@@ -142,6 +143,7 @@ const config: Config = {
       },
       boxShadow: {
         headerIcon: '3px 3px 0px 1px rgba(0, 0, 0, 0.05)',
+        chatRoom:"0px 8px 24px -4px rgba(0, 0, 0, 0.08), 0px 6px 12px -6px rgba(0, 0, 0, 0.25)"
       },
       writingMode: {
         vertical: 'vertical-rl',
