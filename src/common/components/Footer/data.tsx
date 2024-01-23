@@ -26,9 +26,11 @@ type pageSetType = {
 };
 export const swiperSet: pageSetType = {
   authPage: false,
+  CartPage: false,
   productDetailPage: true,
   liveStreamPage: true,
   liveStreamView: true,
   productPage: true,
   landingPage: true,
+  searchPage:true
 };

@@ -1,14 +1,14 @@
 import Layout from '@/common/Layout';
-import ProductPage from '@/modules/ProductPage';
+import SearchPage from '@/modules/ProductPage/SearchPage';
 import { ProductsRefProvider } from '@/common/hooks/ProductsRefContext';
-const ProductShop = () => {
+const ProductSearch = () => {
   return (
-    <Layout pageCategory="productPage">
+    <Layout pageCategory="searchPage">
       <ProductsRefProvider>
-        <ProductPage />
+        <SearchPage />
       </ProductsRefProvider>
     </Layout>
   );
 };
 
-export default ProductShop;
+export default ProductSearch;

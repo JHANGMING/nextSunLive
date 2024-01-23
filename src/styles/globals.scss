@@ -3,7 +3,7 @@
 @tailwind utilities;
 @import 'header.scss';
 @import 'landingPage.scss';
-@import "productShop";
+@import 'productShop';
 @layer base {
   body {
     // max-width: 1440px;
@@ -11,7 +11,7 @@
     font-family: 'Noto Sans TC';
     line-height: 1.5;
     scroll-behavior: smooth;
-    @apply tracking-widest text-mediumGray
+    @apply tracking-widest text-mediumGray;
   }
 
   h1 {
@@ -32,20 +32,20 @@
   h6 {
     @apply text-18 font-bold;
   }
-  img{
+  img {
     object-fit: cover;
   }
 }
 
 @layer utilities {
   .custom-background {
-    background-image: url('/images/productShop/seasonalBG.png'), linear-gradient(to bottom, #fde047, #fde047); 
+    background-image: url('/images/productShop/seasonalBG.png'),
+      linear-gradient(to bottom, #fde047, #fde047);
     background-size: cover, cover;
     background-position: center, center;
     background-repeat: no-repeat, repeat;
   }
 }
-
 
 //auth
 .text-with-lines {
@@ -65,3 +65,32 @@
   @apply bg-darkGray;
 }
 
+//cart
+.cartlist li:not(:last-child) {
+  @apply border-b border-lightGray;
+}
+
+//card
+.link-group {
+  &:hover {
+    .card-animation::after {
+      width: 100%;
+    }
+  }
+}
+
+.card-animation {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    transition: width 0.3s ease-in-out;
+    @apply bg-primary-green;
+  }
+}

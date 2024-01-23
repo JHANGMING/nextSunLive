@@ -9,9 +9,7 @@ import ContactService from '@/modules/ContactService';
 
 const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
   const backgroundColorClass = colorWhiteSet[pageCategory]
-    ? 'bg-white'
-    : 'bg-lightWhite';
-  const gapClassSyle = footerSet[pageCategory] ? 'pt-60' : 'pt-42';
+  const gapClassSyle = footerSet[pageCategory] 
   return (
     <div className={backgroundColorClass}>
       <CustomHead pageCategory={pageCategory} />

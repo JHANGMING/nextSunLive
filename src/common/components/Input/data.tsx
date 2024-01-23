@@ -5,9 +5,12 @@ export type FormValues = {
   nickname: string;
   password: string;
   confirmPassword: string;
-}
+  userName: string;
+  userPhone: string;
+  address: string;
+};
 export type DefaultInputProps = {
-  type: 'email' | 'text' | 'password';
+  type: 'email' | 'text' | 'password' | 'tel';
   labelText: string;
   inputText: string;
   icon?: ReactNode;
@@ -15,4 +18,5 @@ export type DefaultInputProps = {
   register?: UseFormRegister<FormValues>;
   errors?: FieldErrors<FormValues>;
   rules: RegisterOptions;
+  page?:string;
 };

@@ -1,13 +1,11 @@
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-import useProductRefs from '../hooks/useProductRefs';
-import { useContext } from 'react';
-import { ProductsRefContext } from '@/modules/ProductPage/AllProductSection';
-type PaginationProps= {
+import { useProducts } from '../hooks/ProductsRefContext';
+type PaginationProps = {
   itemsPerPage: number;
   totalItems: number;
   paginate: (pageNumber: number) => void;
   currentPage: number;
-}
+};
 const Pagination = ({
   itemsPerPage,
   totalItems,
@@ -15,16 +13,18 @@ const Pagination = ({
   currentPage,
 }: PaginationProps) => {
   const pageCount = Math.ceil(totalItems / itemsPerPage);
-  const allProductsRef = useContext(ProductsRefContext);
-  
-const scrollToElement = () => {
-  if (allProductsRef && allProductsRef.current) {
-    allProductsRef.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  }
-};
+  const refs = useProducts();
+  if (!refs) return null;
+  const { allProductsRef } = refs;
+
+  const scrollToElement = () => {
+    if (allProductsRef && allProductsRef.current) {
+      allProductsRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
   const changePage = (offset: number) => {
     const newPage = currentPage + offset;
     if (newPage > 0 && newPage <= pageCount) {
@@ -49,7 +49,10 @@ const scrollToElement = () => {
         <li
           key={number}
           className={`cursor-pointer w-42 h-40 rounded-full flex justify-center items-center hover:opacity-60 ${currentPage === number ? 'bg-primary-green text-white ' : 'bg-white border border-lightGray'}`}
-          onClick={() => {paginate(number);scrollToElement();}}>
+          onClick={() => {
+            paginate(number);
+            scrollToElement();
+          }}>
           {number}
         </li>
       ))}

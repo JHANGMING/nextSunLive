@@ -3,6 +3,7 @@ import Button from '../Button';
 import { ProductCardProps } from './data';
 import LogoImg from '@/common/components/Logo/LogoImg';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const ProductCard = ({
   productImg,
@@ -35,25 +36,31 @@ const ProductCard = ({
   }, []);
   return (
     <li className={`${cardGapStyle} flex flex-col ${animation}`}>
-      <div className=" relative mb-16">
-        <Image
-          src={productImg.src}
-          alt={productImg.alt}
-          width={416}
-          height={381}
-          className={`hover:opacity-50 border-dashed border-2 rounded-20 transition duration-800 ease-in-out ${imgBorderStyle}`}
-        />
-        {label && (
-          <h4
-            className={`absolute left-0 bottom-0 w-full  h-60 opacity-80 flex justify-center items-center rounded-bl-20 rounded-br-20 ${labelStyle}`}>
-            {label}
-          </h4>
-        )}
-      </div>
+      <div className="link-group">
+        <Link href="/productshop/11" className=" relative mb-16">
+          <Image
+            src={productImg.src}
+            alt={productImg.alt}
+            width={416}
+            height={381}
+            className={`hover:opacity-60 border-dashed border-2 rounded-20 transition duration-800 ease-in-out ${imgBorderStyle}`}
+          />
+          {label && (
+            <h4
+              className={`absolute left-0 bottom-0 w-full  h-60 opacity-80 flex justify-center items-center rounded-bl-20 rounded-br-20 ${labelStyle}`}>
+              {label}
+            </h4>
+          )}
+        </Link>
 
-      <div className="flex gap-16 justify-center mb-8">
-        <LogoImg widthProps={32} heightProps={32} classProps="w-32 h-32" />
-        <h3 className={`text-primary-green ${cardTitleStyle}`}>{title}</h3>
+        <Link
+          href="/productshop/11"
+          className="flex gap-16 justify-center mb-8">
+          <LogoImg widthProps={32} heightProps={32} classProps="w-32 h-32" />
+          <h3 className={`card-animation text-primary-green ${cardTitleStyle}`}>
+            {title}
+          </h3>
+        </Link>
       </div>
 
       {!buttonAtBottom && <p className="px-24 flex-grow mb-16">{des}</p>}

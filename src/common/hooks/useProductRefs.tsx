@@ -1,6 +1,6 @@
 import { useRef, RefObject } from 'react';
 
-type ProductRefsType = {
+export type ProductRefsType = {
   discountedProductsRef: RefObject<HTMLDivElement>;
   popularProductsRef: RefObject<HTMLDivElement>;
   allProductsRef: RefObject<HTMLDivElement>;
@@ -20,5 +20,6 @@ const useProductRefs = (): ProductRefsType => {
     seasonalProductsRef,
   };
 };
+
 
 export default useProductRefs;

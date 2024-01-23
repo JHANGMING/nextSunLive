@@ -4,13 +4,14 @@ import LogoImg from '@/common/components/Logo/LogoImg';
 import { BsFillGeoFill } from 'react-icons/bs';
 import Button from '@/common/components/Button';
 import ProductList from '@/common/components/product/ProductList';
-import  { RefObject } from 'react';
-type DiscountedSectionProps = {
-  discountedProductsRef: RefObject<HTMLDivElement>;
-};
-const DiscountedSection = ({
-  discountedProductsRef,
-}: DiscountedSectionProps) => {
+import { useProducts } from '@/common/hooks/ProductsRefContext';
+
+const DiscountedSection = () => {
+  const refs = useProducts();
+
+  if (!refs) return null;
+  const { discountedProductsRef } = refs;
+
   return (
     <section className="bg-white py-60" ref={discountedProductsRef}>
       <div className="container">

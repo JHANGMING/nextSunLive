@@ -1,10 +1,13 @@
-import ProductList from "@/common/components/product/ProductList";
-import CategoryTitle from "./CategoryTitle";
-import { RefObject } from 'react';
-type PopularSectionProps = {
-  popularProductsRef: RefObject<HTMLDivElement>;
-};
-const PopularSection = ({ popularProductsRef }: PopularSectionProps) => {
+import ProductList from '@/common/components/product/ProductList';
+import CategoryTitle from './CategoryTitle';
+import { useProducts } from '@/common/hooks/ProductsRefContext';
+
+const PopularSection = () => {
+  const refs = useProducts();
+
+  if (!refs) return null;
+  const { popularProductsRef } = refs;
+
   return (
     <section className="bg-white pt-60 pb-[200px]" ref={popularProductsRef}>
       <div className="container">
@@ -14,5 +17,5 @@ const PopularSection = ({ popularProductsRef }: PopularSectionProps) => {
     </section>
   );
 };
- 
+
 export default PopularSection;

@@ -50,6 +50,7 @@ const config: Config = {
         blueGray: '#C6CDD5',
         darkGray: '#999999',
         SoftGray: '#EEEEEE',
+        dashboardGray: '#F2F2F2',
         blueWhite: '#FBFBFB',
         lightWhite: '#FBF9F3',
       },
@@ -143,7 +144,8 @@ const config: Config = {
       },
       boxShadow: {
         headerIcon: '3px 3px 0px 1px rgba(0, 0, 0, 0.05)',
-        chatRoom:"0px 8px 24px -4px rgba(0, 0, 0, 0.08), 0px 6px 12px -6px rgba(0, 0, 0, 0.25)"
+        chatRoom:
+          '0px 8px 24px -4px rgba(0, 0, 0, 0.08), 0px 6px 12px -6px rgba(0, 0, 0, 0.25)',
       },
       writingMode: {
         vertical: 'vertical-rl',

@@ -22,23 +22,27 @@ export const logoData = {
 };
 
 export const pageSet: PageSet = {
-  landingPage: true,
-  liveStreamPage: true,
-  liveStreamView: true,
-  productPage: true,
-  productDetailPage: true,
-  authPage: false,
+  landingPage: 'header',
+  liveStreamPage: 'header',
+  liveStreamView: 'header',
+  productPage: 'header',
+  productDetailPage: 'header',
+  authPage: 'logo',
+  CartPage: 'never',
+  searchPage: 'header',
 };
 
 export const fixedPageSet: PageSet = {
-  landingPage: true,
-  liveStreamPage: true,
-  liveStreamView: false,
-  productPage: true,
-  productDetailPage: false,
-  authPage: false,
+  landingPage: 'scroll',
+  liveStreamPage: 'scroll',
+  liveStreamView: 'never',
+  productPage: 'scroll',
+  productDetailPage: 'never',
+  authPage: 'never',
+  CartPage: 'always',
+  searchPage:'scroll'
 };
 
 export type PageSet = {
-  [key in PageCategoryType]?: boolean;
+  [key in PageCategoryType]?: string|boolean;
 };

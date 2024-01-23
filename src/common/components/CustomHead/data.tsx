@@ -56,6 +56,12 @@ export const dataSet: Record<string, dataType> = {
     url: '',
     image: '',
   },
+  CartPage: {
+    title: '血拼中心',
+    desc: '加入搶鮮購，讓你購安心',
+    url: '',
+    image: '',
+  },
   error: {
     title: '',
     desc: '',

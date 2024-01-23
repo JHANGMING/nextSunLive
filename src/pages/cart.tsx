@@ -1,8 +1,11 @@
+import Layout from "@/common/Layout";
+import CartPage from "@/modules/CartPage";
+
 const Cart = () => {
   return (
-    <>
-      <h1>這是購物車頁面</h1>
-    </>
+    <Layout pageCategory="CartPage">
+      <CartPage />
+    </Layout>
   );
 };
 

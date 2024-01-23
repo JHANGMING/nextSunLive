@@ -1,10 +1,11 @@
 import ProductList from '@/common/components/product/ProductList';
 import CategoryTitle from './CategoryTitle';
-import { RefObject } from 'react';
-type SeasonalSectionProps = {
-  seasonalProductsRef: RefObject<HTMLDivElement>;
-};
-const SeasonalSection = ({ seasonalProductsRef }: SeasonalSectionProps) => {
+import { useProducts } from '@/common/hooks/ProductsRefContext';
+
+const SeasonalSection = () => {
+  const refs = useProducts();
+  if (!refs) return null;
+  const { seasonalProductsRef } = refs;
   return (
     <section
       className=" bg-seasonalBG pt-80 bg-repeat-x  -mt-80"

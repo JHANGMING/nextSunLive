@@ -5,7 +5,9 @@ export type PageCategoryType =
   | 'liveStreamView'
   | 'productPage'
   | 'productDetailPage'
+  | "searchPage"
   | 'landingPage'
+  | 'CartPage'
   | 'authPage';
 
 export type LayoutPropsType = {
@@ -20,27 +22,33 @@ export type AuthLayoutProps = {
 };
 
 type pageSetType = {
-  authPage: boolean;
-  productDetailPage: boolean;
-  liveStreamPage: boolean;
-  productPage: boolean;
-  landingPage: boolean;
-  liveStreamView: boolean;
+  authPage: string;
+  productDetailPage: string;
+  liveStreamPage: string;
+  productPage: string;
+  landingPage: string;
+  liveStreamView: string;
+  CartPage: string;
+  searchPage: string;
 };
 export const colorWhiteSet: pageSetType = {
-  authPage: true,
-  productDetailPage: true,
-  liveStreamPage: true,
-  liveStreamView: true,
-  productPage: false,
-  landingPage: false,
+  authPage: 'bg-white',
+  productDetailPage: 'bg-white',
+  liveStreamPage: 'bg-white',
+  liveStreamView: 'bg-white',
+  searchPage: 'bg-white',
+  productPage: 'bg-lightWhite',
+  landingPage: 'bg-lightWhite',
+  CartPage: 'bg-dashboardGray',
 };
 
 export const footerSet: pageSetType = {
-  authPage: true,
-  productDetailPage: true,
-  liveStreamPage: true,
-  liveStreamView: true,
-  productPage: true,
-  landingPage: false,
+  authPage: 'pt-60',
+  productDetailPage: 'pt-60',
+  liveStreamPage: 'pt-60',
+  liveStreamView: 'pt-60',
+  productPage: 'pt-60',
+  landingPage: 'pt-42',
+  CartPage: 'pt-60',
+  searchPage: 'pt-60',
 };
