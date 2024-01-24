@@ -25,9 +25,9 @@ const DetailSection = () => {
     
   }
   const getButtonClass = (spec: string) => {
-    let baseClass = 'w-[160px] py-12 px-32 border rounded-8 ';
-    let selectedClass = 'border-primary-red font-bold text-primary-red'; // 选中时的样式
-    let defaultClass = 'border-mediumGray'; // 未选中时的样式
+    let baseClass = 'w-[160px] h-48 px-32 border rounded-8 ';
+    let selectedClass = 'border-primary-red font-bold text-primary-red'; 
+    let defaultClass = 'border-mediumGray'; 
 
     return baseClass + (selectedSpec === spec ? selectedClass : defaultClass);
   };
@@ -115,7 +115,7 @@ const DetailSection = () => {
               />
               <input
                 type="text"
-                className="w-[264px] h-40 border border-darkGray rounded-8 text-center font-bold focus-visible:outline-none"
+                className="w-[264px] h-48 border border-darkGray rounded-8 text-center font-bold focus-visible:outline-none"
                 value={qty}
                 readOnly
               />
@@ -131,21 +131,20 @@ const DetailSection = () => {
               category="addCart"
               // onClick={handlerAddCart}
               showIcon={false}
-              btnStyle="bg-white border-primary-red w-full flex justify-center"
+              btnStyle="bg-white border-primary-red w-full flex justify-center items-center h-48"
               textStyle="text-primary-red">
               加入購物車
             </Button>
             <Button
               category="addCart"
               onClick={handlerToBuy}
-              btnStyle="bg-primary-red border-white w-full flex justify-center"
+              btnStyle="bg-primary-red border-white w-full flex justify-center items-center h-48 "
               textStyle="text-white">
               立即購買
             </Button>
           </div>
         </div>
       </div>
-      
     </section>
   );
 }

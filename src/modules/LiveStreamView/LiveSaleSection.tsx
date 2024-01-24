@@ -47,7 +47,9 @@ const LiveSaleSection = () => {
                   <p className="text-mediumGray py-6 px-20 rounded-8 border text-center font-bold">
                     價格
                   </p>
-                  <h4 className=" text-primary-red">{data.salePrice}</h4>
+                  <h4 className=" shiny-scale-effect">
+                    {data.salePrice}
+                  </h4>
                   <span className="text-18 line-through text-lightGray">
                     {data.originalPrice}
                   </span>

@@ -11,6 +11,8 @@ const FixedHeader = ({ pageCategory }: LayoutPropsType) => {
   const [isSearchActive, setIsSearchActive] = useState(false);
 
   const handleSearchClick = () => {
+    console.log('click');
+    
     setIsSearchActive(!isSearchActive);
   };
 
@@ -34,14 +36,16 @@ const FixedHeader = ({ pageCategory }: LayoutPropsType) => {
     }
   }, [headerBehavior]);
 
-  const isVisibleClass = isVisible ? 'opacity-100' : 'opacity-0';
+  const isVisibleClass = isVisible
+    ? 'opacity-100'
+    : 'opacity-0';
   const heightClass = headerBehavior === 'always' ? 'h-[98px]' : 'h-60 fixed';
   if (headerBehavior === 'never') {
     return null;
   }
   return (
     <div
-      className={` ${isVisibleClass} ${heightClass} top-0 left-0 bg-white z-30 w-full flex justify-between items-center transition-opacity duration-1000 ease-in-out px-72`}>
+      className={` ${isVisibleClass} ${heightClass} top-0 left-0 bg-white z-30 w-full flex justify-between items-center px-72 transition-opacity duration-10000 ease-in-out`}>
       <div className="w-400">
         {!isSearchActive && (
           <div

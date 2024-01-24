@@ -36,8 +36,8 @@ const ProductCard = ({
   }, []);
   return (
     <li className={`${cardGapStyle} flex flex-col ${animation}`}>
-      <div className="link-group">
-        <Link href="/productshop/11" className=" relative mb-16">
+      <div className="group flex flex-col gap-16">
+        <Link href="/productshop/11" className=" relative">
           <Image
             src={productImg.src}
             alt={productImg.alt}
@@ -56,8 +56,13 @@ const ProductCard = ({
         <Link
           href="/productshop/11"
           className="flex gap-16 justify-center mb-8">
-          <LogoImg widthProps={32} heightProps={32} classProps="w-32 h-32" />
-          <h3 className={`card-animation text-primary-green ${cardTitleStyle}`}>
+          <LogoImg
+            widthProps={32}
+            heightProps={32}
+            classProps="w-32 h-32 group-shake"
+          />
+          <h3
+            className={` text-primary-green hover:opacity-80 ${cardTitleStyle}`}>
             {title}
           </h3>
         </Link>

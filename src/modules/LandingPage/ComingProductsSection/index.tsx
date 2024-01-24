@@ -22,7 +22,7 @@ const ComingProductsSection = () => {
           />
         </div>
         <UpcomingProductsList />
-        <LinkToProduct path="/liveStream" text="直播一覽" />
+        <LinkToProduct path="/livestream" text="直播一覽" />
       </div>
     </section>
   );

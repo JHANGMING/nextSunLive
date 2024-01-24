@@ -5,10 +5,11 @@ export type PageCategoryType =
   | 'liveStreamView'
   | 'productPage'
   | 'productDetailPage'
-  | "searchPage"
+  | 'searchPage'
   | 'landingPage'
   | 'CartPage'
-  | 'authPage';
+  | 'authPage'
+  | "dashboardPage";
 
 export type LayoutPropsType = {
   children?: ReactNode;
@@ -30,6 +31,7 @@ type pageSetType = {
   liveStreamView: string;
   CartPage: string;
   searchPage: string;
+  dashboardPage: string;
 };
 export const colorWhiteSet: pageSetType = {
   authPage: 'bg-white',
@@ -40,6 +42,7 @@ export const colorWhiteSet: pageSetType = {
   productPage: 'bg-lightWhite',
   landingPage: 'bg-lightWhite',
   CartPage: 'bg-dashboardGray',
+  dashboardPage: 'bg-dashboardGray',
 };
 
 export const footerSet: pageSetType = {
@@ -51,4 +54,5 @@ export const footerSet: pageSetType = {
   landingPage: 'pt-42',
   CartPage: 'pt-60',
   searchPage: 'pt-60',
+  dashboardPage: 'pt-0',
 };

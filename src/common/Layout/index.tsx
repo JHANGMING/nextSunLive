@@ -20,7 +20,7 @@ const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
       ) : (
         children
       )}
-      <ContactService />
+      {pageCategory === 'authPage' || <ContactService />}
       <ScrollPageTop />
       <Footer gapClassSyle={gapClassSyle} pageCategory={pageCategory} />
     </div>

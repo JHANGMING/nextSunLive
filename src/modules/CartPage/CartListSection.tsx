@@ -1,8 +1,13 @@
 import LogoImg from '@/common/components/Logo/LogoImg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { BsChevronRight, BsChevronDown, BsX } from 'react-icons/bs';
-const CartList = () => {
+const CartListSection = () => {
+  const [isFormOpen, setIsFormOpen] = useState(true);
+  const toggleForm = () => {
+    setIsFormOpen(!isFormOpen);
+  };
   return (
     <>
       <ul className=" col-span-12 flex items-center gap-12 mb-[54px]">
@@ -33,10 +38,23 @@ const CartList = () => {
       </ul>
       <div className="bg-white col-span-9 p-24 rounded-20 mb-16">
         <div className="flex gap-8">
-          <BsChevronDown size={24} className=" text-primary-green" />
+          {isFormOpen ? (
+            <BsChevronDown
+              size={24}
+              className="text-primary-green cursor-pointer hover:scale-105"
+              onClick={toggleForm}
+            />
+          ) : (
+            <BsChevronRight
+              size={24}
+              className="text-primary-green cursor-pointer hover:scale-105"
+              onClick={toggleForm}
+            />
+          )}
           <p className=" text-darkGray font-semibold text-20">購物車清單</p>
         </div>
-        <ul className="cartlist">
+        <ul
+          className={`cartlist form-transition ${isFormOpen ? 'form-open' : 'form-closed'}`}>
           <li className="p-24 flex justify-between">
             <div className="flex gap-16">
               <Image
@@ -191,7 +209,9 @@ const CartList = () => {
           <LogoImg widthProps={32} heightProps={32} />
           <p>兩件商品總計</p>
         </div>
-        <h5 className=' text-primary-green font-bold'><span>$</span>500</h5>
+        <h5 className=" text-primary-green font-bold">
+          <span>$</span>500
+        </h5>
       </div>
       <Link
         href="/productshop"
@@ -209,4 +229,4 @@ const CartList = () => {
   );
 };
 
-export default CartList;
+export default CartListSection;

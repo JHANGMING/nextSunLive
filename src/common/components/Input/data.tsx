@@ -8,6 +8,7 @@ export type FormValues = {
   userName: string;
   userPhone: string;
   address: string;
+  identity: string;
 };
 export type DefaultInputProps = {
   type: 'email' | 'text' | 'password' | 'tel';
