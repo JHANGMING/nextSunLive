@@ -6,14 +6,14 @@ import CartAndLogin from './CartAndLogin';
 
 const Header = ({ pageCategory }: LayoutPropsType) => {
   const headerBehavior = pageSet[pageCategory];
-
+ 
   switch (headerBehavior) {
     case 'header':
       return (
         <header className="bg-white flex absolute left-1/2 top-60 z-20 max-w-full -translate-x-1/2 transform items-center rounded-25 gap-60 px-32 py-16">
           <NavBar />
           <div className="relative flex items-center gap-38">
-            <CartAndLogin />
+            <CartAndLogin pageCategory ={pageCategory}/>
           </div>
         </header>
       );

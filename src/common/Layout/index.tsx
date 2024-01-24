@@ -8,10 +8,8 @@ import ScrollPageTop from '../components/ScrollPageTop';
 import ContactService from '@/modules/ContactService';
 
 const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
-  const backgroundColorClass = colorWhiteSet[pageCategory]
-  const gapClassSyle = footerSet[pageCategory] 
   return (
-    <div className={backgroundColorClass}>
+    <div className={colorWhiteSet[pageCategory]}>
       <CustomHead pageCategory={pageCategory} />
       <Header pageCategory={pageCategory} />
       <FixedHeader pageCategory={pageCategory} />
@@ -22,7 +20,10 @@ const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
       )}
       {pageCategory === 'authPage' || <ContactService />}
       <ScrollPageTop />
-      <Footer gapClassSyle={gapClassSyle} pageCategory={pageCategory} />
+      <Footer
+        gapClassSyle={footerSet[pageCategory]}
+        pageCategory={pageCategory}
+      />
     </div>
   );
 };

@@ -7,7 +7,7 @@ const LiveViewer = () => {
   return (
     <section className="container grid grid-cols-12 gap-24 -mt-[180px] pb-[144px]">
       <div className=" col-span-8">
-        <YoutubeLiveIfram isViewPage ={true}/>
+        <YoutubeLiveIfram isViewPage={true} />
         <div className="pt-24 flex flex-col gap-16">
           <h2 className="text-24">
             陽光甘醇有機蕃茄<span>- 特價直播</span>
@@ -55,8 +55,12 @@ const LiveViewer = () => {
                   <span>NT$</span>250
                 </h5>
               </div>
-              <p>
-                剩餘 <span className=" text-primary-red font-bold">50</span> 組
+              <p className="">
+                剩餘{' '}
+                <span className=" text-primary-red font-bold shiny-scale-effect">
+                  50
+                </span>{' '}
+                組
               </p>
               <GlobalLink
                 href="/cart"

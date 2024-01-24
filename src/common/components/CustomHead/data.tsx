@@ -62,6 +62,12 @@ export const dataSet: Record<string, dataType> = {
     url: '',
     image: '',
   },
+  dashboardPage: {
+    title: '後台中心',
+    desc: '一個專為小型農業生產者設計的綜合管理系統，簡化農產品的銷售和分銷流程',
+    url: '',
+    image: '',
+  },
   error: {
     title: '',
     desc: '',
