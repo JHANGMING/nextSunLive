@@ -9,17 +9,20 @@ import ContactService from '@/modules/ContactService';
 
 const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
   return (
-    <div className={colorWhiteSet[pageCategory]}>
+    <div
+      className={`${colorWhiteSet[pageCategory]} flex flex-col min-h-screen`}>
       <CustomHead pageCategory={pageCategory} />
       <Header pageCategory={pageCategory} />
       <FixedHeader pageCategory={pageCategory} />
-      {pageCategory === 'authPage' ? (
-        <AuthLayout classStyle={classStyle}>{children}</AuthLayout>
-      ) : (
-        children
-      )}
-      {pageCategory === 'authPage' || <ContactService />}
-      <ScrollPageTop />
+      <main className="flex-grow">
+        {pageCategory === 'authPage' ? (
+          <AuthLayout classStyle={classStyle}>{children}</AuthLayout>
+        ) : (
+          children
+        )}
+        {pageCategory === 'authPage' || <ContactService />}
+        <ScrollPageTop />
+      </main>
       <Footer
         gapClassSyle={footerSet[pageCategory]}
         pageCategory={pageCategory}

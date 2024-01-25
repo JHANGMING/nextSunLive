@@ -10,7 +10,6 @@ const CartAndLogin = ({ pageCategory }: LayoutPropsType) => {
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
-  console.log(pageCategory);
   
   return (
     <>

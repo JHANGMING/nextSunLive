@@ -28,7 +28,10 @@ const LiveSaleSection = () => {
                   className="w-[306px] h-[284px] rounded-16"
                 />
                 <h4 className="absolute left-0 bottom-0 py-16 w-full opacity-80 flex justify-center items-center rounded-bl-16 rounded-br-16 bg-white/90 text-primary-green">
-                  剩餘<span className=" text-primary-red mx-8">{data.qty}</span>
+                  剩餘
+                  <span className=" text-primary-red mx-8 shiny-scale-effect">
+                    {data.qty}
+                  </span>
                   組
                 </h4>
               </div>
@@ -47,9 +50,7 @@ const LiveSaleSection = () => {
                   <p className="text-mediumGray py-6 px-20 rounded-8 border text-center font-bold">
                     價格
                   </p>
-                  <h4 className=" shiny-scale-effect">
-                    {data.salePrice}
-                  </h4>
+                  <h4 className=" text-primary-red">{data.salePrice}</h4>
                   <span className="text-18 line-through text-lightGray">
                     {data.originalPrice}
                   </span>

@@ -6,10 +6,8 @@ const LiveStreamView = () => {
   return (
     <>
       <ViewBanner />
-      <main>
-        <LiveViewer/>
-        <LiveSaleSection/>
-      </main>
+      <LiveViewer />
+      <LiveSaleSection />
     </>
   );
 };

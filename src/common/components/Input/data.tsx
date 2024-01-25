@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 import { UseFormRegister, FieldErrors, RegisterOptions } from 'react-hook-form';
 export type FormValues = {
   email: string;
-  nickname: string;
   password: string;
   confirmPassword: string;
   userName: string;
@@ -19,5 +18,6 @@ export type DefaultInputProps = {
   register?: UseFormRegister<FormValues>;
   errors?: FieldErrors<FormValues>;
   rules: RegisterOptions;
-  page?:string;
+  page?: string;
+  globalStyle?: string;
 };

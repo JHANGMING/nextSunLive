@@ -9,7 +9,8 @@ const DefaultInput = ({
   register,
   rules,
   errors,
-  page
+  page,
+  globalStyle,
 }: DefaultInputProps) => {
   const inputClassName = `w-full border rounded-8 py-12 pl-12 text-black ${
     errors && id in errors ? 'border-primary-red' : 'border-lightGray'
@@ -17,7 +18,7 @@ const DefaultInput = ({
   const labelSytle = page === 'cart' ? 'text-18' : 'text-20 font-bold';
   const inputSytle = page === 'cart' ? 'w-[595px] h-[59px]' : 'h-48';
   return (
-    <div>
+    <div className={globalStyle}>
       <label htmlFor={id} className={`${labelSytle} block mb-8`}>
         {labelText} <span className=" text-primary-red">{icon}</span>
       </label>

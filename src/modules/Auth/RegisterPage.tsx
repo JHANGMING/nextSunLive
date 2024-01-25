@@ -8,42 +8,27 @@ import { useForm } from 'react-hook-form';
 const RegisterPage = () => {
   const {
     register,
+    watch,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
   const gapClass = useGapClass(errors);
   const onSubmit = (data: FormValues) => {
-    const { email, password, nickname, identity } = data;
+    const { email, password, identity } = data;
     const dataObj = {
       email: email.trim(),
       password: password.trim(),
-      nickname: nickname.trim(),
       identity,
     };
     console.log(dataObj);
   };
-  
+
   return (
     <>
       <h2 className="text-center">電子郵件註冊</h2>
       <form
         className={`flex flex-col ${gapClass}`}
         onSubmit={handleSubmit(onSubmit)}>
-        <DefaultInput
-          type="text"
-          labelText="暱稱"
-          inputText="請輸入暱稱"
-          icon="*"
-          id="nickname"
-          errors={errors}
-          register={register}
-          rules={{
-            required: {
-              value: true,
-              message: '請輸入您的暱稱!',
-            },
-          }}
-        />
         <DefaultInput
           type="email"
           labelText="電子郵件"
@@ -79,6 +64,30 @@ const RegisterPage = () => {
             },
           }}
         />
+        <DefaultInput
+          type="password"
+          labelText="確認密碼"
+          inputText="請輸入密碼"
+          icon="*"
+          id="confirmPassword"
+          errors={errors}
+          register={register}
+          rules={{
+            required: {
+              value: true,
+              message: '請輸入密碼!',
+            },
+            minLength: {
+              value: 6,
+              message: '密碼長度至少6位字元',
+            },
+            validate: (val) => {
+              if (watch('password') !== val) {
+                return '密碼沒有一致喔！！';
+              }
+            },
+          }}
+        />
         <div className="">
           <label htmlFor="identity" className="text-20 font-bold block mb-8">
             註冊身份{' '}
@@ -90,9 +99,6 @@ const RegisterPage = () => {
               required: '請選擇註冊身份',
             })}
             className=" h-48 w-full border rounded-8 py-12 pl-12 text-mediumGray focus-visible:outline-primary-green">
-            <option value="" disabled selected>
-              選擇註冊身份
-            </option>
             <option value="一般會員">一般會員 (我想要查看或購買農產品)</option>
             <option value="小農">小農 (我想要販售農產品)</option>
           </select>

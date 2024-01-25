@@ -1,7 +1,7 @@
-import Image from "next/image";
-import YoutubeLiveIfram from "../LandingPage/LivingShowSection/YoutubeLiveLink";
-import GlobalLink from "@/common/components/GlobalLink";
-import LogoImg from "@/common/components/Logo/LogoImg";
+import Image from 'next/image';
+import YoutubeLiveIfram from '../LandingPage/LivingShowSection/YoutubeLiveLink';
+import GlobalLink from '@/common/components/GlobalLink';
+import LogoImg from '@/common/components/Logo/LogoImg';
 import { BsCursorFill } from 'react-icons/bs';
 const LiveViewer = () => {
   return (
@@ -57,7 +57,7 @@ const LiveViewer = () => {
               </div>
               <p className="">
                 剩餘{' '}
-                <span className=" text-primary-red font-bold shiny-scale-effect">
+                <span className=" text-primary-red text-24 font-bold shiny-scale-effect">
                   50
                 </span>{' '}
                 組
@@ -95,7 +95,7 @@ const LiveViewer = () => {
             </li>
           </ul>
         </div>
-        <div className="border-t border-lightGray p-24 flex items-center justify-between">
+        <div className="border-t border-lightGray p-24 gap-16 flex items-center justify-between">
           <Image
             src="/images/liveStream/viewPerson1.png"
             alt="viewPerson1"
@@ -117,5 +117,5 @@ const LiveViewer = () => {
     </section>
   );
 };
- 
+
 export default LiveViewer;

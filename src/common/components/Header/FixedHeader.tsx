@@ -6,7 +6,7 @@ import { BsSearch } from 'react-icons/bs';
 import SearchInput from '../Input/SearchInput';
 import { LayoutPropsType } from '@/common/Layout/data';
 
-const FixedHeader = ({ pageCategory }:LayoutPropsType) => {
+const FixedHeader = ({ pageCategory }: LayoutPropsType) => {
   const headerBehavior = fixedPageSet[pageCategory];
   const [isVisible, setIsVisible] = useState(headerBehavior === 'always');
   const [isSearchActive, setIsSearchActive] = useState(false);
@@ -35,8 +35,12 @@ const FixedHeader = ({ pageCategory }:LayoutPropsType) => {
 
   return (
     <div
-      className={`${isVisibleClass} ${heightClass} top-0 left-0 bg-white z-30 w-full flex justify-between items-center px-72 transition-opacity duration-10000 ease-in-out`}>
-      <div className={`w-400 ${pageCategory === 'dashboardPage' && 'hidden'}`}>
+      className={`${isVisibleClass} ${heightClass} top-0 left-0 bg-white z-30 w-full flex justify-between items-center px-72 transition-opacity duration-10000 ease-in-out flex-shrink-0`}>
+      <div className="w-400 flex ">
+        <Logo widthProps={logoImgstyle} heightProps={logoImgstyle} />
+      </div>
+      <div
+        className={`w-400 flex justify-center ${pageCategory === 'dashboardPage' && 'hidden'}`}>
         {!isSearchActive ? (
           <div
             className="bg-primary-yellow w-53 h-48 flex justify-center items-center rounded-full cursor-pointer hover:opacity-80"
@@ -46,9 +50,6 @@ const FixedHeader = ({ pageCategory }:LayoutPropsType) => {
         ) : (
           <SearchInput headerVisible={true} onClick={handleSearchClick} />
         )}
-      </div>
-      <div className="flex justify-center">
-        <Logo widthProps={logoImgstyle} heightProps={logoImgstyle} />
       </div>
       <div className="flex gap-40 items-center justify-end w-400">
         <CartAndLogin pageCategory={pageCategory} />

@@ -1,41 +1,15 @@
 import LogoImg from '@/common/components/Logo/LogoImg';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState } from 'react';
 import { BsChevronRight, BsChevronDown, BsX } from 'react-icons/bs';
+import CartLink from './CartLink';
 const CartListSection = () => {
   const [isFormOpen, setIsFormOpen] = useState(true);
   const toggleForm = () => {
     setIsFormOpen(!isFormOpen);
   };
   return (
-    <>
-      <ul className=" col-span-12 flex items-center gap-12 mb-[54px]">
-        <li className="flex items-center gap-12">
-          <div className="w-24 h-24 rounded-full bg-primary-yellow flex justify-center items-center border border-black">
-            1
-          </div>
-          <h5>購物車</h5>
-        </li>
-        <li>
-          <BsChevronRight size={24} className=" text-darkGray" />
-        </li>
-        <li className="flex items-center gap-12">
-          <div className="w-24 h-24 rounded-full bg-primary-yellow flex justify-center items-center border border-black">
-            2
-          </div>
-          <h5>填寫資料與付款</h5>
-        </li>
-        <li>
-          <BsChevronRight size={24} className=" text-darkGray" />
-        </li>
-        <li className="flex items-center gap-12">
-          <div className="w-24 h-24 rounded-full bg-primary-yellow flex justify-center items-center border border-black">
-            3
-          </div>
-          <h5>訂購完成</h5>
-        </li>
-      </ul>
+    <section className="container grid grid-cols-12 gap-x-24">
       <div className="bg-white col-span-9 p-24 rounded-20 mb-16">
         <div className="flex gap-8">
           {isFormOpen ? (
@@ -204,28 +178,48 @@ const CartListSection = () => {
           </li>
         </ul>
       </div>
-      <div className="bg-white col-span-3 p-20 rounded-20 h-[110px] flex flex-col gap-8 items-center">
-        <div className="flex items-center gap-8">
-          <LogoImg widthProps={32} heightProps={32} />
-          <p>兩件商品總計</p>
+      <div className=" col-span-3 ">
+        <div className="bg-white px-16 py-20 rounded-20 flex flex-col gap-8 items-center mb-32">
+          <div className="flex flex-col gap-8 w-full">
+            <div className="flex">
+              <div className="text-18 w-1/2">商品原價</div>
+              <p className="text-16 w-1/2">
+                $<span>500</span>
+              </p>
+            </div>
+            <div className="flex">
+              <div className="text-18 w-1/2">運費</div>
+              <p className="text-16 w-1/2">
+                $<span>100</span>
+              </p>
+            </div>
+            <div className="flex">
+              <div className="text-18 w-1/2">總額</div>
+              <p className="text-16 w-1/2">
+                $<span>650</span>
+              </p>
+            </div>
+            <div className="flex">
+              <div className="text-18 text-primary-red w-1/2">折扣</div>
+              <p className="text-20 text-primary-red font-bold w-1/2">
+                $<span>650</span>
+              </p>
+            </div>
+          </div>
         </div>
-        <h5 className=" text-primary-green font-bold">
-          <span>$</span>500
-        </h5>
+        <div className="bg-white p-20 rounded-20  flex flex-col gap-8 items-center">
+          <div className="flex items-center gap-8">
+            <LogoImg widthProps={32} heightProps={32} />
+            <p>商品總價</p>
+          </div>
+          <h5 className=" text-primary-green font-bold">
+            <span>$</span>500
+          </h5>
+        </div>
       </div>
-      <Link
-        href="/productshop"
-        className=" font-bold text-primary-green flex items-center justify-end col-span-9 hover:opacity-60 mb-32">
-        <p>繼續購物</p>
-        <BsChevronRight
-          size={16}
-          className=" font-bold text-primary-green"
-          style={{
-            strokeWidth: 2,
-          }}
-        />
-      </Link>
-    </>
+
+      <CartLink />
+    </section>
   );
 };
 

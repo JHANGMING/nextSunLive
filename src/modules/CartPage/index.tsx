@@ -1,14 +1,16 @@
+import CartEmpty from './CartEmpty';
 import CartFormSection from './CartFormSection';
 import CartListSection from './CartListSection';
+import CartProcess from './CartProcess';
 
 const CartPage = () => {
   return (
-    <main>
-      <section className="container grid grid-cols-12 gap-x-24 py-60">
-        <CartListSection />
-        <CartFormSection />
-      </section>
-    </main>
+    <>
+      <CartProcess />
+      {/* <CartEmpty /> */}
+      <CartListSection />
+      <CartFormSection />
+    </>
   );
 };
 

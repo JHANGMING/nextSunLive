@@ -9,13 +9,11 @@ const ProductPage = () => {
   return (
     <>
       <Banner />
-      <main>
-        <CategorySection />
-        <DiscountedSection />
-        <PopularSection />
-        <SeasonalSection />
-        <AllProductSection />
-      </main>
+      <CategorySection />
+      <DiscountedSection />
+      <PopularSection />
+      <SeasonalSection />
+      <AllProductSection />
     </>
   );
 };

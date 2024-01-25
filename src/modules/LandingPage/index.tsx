@@ -8,7 +8,7 @@ import ProductListSection from '@/modules/LandingPage/productListSection';
 import RecommendSection from '@/common/components/LandingPage/RecommendSection';
 const LandingPage = () => {
   return (
-    <main>
+    <>
       <Banner />
       <FriendlyFarmSection />
       <HomeSwiper imgData="farmDatas" />
@@ -17,7 +17,7 @@ const LandingPage = () => {
       <ComingProductsSection />
       <RecommendSection />
       <ProductListSection />
-    </main>
+    </>
   );
 };
 

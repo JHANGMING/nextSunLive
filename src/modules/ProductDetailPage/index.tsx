@@ -8,12 +8,11 @@ const ProductDetailPage = () => {
   return (
     <>
       <DetailBanner />
-      <main>
-        <DetailSection />
-        <IntroductSection/>
-        <RelatedSection/>
-        {/* <HomeSwiper imgData="farmerDatas" classStyle="pb-20 bg-white" /> */}
-      </main>
+
+      <DetailSection />
+      <IntroductSection />
+      <RelatedSection />
+      {/* <HomeSwiper imgData="farmerDatas" classStyle="pb-20 bg-white" /> */}
     </>
   );
 };

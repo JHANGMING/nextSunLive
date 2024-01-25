@@ -1,8 +1,10 @@
 import { FormValues } from '@/common/components/Input/data';
-import { useForm } from 'react-hook-form';
+import { useForm, FormProvider } from 'react-hook-form';
 import { BsChevronDown, BsChevronRight } from 'react-icons/bs';
 import { useRef, useState } from 'react';
 import DefaultInput from '@/common/components/Input';
+
+
 const CartFormSection = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -11,6 +13,7 @@ const CartFormSection = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
+  const methods = useForm<FormValues>();
   const handleFormSubmit = () => {
     if (formRef.current) {
       formRef.current.dispatchEvent(
@@ -33,8 +36,8 @@ const CartFormSection = () => {
     setIsFormOpen(!isFormOpen);
   };
   return (
-    <>
-      <div className="bg-white col-span-9 p-24 rounded-20 mb-32">
+    <section className="container grid grid-cols-12 gap-x-24 mb-[78px]">
+      <div className="bg-white col-span-9 pt-24 pl-24 pb-48 pr-[43px] rounded-20 mb-32">
         <div className="flex gap-8 mb-24 ">
           {isFormOpen ? (
             <BsChevronDown
@@ -55,37 +58,42 @@ const CartFormSection = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit(onSubmit)}
-          className={`flex flex-col gap-24 w-[595px] form-transition ${isFormOpen ? 'form-open' : 'form-closed'}`}>
-          <DefaultInput
-            page="cart"
-            type="text"
-            labelText="收貨人"
-            id="userName"
-            inputText="請輸入姓名"
-            register={register}
-            errors={errors}
-            rules={{
-              required: {
-                value: true,
-                message: '請輸入您的姓名!',
-              },
-            }}
-          />
-          <DefaultInput
-            page="cart"
-            type="tel"
-            labelText="聯絡電話"
-            id="userPhone"
-            inputText="請輸入聯絡電話"
-            register={register}
-            errors={errors}
-            rules={{
-              required: {
-                value: true,
-                message: '請輸入您的聯絡電話!',
-              },
-            }}
-          />
+          className={`flex flex-col gap-24 form-transition ${isFormOpen ? 'form-open' : 'form-closed'}`}>
+          <div className=" flex gap-24">
+            <DefaultInput
+              page="cart"
+              type="text"
+              labelText="收貨人"
+              id="userName"
+              inputText="請輸入姓名"
+              globalStyle="w-full"
+              register={register}
+              errors={errors}
+              rules={{
+                required: {
+                  value: true,
+                  message: '請輸入您的姓名!',
+                },
+              }}
+            />
+            <DefaultInput
+              page="cart"
+              type="tel"
+              labelText="聯絡電話"
+              id="userPhone"
+              inputText="請輸入聯絡電話"
+              globalStyle="w-full"
+              register={register}
+              errors={errors}
+              rules={{
+                required: {
+                  value: true,
+                  message: '請輸入您的聯絡電話!',
+                },
+              }}
+            />
+          </div>
+
           <DefaultInput
             page="cart"
             type="text"
@@ -103,14 +111,11 @@ const CartFormSection = () => {
           />
         </form>
       </div>
-      <div className="bg-white col-span-9 px-24 py-16 rounded-20 flex items-center justify-between">
+      <div className="bg-white col-span-9 p-24 rounded-20 flex items-center justify-between">
         <p className="w-[590px]">
           點擊「確認付款」，即表示您已確認訂單無誤且同意右方顯示的總金額，亦同意使用信用卡付款。
         </p>
         <div className=" flex flex-col gap-8 w-[200px] items-center">
-          <h5 className=" text-primary-red font-bold">
-            <span>$</span>550
-          </h5>
           <button
             type="submit"
             onClick={handleFormSubmit}
@@ -119,7 +124,7 @@ const CartFormSection = () => {
           </button>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
