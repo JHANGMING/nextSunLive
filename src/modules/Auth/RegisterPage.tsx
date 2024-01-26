@@ -114,14 +114,16 @@ const RegisterPage = () => {
         </Button>
       </form>
       <div className=" self-center text-center">
+        <div className="flex justify-center">
         <p className="mb-16">
           已經成為會員 ?
+        </p>
           <Link
             href="/auth/login"
             className=" cursor-pointer text-primary-green font-bold">
             立即登入 !
           </Link>
-        </p>
+        </div>
         <p>註冊表示同意使用者條款 & 隱私權保護政策</p>
       </div>
     </>

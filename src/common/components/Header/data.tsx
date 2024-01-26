@@ -41,7 +41,8 @@ export const fixedPageSet: PageSet = {
   authPage: 'never',
   CartPage: 'always',
   searchPage:'scroll',
-  dashboardPage:'always'
+  dashboardPage:'always',
+  personInfoPage:'always'
 };
 
 export type PageSet = {

@@ -52,8 +52,16 @@ const CartAndLogin = ({ pageCategory }: LayoutPropsType) => {
               註冊新會員
             </Link>
             <div className="mt-16 border-t border-lightGray pt-20">
-              <p className="mb-8">我的帳戶</p>
-              <p>訂單查詢</p>
+              <Link
+                href="/personinfo?section=account"
+                className="mb-8 hover:opacity-60">
+                我的帳戶
+              </Link>
+              <Link
+                href="/personinfo?section=order"
+                className="hover:opacity-60">
+                訂單查詢
+              </Link>
             </div>
           </div>
         )}

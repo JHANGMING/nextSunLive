@@ -9,7 +9,8 @@ export type PageCategoryType =
   | 'landingPage'
   | 'CartPage'
   | 'authPage'
-  | "dashboardPage";
+  | 'dashboardPage'
+  | "personInfoPage";
 
 export type LayoutPropsType = {
   children?: ReactNode;
@@ -32,6 +33,7 @@ type pageSetType = {
   CartPage: string;
   searchPage: string;
   dashboardPage: string;
+  personInfoPage: string;
 };
 export const colorWhiteSet: pageSetType = {
   authPage: 'bg-white',
@@ -43,6 +45,7 @@ export const colorWhiteSet: pageSetType = {
   landingPage: 'bg-lightWhite',
   CartPage: 'bg-dashboardGray',
   dashboardPage: 'bg-dashboardGray',
+  personInfoPage: 'bg-dashboardGray',
 };
 
 export const footerSet: pageSetType = {
@@ -55,4 +58,5 @@ export const footerSet: pageSetType = {
   CartPage: 'pt-60',
   searchPage: 'pt-60',
   dashboardPage: 'pt-0',
+  personInfoPage: 'pt-0',
 };

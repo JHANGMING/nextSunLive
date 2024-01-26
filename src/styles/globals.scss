@@ -35,6 +35,9 @@
   img {
     object-fit: cover;
   }
+  a{
+    @apply block;
+  }
 }
 
 @layer utilities {

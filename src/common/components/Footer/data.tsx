@@ -32,5 +32,5 @@ export const swiperSet: pageSetType = {
   liveStreamView: true,
   productPage: true,
   landingPage: true,
-  searchPage:true
+  searchPage: true,
 };

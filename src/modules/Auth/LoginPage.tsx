@@ -88,7 +88,7 @@ const LoginPage = () => {
           onClick={handlerToPasswordlessPage}>
           使用無密碼快速登入
         </Button>
-        <p className=" self-center text-center">
+        <p className="flex justify-center">
           還未成為會員 ?
           <Link
             href="/auth/register"

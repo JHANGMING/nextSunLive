@@ -74,6 +74,12 @@ export const dataSet: Record<string, dataType> = {
     url: '',
     image: '',
   },
+  personInfoPage:{
+    title: '個人資訊',
+    desc: '我们提供最新鲜的農產品直播銷售服務，确保質量和時效。',
+    url: '',
+    image: '',
+  },
   error: {
     title: '',
     desc: '',

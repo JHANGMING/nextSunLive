@@ -13,7 +13,7 @@ type FooterProps = {
 const Footer = ({ gapClassSyle, pageCategory }: FooterProps) => {
   const { grassMotionLeft, grassMotionRight } = grassMotionSet;
   const swierShow = swiperSet[pageCategory] ? '' : 'hidden';
-  if (pageCategory === 'dashboardPage') {
+  if (pageCategory === 'dashboardPage' || pageCategory === 'personInfoPage') {
     return <DashBoardFooter />;
   }
   return (

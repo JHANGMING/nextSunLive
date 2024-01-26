@@ -50,6 +50,7 @@ const config: Config = {
         blueGray: '#C6CDD5',
         darkGray: '#999999',
         SoftGray: '#EEEEEE',
+        personGray:"#D9D9D9",
         dashboardGray: '#F2F2F2',
         blueWhite: '#FBFBFB',
         lightWhite: '#FBF9F3',

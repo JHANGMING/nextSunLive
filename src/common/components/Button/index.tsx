@@ -1,5 +1,6 @@
 import AddToCartButton from './AddToCartButton';
 import AuthButton from './AuthButton';
+import SubmitButton from './SubmitButton';
 import { ButtonPropsType } from './data';
 
 const Button = ({
@@ -28,6 +29,8 @@ const Button = ({
           {children}
         </AuthButton>
       );
+    case 'submit':
+      return <SubmitButton classStyle={classStyle}>{children}</SubmitButton>;
     default:
       return null;
   }
