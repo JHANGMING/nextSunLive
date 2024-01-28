@@ -35,7 +35,7 @@ const FriendlyFarmSection = () => {
             })}
           </ul>
           <div className="col-start-9 col-end-13">
-            <Image src={src} alt={alt} width={411} height={308}/>
+            <Image src={src} alt={alt} width={411} height={308} />
           </div>
         </div>
       </div>

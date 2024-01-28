@@ -27,7 +27,6 @@ const FarmFeatureSection = () => {
                   alt={IconLeft.alt}
                   width={IconLeft.width}
                   height={IconLeft.height}
-                  
                 />
                 <h4 className=" text-primary-red">{title}</h4>
                 <Image
@@ -45,7 +44,7 @@ const FarmFeatureSection = () => {
                 className="mb-16 h-276 object-cover"
               />
               <h5 className=" text-primary-red mb-8">{subTitle}</h5>
-              <p className='text-center'>
+              <p className="text-center">
                 {descFirst}
                 <br />
                 {descSecond}

@@ -1,5 +1,5 @@
-import Layout from "@/common/Layout";
-import LiveStreamView from "@/modules/LiveStreamView";
+import Layout from '@/common/Layout';
+import LiveStreamView from '@/modules/LiveStreamView';
 
 const Livestreaming = () => {
   return (
@@ -7,6 +7,6 @@ const Livestreaming = () => {
       <LiveStreamView />
     </Layout>
   );
-}
- 
+};
+
 export default Livestreaming;

@@ -1,33 +1,29 @@
-import Button from "@/common/components/Button";
-import LogoImg from "@/common/components/Logo/LogoImg";
-import Image from "next/image";
-import { useState } from "react";
-import {
-  BsDashCircleFill,
-  BsPlusCircleFill,
-} from 'react-icons/bs';
-import { productData } from "./data";
+import Button from '@/common/components/Button';
+import LogoImg from '@/common/components/Logo/LogoImg';
+import Image from 'next/image';
+import { useState } from 'react';
+import { BsDashCircleFill, BsPlusCircleFill } from 'react-icons/bs';
+import { productData } from './data';
 
 const DetailSection = () => {
   const [qty, setQty] = useState(1);
   const [selectedSpec, setSelectedSpec] = useState('small');
-  const updateCount = (isIncrement:boolean) => {
-   setQty((prevCount) => (isIncrement ? prevCount + 1 : prevCount - 1));
+  const updateCount = (isIncrement: boolean) => {
+    setQty((prevCount) => (isIncrement ? prevCount + 1 : prevCount - 1));
   };
-  const selectSpec = (spec:string) => {
+  const selectSpec = (spec: string) => {
     setSelectedSpec(spec);
   };
   // const handlerAddCart = () => {
   //   console.log(spec);
   // };
-  const handlerToBuy=()=>{
+  const handlerToBuy = () => {
     console.log('handlerToBuy');
-    
-  }
+  };
   const getButtonClass = (spec: string) => {
     let baseClass = 'w-[160px] h-48 px-32 border rounded-8 ';
-    let selectedClass = 'border-primary-red font-bold text-primary-red'; 
-    let defaultClass = 'border-mediumGray'; 
+    let selectedClass = 'border-primary-red font-bold text-primary-red';
+    let defaultClass = 'border-mediumGray';
 
     return baseClass + (selectedSpec === spec ? selectedClass : defaultClass);
   };
@@ -35,7 +31,7 @@ const DetailSection = () => {
     '/images/productDetail/detailImg1.svg'
   );
 
-  const handleImageSelect = (imageSrc:string) => {
+  const handleImageSelect = (imageSrc: string) => {
     setSelectedImage(imageSrc);
   };
 
@@ -147,6 +143,6 @@ const DetailSection = () => {
       </div>
     </section>
   );
-}
- 
+};
+
 export default DetailSection;

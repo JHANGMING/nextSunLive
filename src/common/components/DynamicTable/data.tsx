@@ -4,7 +4,6 @@ type ColumnType = {
   key: string;
 };
 
-
 type OrdersDataItemType = {
   id: string;
   farmer: string;
@@ -17,5 +16,5 @@ type OrdersDataItemType = {
 export type DynamicTableProps = {
   columns: ColumnType[];
   data: OrdersDataItemType[];
-  showCheckbox:boolean;
+  showCheckbox: boolean;
 };

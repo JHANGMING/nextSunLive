@@ -1,10 +1,10 @@
-import LogoImg from "@/common/components/Logo/LogoImg";
+import LogoImg from '@/common/components/Logo/LogoImg';
 
 type CategoryProductTagProps = {
   classStyle: string;
-  text:string;
+  text: string;
 };
-const CategoryProductTag = ({ classStyle,text }: CategoryProductTagProps) => {
+const CategoryProductTag = ({ classStyle, text }: CategoryProductTagProps) => {
   return (
     <div
       className={`w-220 h-74 rounded-20 bg-white flex gap-10 justify-center items-center   absolute z-10 ${classStyle}`}>
@@ -13,5 +13,5 @@ const CategoryProductTag = ({ classStyle,text }: CategoryProductTagProps) => {
     </div>
   );
 };
- 
+
 export default CategoryProductTag;

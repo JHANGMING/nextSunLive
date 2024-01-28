@@ -1,4 +1,4 @@
-import { DefaultInputProps, PersonInputProps } from "./data";
+import { DefaultInputProps, PersonInputProps } from './data';
 
 const PersonInput = ({
   type,
@@ -30,5 +30,5 @@ const PersonInput = ({
     </div>
   );
 };
- 
+
 export default PersonInput;

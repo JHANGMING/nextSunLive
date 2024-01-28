@@ -12,8 +12,7 @@ const ResetPasswordPage = () => {
   } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
     console.log(data);
-    
-  }
+  };
   return (
     <div className="flex flex-col justify-between h-full relative">
       <ArrowLeft />
@@ -35,7 +34,10 @@ const ResetPasswordPage = () => {
             },
           }}
         />
-        <Button type="submit" category="auth" btnStyle="mb-60 bg-primary-yellow">
+        <Button
+          type="submit"
+          category="auth"
+          btnStyle="mb-60 bg-primary-yellow">
           發送驗證信至信箱
         </Button>
       </form>

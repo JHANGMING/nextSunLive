@@ -76,7 +76,6 @@ export const productData: ProductCardProps[] = [
       alt: 'product3',
     },
   },
-  
 ];
 
 export const allproductData: ProductCardProps[] = [

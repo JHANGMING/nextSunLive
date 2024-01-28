@@ -1,24 +1,29 @@
 import Button from '@/common/components/Button';
 import DefaultInput from '@/common/components/Input';
 import { FormValues } from '@/common/components/Input/data';
+import AuthSelect from '@/common/components/Select/AuthSelect';
 import { useGapClass } from '@/common/hooks/useGapClass';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
+type OnSubmitType = {
+  (data: FormValues): void;
+};
 const RegisterPage = () => {
   const {
+    control,
     register,
     watch,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
   const gapClass = useGapClass(errors);
-  const onSubmit = (data: FormValues) => {
+  const onSubmit: OnSubmitType = (data) => {
     const { email, password, identity } = data;
     const dataObj = {
       email: email.trim(),
       password: password.trim(),
-      identity,
+      identity: identity.value,
     };
     console.log(dataObj);
   };
@@ -88,7 +93,8 @@ const RegisterPage = () => {
             },
           }}
         />
-        <div className="">
+        <AuthSelect control={control} />
+        {/* <div className="">
           <label htmlFor="identity" className="text-20 font-bold block mb-8">
             註冊身份{' '}
             <span className="text-20 font-bold text-primary-red">*</span>
@@ -105,7 +111,7 @@ const RegisterPage = () => {
           {errors.identity && (
             <p className="text-primary-red mt-8">{errors.identity.message}</p>
           )}
-        </div>
+        </div> */}
         <Button
           type="submit"
           category="auth"
@@ -115,9 +121,7 @@ const RegisterPage = () => {
       </form>
       <div className=" self-center text-center">
         <div className="flex justify-center">
-        <p className="mb-16">
-          已經成為會員 ?
-        </p>
+          <p className="mb-16">已經成為會員 ?</p>
           <Link
             href="/auth/login"
             className=" cursor-pointer text-primary-green font-bold">

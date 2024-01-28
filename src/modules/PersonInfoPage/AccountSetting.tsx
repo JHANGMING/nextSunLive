@@ -1,15 +1,22 @@
-
 import { useForm } from 'react-hook-form';
 import { FormValues } from '@/common/components/Input/data';
 import PersonInput from '@/common/components/Input/PersonInput';
 import Button from '@/common/components/Button';
+import AuthSelect from '@/common/components/Select/AuthSelect';
+import CommonSelect from '@/common/components/Select/GenderSelect';
+import DatePickerShow from '@/common/components/DatePicker';
+import { format } from 'date-fns';
+import GenderSelect from '@/common/components/Select/GenderSelect';
 const AccountSetting = () => {
   const {
+    control,
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
+    //儲存日期格式
+    // const formattedDate = format(data.birthday, 'yyyy/MM/dd');
     // const { email, password, identity } = data;
     // const dataObj = {
     //   email: email.trim(),
@@ -43,7 +50,7 @@ const AccountSetting = () => {
             type="tel"
             labelText="聯絡電話"
             inputText="請輸入聯絡電話"
-            inputStyle="text-18"
+            inputStyle=""
             id="userPhone"
             errors={errors}
             register={register}
@@ -58,6 +65,16 @@ const AccountSetting = () => {
               },
             }}
           />
+        </div>
+        <div className="flex gap-24">
+          <GenderSelect control={control} labelText="性別" id="gender" />
+          <div className="w-full">
+            <label htmlFor="" className="text-18 block mb-8">
+              生日
+            </label>
+            <DatePickerShow control={control} />
+          </div>
+          {/* <CommonSelect control={control} /> */}
         </div>
         <Button category="submit" classStyle="self-end hover:opacity-70">
           儲存

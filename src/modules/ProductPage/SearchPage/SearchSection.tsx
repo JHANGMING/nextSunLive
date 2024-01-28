@@ -9,7 +9,7 @@ const SearchSection = () => {
         <div className="container ">
           <div className="flex items-center">
             <CategoryTitle title="搜尋結果" gapStyle="mb-8" />
-            <SearchInput headerVisible={true}/>
+            <SearchInput headerVisible={true} />
           </div>
           <h4 className="mb-24">
             玉米的搜尋結果共 <span className=" text-primary-green">3</span> 筆

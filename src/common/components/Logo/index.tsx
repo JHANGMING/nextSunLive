@@ -6,7 +6,7 @@ const Logo = ({
   classStyle,
   widthProps = 50,
   heightProps = 50,
-  textSytle="text-28"
+  textSytle = 'text-28',
 }: classStyleProps) => {
   return (
     <Link href="/" className={`flex items-center gap-16 group ${classStyle}`}>

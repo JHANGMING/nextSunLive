@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { DynamicTableProps } from './data';
-import Button from '../Button';
 
 const DynamicTable = ({ columns, data, showCheckbox }: DynamicTableProps) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,7 +32,7 @@ const DynamicTable = ({ columns, data, showCheckbox }: DynamicTableProps) => {
   // };
   // const handleRowSelect = (id:string) => {
   //   console.log(id);
-    
+
   //   setSelectedRows((prev) => ({
   //     ...prev,
   //     [id]: !prev[id],

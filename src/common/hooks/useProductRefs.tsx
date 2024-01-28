@@ -21,5 +21,4 @@ const useProductRefs = (): ProductRefsType => {
   };
 };
 
-
 export default useProductRefs;

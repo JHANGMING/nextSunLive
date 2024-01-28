@@ -7,8 +7,13 @@ export type FormValues = {
   userName: string;
   userPhone: string;
   address: string;
-  identity: string;
+  identity: { value: string; label: string };
   nickName: string;
+  gender: string;
+  zip: string;
+  birthday: Date;
+  county: { label: string; value: string };
+  district: { label: string; value: string } | null;
 };
 export type DefaultInputProps = {
   type: 'email' | 'text' | 'password' | 'tel';
@@ -21,7 +26,7 @@ export type DefaultInputProps = {
   rules: RegisterOptions;
   page?: string;
   globalStyle?: string;
-  isdisabled?:boolean
+  isdisabled?: boolean;
 };
 
 export type PersonInputProps = {

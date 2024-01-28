@@ -16,15 +16,15 @@ const ProductCard = ({
   imgBorderStyle,
   priceBorderStyle,
   originalPriceStyle,
-  cardGapThreeCol=true,
+  cardGapThreeCol = true,
   buttonAtBottom = false,
 }: ProductCardProps) => {
   const priceBorderClass =
     priceBorderStyle === 'white' ? 'border-white' : 'border-lightGray';
   const originalPriceClass =
     originalPriceStyle === 'white' ? 'text-white' : 'text-lightGray';
-    const cardGapStyle=cardGapThreeCol?"col-span-4":"col-span-3";
-    const cardTitleStyle = cardGapThreeCol || "text-24"
+  const cardGapStyle = cardGapThreeCol ? 'col-span-4' : 'col-span-3';
+  const cardTitleStyle = cardGapThreeCol || 'text-24';
   const [animation, setAnimation] = useState('product-card-enter');
 
   useEffect(() => {

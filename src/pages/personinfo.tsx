@@ -1,5 +1,5 @@
-import Layout from "@/common/Layout";
-import PersonInfoPage from "@/modules/PersonInfoPage";
+import Layout from '@/common/Layout';
+import PersonInfoPage from '@/modules/PersonInfoPage';
 
 const PersonInfo = () => {
   return (
@@ -7,6 +7,6 @@ const PersonInfo = () => {
       <PersonInfoPage />
     </Layout>
   );
-}
- 
+};
+
 export default PersonInfo;

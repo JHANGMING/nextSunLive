@@ -40,11 +40,11 @@ export const fixedPageSet: PageSet = {
   productDetailPage: 'never',
   authPage: 'never',
   CartPage: 'always',
-  searchPage:'scroll',
-  dashboardPage:'always',
-  personInfoPage:'always'
+  searchPage: 'scroll',
+  dashboardPage: 'always',
+  personInfoPage: 'always',
 };
 
 export type PageSet = {
-  [key in PageCategoryType]?: string|boolean;
+  [key in PageCategoryType]?: string | boolean;
 };

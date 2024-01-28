@@ -1,5 +1,6 @@
 import CartEmpty from './CartEmpty';
 import CartFormSection from './CartFormSection';
+import CartLink from './CartLink';
 import CartListSection from './CartListSection';
 import CartProcess from './CartProcess';
 

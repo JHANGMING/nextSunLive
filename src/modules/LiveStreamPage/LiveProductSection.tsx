@@ -1,6 +1,6 @@
-import Image from "next/image";
-import CategoryTitle from "../ProductPage/CategoryTitle";
-import { liveCardData } from "./data";
+import Image from 'next/image';
+import CategoryTitle from '../ProductPage/CategoryTitle';
+import { liveCardData } from './data';
 
 const LiveProductSection = () => {
   return (
@@ -44,5 +44,5 @@ const LiveProductSection = () => {
     </section>
   );
 };
- 
+
 export default LiveProductSection;

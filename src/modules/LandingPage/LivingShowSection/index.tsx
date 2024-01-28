@@ -4,7 +4,6 @@ import { BsHandIndex } from 'react-icons/bs';
 import LivingProduct from './LivingProduct';
 import YoutubeLiveIfram from './YoutubeLiveLink';
 
-
 type LivingShowSectionProps = {
   isLivePage?: boolean;
 };

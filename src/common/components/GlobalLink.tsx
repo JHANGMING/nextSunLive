@@ -12,10 +12,9 @@ const GlobalLink = ({
   openInNewTab,
   children,
 }: GlobalLinkProps) => {
-  const handerAddtoCart=()=>{
+  const handerAddtoCart = () => {
     console.log('嫁入購物車');
-    
-  }
+  };
   if (openInNewTab) {
     return (
       <a

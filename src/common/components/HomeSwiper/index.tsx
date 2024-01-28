@@ -7,7 +7,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-const HomeSwiper = ({ imgData,classStyle }: HomeSwiperPropsType) => {
+const HomeSwiper = ({ imgData, classStyle }: HomeSwiperPropsType) => {
   const data = swiperData[imgData];
   if (!data) return null;
   const { spaceBetween, imgDatas } = data;

@@ -29,7 +29,8 @@
 
 //livingShowSection LogoImg
 @keyframes shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotate(-5deg);
   }
   50% {
@@ -40,5 +41,3 @@
 .logo-shake {
   animation: shake 1s infinite;
 }
-
-

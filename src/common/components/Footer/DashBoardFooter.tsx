@@ -4,6 +4,6 @@ const DashBoardFooter = () => {
       <p>© 搶鮮購 - 線上直播搶購當季新鮮農產品</p>
     </footer>
   );
-}
- 
+};
+
 export default DashBoardFooter;

@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { useState } from "react";
+import Image from 'next/image';
+import { useState } from 'react';
 
 const PersonChatRoom = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -46,11 +46,9 @@ const PersonChatRoom = () => {
           </li>
         </ul>
       )}
-      {isExpanded && (<div>
-        
-      </div>)}
+      {isExpanded && <div></div>}
     </>
   );
-}
- 
+};
+
 export default PersonChatRoom;

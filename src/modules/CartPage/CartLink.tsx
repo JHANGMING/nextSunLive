@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { BsChevronRight } from 'react-icons/bs';
 const CartLink = ({ cartEmpty = false }) => {
-  const colStyle = cartEmpty ? 'col-span-12' : 'col-span-9';
+  const colStyle = cartEmpty ? 'col-span-12' : 'col-span-9 w-[74%] ';
   return (
     <Link
       href="/productshop"

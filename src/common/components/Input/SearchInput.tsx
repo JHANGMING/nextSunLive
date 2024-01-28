@@ -8,7 +8,7 @@ type SearchInputProps = {
 };
 const SearchInput = ({ headerVisible = false, onClick }: SearchInputProps) => {
   const [inputValue, setInputValue] = useState('');
-  const router=useRouter()
+  const router = useRouter();
   const handlerSearch = () => {
     if (inputValue) {
       console.log(inputValue);
@@ -19,7 +19,7 @@ const SearchInput = ({ headerVisible = false, onClick }: SearchInputProps) => {
     if (headerVisible) {
       onClick?.();
     }
-    router.push("/search")
+    router.push('/search');
   };
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== 'Enter') return;

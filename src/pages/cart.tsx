@@ -1,5 +1,5 @@
-import Layout from "@/common/Layout";
-import CartPage from "@/modules/CartPage";
+import Layout from '@/common/Layout';
+import CartPage from '@/modules/CartPage';
 
 const Cart = () => {
   return (

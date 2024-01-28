@@ -4,7 +4,7 @@ type LinkToProductProps = {
   path: string;
   text: string;
 };
-const LinkToProduct = ({ path,text }: LinkToProductProps) => {
+const LinkToProduct = ({ path, text }: LinkToProductProps) => {
   return (
     <Link
       href={path}

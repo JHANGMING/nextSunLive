@@ -1,5 +1,5 @@
-import ProductList from "@/common/components/product/ProductList";
-import CategoryTitle from "../ProductPage/CategoryTitle";
+import ProductList from '@/common/components/product/ProductList';
+import CategoryTitle from '../ProductPage/CategoryTitle';
 
 const RelatedSection = () => {
   return (
@@ -8,6 +8,6 @@ const RelatedSection = () => {
       <ProductList category="related" />
     </section>
   );
-}
- 
+};
+
 export default RelatedSection;

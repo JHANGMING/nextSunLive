@@ -5,18 +5,11 @@ type ProductListProps = {
   category: string;
 };
 
-const numberToChinese = (number:number) => {
-  const chineseNumbers = [
-    '零',
-    '一',
-    '二',
-    '三',
-  ];
+const numberToChinese = (number: number) => {
+  const chineseNumbers = ['零', '一', '二', '三'];
   return chineseNumbers[number] || number;
 };
-const ProductList = ({
-  category,
-}: ProductListProps) => {
+const ProductList = ({ category }: ProductListProps) => {
   switch (category) {
     case 'landingPage':
       return (
@@ -99,12 +92,7 @@ const ProductList = ({
         </ul>
       );
     case 'all':
-      return (
-        <PaginatedProductList
-          data={allproductData}
-          itemsPerPage={9}
-        />
-      );
+      return <PaginatedProductList data={allproductData} itemsPerPage={9} />;
 
     default:
       return null;

@@ -1,11 +1,6 @@
 import { BsHandIndex } from 'react-icons/bs';
 import { ButtonPropsType } from './data';
-const AuthButton = ({
-  type,
-  onClick,
-  children,
-  btnStyle,
-}: ButtonPropsType) => {
+const AuthButton = ({ type, onClick, children, btnStyle }: ButtonPropsType) => {
   return (
     <button
       type={type}

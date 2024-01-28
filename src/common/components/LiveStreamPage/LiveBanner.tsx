@@ -5,6 +5,6 @@ const LiveBanner = () => {
       <div className=" bg-liveBannerBG h-[357px] bg-repeat-x bg-center -mt-[216px] flex justify-center items-end"></div>
     </section>
   );
-}
- 
+};
+
 export default LiveBanner;

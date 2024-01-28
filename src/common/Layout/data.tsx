@@ -10,7 +10,7 @@ export type PageCategoryType =
   | 'CartPage'
   | 'authPage'
   | 'dashboardPage'
-  | "personInfoPage";
+  | 'personInfoPage';
 
 export type LayoutPropsType = {
   children?: ReactNode;

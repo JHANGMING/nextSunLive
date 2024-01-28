@@ -35,6 +35,7 @@ const Banner = () => {
                 alt={data.alt}
                 width={1440}
                 height={600}
+                priority
                 className={`h-[600px] w-full object-cover transition-transform duration-[25000ms] ease-in-out ${isVisible ? 'scale-125' : 'scale-100'}`}
               />
             )}
