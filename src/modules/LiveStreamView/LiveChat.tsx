@@ -1,120 +1,59 @@
 import React, { useEffect, useState } from 'react';
-import $ from 'jquery';
 import Image from 'next/image';
 import GlobalLink from '@/common/components/GlobalLink';
 import { BsCursorFill } from 'react-icons/bs';
+
+
 const LiveChat = () => {
   const [chatroomId, setChatroomId] = useState(null);
-  const [messageStatus, setMessageStatus] = useState(null);
-  const [messages, setMessages] = useState<{ sender: string; message: any }[]>(
-    []
-  );
+  const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [userIdSender, setUserIdSender] = useState(3);
-  let chatHubProxy: SignalR.Hub.Proxy; // 定義在更廣泛的範圍內
 
   useEffect(() => {
-    // 使用 jQuery 的代碼（這裡僅供範例，請注意不建議直接使用 jQuery）
-    $.getScript('src/jquery-1.6.4.js', () => {
-      $.getScript('src/jquery.signalR-2.4.3.js', () => {
-        // WebSocket 連線
-        const connection = $.hubConnection('http://4.224.41.94'); // 大鈞：這邊應該要改成伺服器網域
-        chatHubProxy = connection.createHubProxy('chathub'); // 大鈞：這是測試的實際名稱：chathub
-        chatHubProxy.on('receiveMessage', (message:any) => {
-          // 大鈞：前端創立一個名為"receiveMessage"的方法，後端會call前端的方法，以回傳訊息
-          console.log('Received message:', message);
-          const newMsg = { sender: 'Other', message }; // 假设接收到的消息来自其他用户
-          setMessages((prevMessages) => [...prevMessages, newMsg]);
+    if (typeof window !== 'undefined') {
+      import('signalr-no-jquery').then(({ hubConnection }) => {
+        const connection = hubConnection('http://4.224.41.94');
+        const chatHubProxy = connection.createHubProxy('chathub');
+
+        chatHubProxy.on('receiveMessage', (sender, message) => {
+          const newMessage = { sender, message };
+          setMessages((prevMessages) => [...prevMessages, newMessage]);
         });
 
         connection
           .start()
           .done(() => {
-            console.log(
-              'FrontEnd Client-Side:Connected to WebSocket',
-              connection
-            );
-            // 在這裡可以添加更多的 WebSocket 相關邏輯
-            callApi(); // 大鈞：這邊call下面的callApi方法
+            console.log('Connected to SignalR server!');
           })
           .fail((error) => {
-            console.error('WebSocket connection failed:', error);
+            console.error('Failed to connect to SignalR server: ', error);
           });
 
+        // 断开连接的逻辑也应该在这里
         return () => {
-          // 在組件卸載時斷開 WebSocket 連線
           connection.stop();
         };
       });
-    });
+    }
   }, []);
 
-  // 大鈞：定義呼叫 API 的函式
-  const callApi = () => {
-    $.ajax({
-      type: 'POST',
-      url: 'http://4.224.41.94/api/c1/3/2', // 大鈞：前端使用ajax發送post api給後端
-      //url: 'https://localhost:44364/api/c1/senderId/receiverId',
-      success: function (response) {
-        console.log('API called successfully:', response);
-        // 在這裡處理 API 呼叫成功的邏輯
-
-        const { chatroomId } = response; //大鈞：api會回傳chatroomId，
-        let userIdSender = 3; //大鈞：這邊我先手動設定參數userIdSender=3
-        let message = 'message test for3'; //大鈞：這邊我先手動設定參數message string
-
-        // 大鈞：呼叫下面的方法
-        JoinChatRoom(chatroomId); //大鈞：先加入2人專屬的聊天室
-        SendMessageToRoom(chatroomId, userIdSender, message); //大鈞：之後透過這個function發送訊息
-        // 在這裡處理收到的消息
-      },
-      error: function (error) {
-        console.error('Failed to call API:', error);
-        // 在這裡處理 API 呼叫失敗的邏輯
-      },
-    });
-  };
-
-  // 大鈞：在前端定義一個方法，其名稱和參數要和後端方法的文字相同
-  const SendMessageToRoom = (
-    chatroomId: any,
-    userIdSender: any,
-    message: any
-  ) => {
-    if (chatHubProxy){
-
-      chatHubProxy
-        .invoke('SendMessageToRoom', chatroomId, userIdSender, message)
-        .done(() => {
-          const newMsg = { sender: 'You', message };
-          setMessages((prevMessages) => [...prevMessages, newMsg]);
-        })
-        .fail((error: any) => {
-          console.error('Failed to send message:', error);
-          console.error('Stack trace:', error.stack);
-          // 在這裡處理發送失敗的邏輯，例如提示用戶等操作
-        });
-    }
-  };
-
-  // 大鈞：在前端定義一個方法，其名稱和參數要和後端方法的文字相同
-  const JoinChatRoom = (chatroomId: any) => {
-    chatHubProxy
-      .invoke('JoinChatRoom', chatroomId)
-      .done((response: any) => {
-        console.log('Join room successfully:', response);
-        // 在這裡處理發送成功的邏輯，例如更新 UI 等操作
-      })
-      .fail((error: any) => {
-        console.error('Failed to join room:', error);
-        // 在這裡處理發送失敗的邏輯，例如提示用戶等操作
-      });
-  };
-  const handleSendMessage = () => {
-    // 假设您已经有 chatroomId 和 userIdSender
-    SendMessageToRoom(chatroomId, userIdSender, newMessage);
-    setNewMessage(''); // 清空输入字段
-  };
+  // const handleSendMessage = () => {
+  //    const connection = hubConnection('http://4.224.41.94');
+  //   const chatHubProxy = connection.createHubProxy('chathub'); // 重新获取proxy，确保其在当前作用域内有效
+  //   // 发送消息
+  //   if (chatroomId && newMessage.trim() !== '') {
+  //     chatHubProxy
+  //       .invoke('SendMessageToRoom', chatroomId, userIdSender, newMessage)
+  //       .done(() => {
+  //         console.log('Message sent successfully');
+  //         setNewMessage(''); // 清空输入框
+  //       })
+  //       .fail((error) => {
+  //         console.error('Failed to send message: ', error);
+  //       });
+  //   }
+  // };
 
   return (
     <div className="mt-[250px] mb-40 mx-auto w-[600px] border border-lightGray rounded-16">
@@ -177,11 +116,11 @@ const LiveChat = () => {
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
         />
-        <BsCursorFill
+        {/* <BsCursorFill
           size={24}
           onClick={handleSendMessage}
           className=" text-primary-red cursor-pointer hover:opacity-60"
-        />
+        /> */}
       </div>
     </div>
   );
