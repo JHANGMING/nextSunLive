@@ -6,11 +6,15 @@ import AuthLayout from './AuthLayout';
 import FixedHeader from '../components/Header/FixedHeader';
 import ScrollPageTop from '../components/ScrollPageTop';
 import ContactService from '@/modules/ContactService';
-
+import { Noto_Sans_TC } from 'next/font/google';
+const notos = Noto_Sans_TC({
+  weight: ['400',"600", '700'],
+  subsets: ['latin'],
+});
 const Layout = ({ children, pageCategory, classStyle }: LayoutPropsType) => {
   return (
     <div
-      className={`${colorWhiteSet[pageCategory]} flex flex-col min-h-screen`}>
+      className={`${colorWhiteSet[pageCategory]} ${notos.className} flex flex-col min-h-screen`}>
       <CustomHead pageCategory={pageCategory} />
       <Header pageCategory={pageCategory} />
       <FixedHeader pageCategory={pageCategory} />

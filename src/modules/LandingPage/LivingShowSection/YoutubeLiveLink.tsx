@@ -43,7 +43,12 @@ const YoutubeLiveIfram = ({
     if (isViewPage || isLivePage) {
       playVideo();
     }
+const iframeElement = iframeRef.current; // 创建局部变量引用 iframe
 
+if (!('IntersectionObserver' in window)) {
+  // 如果浏览器不支持 IntersectionObserver，直接返回
+  return;
+}
     const observer = new IntersectionObserver(
       (entries) => {
         if (isViewPage || isLivePage) {
@@ -60,13 +65,13 @@ const YoutubeLiveIfram = ({
       { threshold: 0.5 }
     );
 
-    if (iframeRef.current) {
-      observer.observe(iframeRef.current);
-    }
 
+if (iframeElement) {
+  observer.observe(iframeElement);
+}
     return () => {
-      if (iframeRef.current) {
-        observer.unobserve(iframeRef.current);
+      if (iframeElement) {
+        observer.unobserve(iframeElement);
       }
     };
   }, [isViewPage, isLivePage]);
