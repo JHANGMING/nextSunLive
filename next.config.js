@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  assetPrefix: 'https://4.224.41.94',
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.externals.push({
+        'http://4.224.41.94': 'http://4.224.41.94',
+      });
+    }
+    return config;
+  },
 };
 
 module.exports = nextConfig;
