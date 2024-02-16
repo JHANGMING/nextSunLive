@@ -40,7 +40,7 @@ const LiveChat = () => {
           .done(() => {
             console.log('Connected to SignalR server!');
             setIsConnected(true);
-            JoinChatRoom("ss")
+            JoinChatRoom('ss');
             // callApi();
             if (chatHubProxyRef.current) {
               chatHubProxyRef.current
@@ -62,20 +62,20 @@ const LiveChat = () => {
       });
     }
   }, []);
-  const JoinChatRoom = (chatroomId:string) => {
+  const JoinChatRoom = (chatroomId: string) => {
     const chatHubProxy = chatHubProxyRef.current;
-  if (chatHubProxy) {
-    chatHubProxy.invoke('JoinLiveRoom', chatroomId)
-      .done((response) => {
-        console.log('JoinLiveRoom:', response);
-
-      })
-      .fail((error) => {
-        // 失败逻辑...
-      });
-  } else {
-    console.error('ChatHubProxy is not initialized.');
-  }
+    if (chatHubProxy) {
+      chatHubProxy
+        .invoke('JoinLiveRoom', chatroomId)
+        .done((response) => {
+          console.log('JoinLiveRoom:', response);
+        })
+        .fail((error) => {
+          // 失败逻辑...
+        });
+    } else {
+      console.error('ChatHubProxy is not initialized.');
+    }
   };
 
   // const callApi = () => {
@@ -128,6 +128,26 @@ const LiveChat = () => {
   // }
   // };
 
+  // const handleSendMessage = () => {
+  //   if (!isConnected) {
+  //     console.error('SignalR connection is not established.');
+  //     return;
+  //   }
+
+  //   if (chatroomId && newMessage.trim() !== '') {
+  //     // console.log('Sending message...', newMessage);
+  //     const chatHubProxy = chatHubProxyRef.current;
+  //     chatHubProxy
+  //       ?.invoke('SendMessageToRoom', chatroomId, userIdSender, newMessage)
+  //       .done(() => {
+  //         console.log('Message sent successfully');
+  //         setNewMessage(''); // 清空输入框
+  //       })
+  //       .fail((error) => {
+  //         console.error('Failed to send message: ', error);
+  //       });
+  //   }
+  // };
   const handleSendMessage = () => {
     if (!isConnected) {
       console.error('SignalR connection is not established.');
@@ -138,7 +158,7 @@ const LiveChat = () => {
       // console.log('Sending message...', newMessage);
       const chatHubProxy = chatHubProxyRef.current;
       chatHubProxy
-        ?.invoke('SendMessageToRoom', chatroomId, userIdSender, newMessage)
+        ?.invoke('SendMessageToLiveRoom', "ss", userIdSender, newMessage)
         .done(() => {
           console.log('Message sent successfully');
           setNewMessage(''); // 清空输入框
