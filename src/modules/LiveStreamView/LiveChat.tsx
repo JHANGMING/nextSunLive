@@ -62,7 +62,7 @@ const LiveChat = () => {
   }, []);
   const callApi = () => {
     // 使用 fetch 发送 POST 请求
-    fetch('http://4.224.41.94/api/chats/joinroom/', {
+    fetch('https://4.224.41.94/api/chats/joinroom/', {
       method: 'POST', // 指定请求方法为 POST
       headers: {
         'Content-Type': 'application/json',
