@@ -11,35 +11,37 @@ const LiveChat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMessage, setNewMessage] = useState('');
   const [userIdSender, setUserIdSender] = useState(6);
-  const [isConnected, setIsConnected] = useState(false); 
-  const chatHubProxyRef = useRef<SignalR.Hub.Proxy | null>(null); 
+  const [isConnected, setIsConnected] = useState(false);
+  const chatHubProxyRef = useRef<SignalR.Hub.Proxy | null>(null);
   const messagesEndRef = useRef<HTMLUListElement | null>(null);
   const token =
     'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6NiwiVXNlckNhdGVnb3J5IjowLCJJYXQiOiJcL0RhdGUoMTcwODA0NjAwMzMzMilcLyIsIkV4cCI6IjIvMTcvMjAyNCA5OjEzOjIzIEFNIn0.zZv8ssl3W7dB4EYjnEJj50MaGjesLnldywAW0sBBnArKNCXwj5i9H5w4sa_PQDoFZyy_pz4CuPB-t5Fu1PZNfQ';
-   useEffect(() => {
-     if (messagesEndRef.current) {
-       const { current: messagesContainer } = messagesEndRef;
-       messagesContainer.scrollTop = messagesContainer.scrollHeight;
-     }
-   }, [messages]);
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      const { current: messagesContainer } = messagesEndRef;
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+  }, [messages]);
   useEffect(() => {
     if (typeof window !== 'undefined') {
       import('signalr-no-jquery').then(({ hubConnection }) => {
         const connection = hubConnection('https://4.224.41.94');
-        const chatHubProxy = connection.createHubProxy('chathub')as unknown as SignalR.Hub.Proxy;
+        const chatHubProxy = connection.createHubProxy(
+          'chathub'
+        ) as unknown as SignalR.Hub.Proxy;
         chatHubProxy.on('receiveMessage', (message) => {
-
           console.log('Received message:', message.chatcontent);
           setMessages(message.chatcontent);
           // 在這裡處理收到的消息
         });
-         chatHubProxyRef.current = chatHubProxy;
+        chatHubProxyRef.current = chatHubProxy;
         connection
           .start()
           .done(() => {
             console.log('Connected to SignalR server!');
             setIsConnected(true);
-            callApi();
+            JoinChatRoom("ss")
+            // callApi();
             if (chatHubProxyRef.current) {
               chatHubProxyRef.current
                 .invoke('Hello') // 假设Hello方法不需要参数，或者传递 null/undefined 作为空参数
@@ -60,75 +62,92 @@ const LiveChat = () => {
       });
     }
   }, []);
-  const callApi = () => {
-    // 使用 fetch 发送 POST 请求
-    fetch('https://4.224.41.94/api/chats/joinroom/', {
-      method: 'POST', // 指定请求方法为 POST
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ receiverId: 8}), // 将对象转换为 JSON 字符串
-    })
-      .then((response) => {
-        console.log('API called successfully:', response);
-
-        return response.json(); // 解析 JSON 数据
-      })
-      .then((response) => {
-        console.log('API called successfully:', response);
-        // 在这里处理 API 调用成功的逻辑
-        setMessages(response.chatcontent);
-        const { chatroomId } = response;
-        setChatroomId(chatroomId); // api会返回chatroomId，
-
-        let userIdSender = 6; // 这里我先手动设置参数userIdSender=5
-        let message = 'message test for 11@11.com user'; // 这里我先手动设置参数message string
-
-        // 调用下面的方法
-        JoinChatRoom(chatroomId); // 先加入2人专属的聊天室
-        // SendMessageToRoom(chatroomId, userIdSender, message); // 之后通过这个function发送消息
-      })
-      .catch((error) => {
-        console.error('Failed to call API:', error);
-        // 在这里处理 API 调用失败的逻辑
-      });
-  };
-    const JoinChatRoom = (chatroomId:number) => {
-      const chatHubProxy = chatHubProxyRef.current;
-    if (chatHubProxy) {
-      chatHubProxy.invoke('JoinChatRoom', chatroomId)
-        .done((response) => {
-          console.log('Joined chat room successfully:', response);
-          
-        })
-        .fail((error) => {
-          // 失败逻辑...
-        });
-    } else {
-      console.error('ChatHubProxy is not initialized.');
-    }
-    };
-const handleSendMessage = () => {
-  if (!isConnected) {
-    console.error('SignalR connection is not established.');
-    return;
-  }
-
-  if (chatroomId && newMessage.trim() !== '') {
-    // console.log('Sending message...', newMessage);
+  const JoinChatRoom = (chatroomId:string) => {
     const chatHubProxy = chatHubProxyRef.current;
-    chatHubProxy
-      ?.invoke('SendMessageToRoom', chatroomId, userIdSender, newMessage)
-      .done(() => {
-        console.log('Message sent successfully');
-        setNewMessage(''); // 清空输入框
+  if (chatHubProxy) {
+    chatHubProxy.invoke('JoinLiveRoom', chatroomId)
+      .done((response) => {
+        console.log('JoinLiveRoom:', response);
+
       })
       .fail((error) => {
-        console.error('Failed to send message: ', error);
+        // 失败逻辑...
       });
+  } else {
+    console.error('ChatHubProxy is not initialized.');
   }
-};
+  };
+
+  // const callApi = () => {
+  //   // 使用 fetch 发送 POST 请求
+  //   fetch('https://4.224.41.94/api/chats/joinroom/', {
+  //     method: 'POST', // 指定请求方法为 POST
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //     body: JSON.stringify({ receiverId: 8}), // 将对象转换为 JSON 字符串
+  //   })
+  //     .then((response) => {
+  //       console.log('API called successfully:', response);
+
+  //       return response.json(); // 解析 JSON 数据
+  //     })
+  //     .then((response) => {
+  //       console.log('API called successfully:', response);
+  //       // 在这里处理 API 调用成功的逻辑
+  //       setMessages(response.chatcontent);
+  //       const { chatroomId } = response;
+  //       setChatroomId(chatroomId); // api会返回chatroomId，
+
+  //       let userIdSender = 6; // 这里我先手动设置参数userIdSender=5
+  //       let message = 'message test for 11@11.com user'; // 这里我先手动设置参数message string
+
+  //       // 调用下面的方法
+  //       JoinChatRoom(chatroomId); // 先加入2人专属的聊天室
+  //       // SendMessageToRoom(chatroomId, userIdSender, message); // 之后通过这个function发送消息
+  //     })
+  //     .catch((error) => {
+  //       console.error('Failed to call API:', error);
+  //       // 在这里处理 API 调用失败的逻辑
+  //     });
+  // };
+  // const JoinChatRoom = (chatroomId:number) => {
+  //   const chatHubProxy = chatHubProxyRef.current;
+  // if (chatHubProxy) {
+  //   chatHubProxy.invoke('JoinChatRoom', chatroomId)
+  //     .done((response) => {
+  //       console.log('Joined chat room successfully:', response);
+
+  //     })
+  //     .fail((error) => {
+  //       // 失败逻辑...
+  //     });
+  // } else {
+  //   console.error('ChatHubProxy is not initialized.');
+  // }
+  // };
+
+  const handleSendMessage = () => {
+    if (!isConnected) {
+      console.error('SignalR connection is not established.');
+      return;
+    }
+
+    if (chatroomId && newMessage.trim() !== '') {
+      // console.log('Sending message...', newMessage);
+      const chatHubProxy = chatHubProxyRef.current;
+      chatHubProxy
+        ?.invoke('SendMessageToRoom', chatroomId, userIdSender, newMessage)
+        .done(() => {
+          console.log('Message sent successfully');
+          setNewMessage(''); // 清空输入框
+        })
+        .fail((error) => {
+          console.error('Failed to send message: ', error);
+        });
+    }
+  };
 
   return (
     <div className="mt-[250px] mb-40 mx-auto w-[600px] border border-lightGray rounded-16">
