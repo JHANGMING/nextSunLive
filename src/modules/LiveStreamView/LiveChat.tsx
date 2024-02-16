@@ -155,7 +155,7 @@ const LiveChat = () => {
     }
 
     if (chatroomId && newMessage.trim() !== '') {
-      // console.log('Sending message...', newMessage);
+      console.log('Sending message...', newMessage);
       const chatHubProxy = chatHubProxyRef.current;
       chatHubProxy
         ?.invoke('SendMessageToLiveRoom', "ss", userIdSender, newMessage)
