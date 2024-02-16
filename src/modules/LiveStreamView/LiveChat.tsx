@@ -15,7 +15,7 @@ const LiveChat = () => {
   const chatHubProxyRef = useRef<SignalR.Hub.Proxy | null>(null); 
   const messagesEndRef = useRef<HTMLUListElement | null>(null);
   const token =
-    'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6NiwiVXNlckNhdGVnb3J5IjowLCJJYXQiOiJcL0RhdGUoMTcwNzg5MTE2ODY5MylcLyIsIkV4cCI6IjIvMTUvMjAyNCAyOjEyOjQ4IFBNIn0.aAIr2GBb8HoO_moIuRNjnKQJQAukUTQELrHyDnO10nIiBUrwO2nC--S-R-A2xpwD6UG5eNz3Kbudyvkukdxowg';
+    'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6NiwiVXNlckNhdGVnb3J5IjowLCJJYXQiOiJcL0RhdGUoMTcwODA0NjAwMzMzMilcLyIsIkV4cCI6IjIvMTcvMjAyNCA5OjEzOjIzIEFNIn0.zZv8ssl3W7dB4EYjnEJj50MaGjesLnldywAW0sBBnArKNCXwj5i9H5w4sa_PQDoFZyy_pz4CuPB-t5Fu1PZNfQ';
    useEffect(() => {
      if (messagesEndRef.current) {
        const { current: messagesContainer } = messagesEndRef;
@@ -25,11 +25,11 @@ const LiveChat = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       import('signalr-no-jquery').then(({ hubConnection }) => {
-        const connection = hubConnection('http://4.224.41.94');
+        const connection = hubConnection('https://4.224.41.94');
         const chatHubProxy = connection.createHubProxy('chathub')as unknown as SignalR.Hub.Proxy;
         chatHubProxy.on('receiveMessage', (message) => {
 
-          console.log('Received message:', message);
+          console.log('Received message:', message.chatcontent);
           setMessages(message.chatcontent);
           // 在這裡處理收到的消息
         });
@@ -62,12 +62,13 @@ const LiveChat = () => {
   }, []);
   const callApi = () => {
     // 使用 fetch 发送 POST 请求
-    fetch('http://4.224.41.94/api/chats/joinroom/6/8', {
+    fetch('http://4.224.41.94/api/chats/joinroom/', {
       method: 'POST', // 指定请求方法为 POST
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
+      body: JSON.stringify({ receiverId: 8}), // 将对象转换为 JSON 字符串
     })
       .then((response) => {
         console.log('API called successfully:', response);
@@ -80,7 +81,7 @@ const LiveChat = () => {
         setMessages(response.chatcontent);
         const { chatroomId } = response;
         setChatroomId(chatroomId); // api会返回chatroomId，
-        
+
         let userIdSender = 6; // 这里我先手动设置参数userIdSender=5
         let message = 'message test for 11@11.com user'; // 这里我先手动设置参数message string
 
