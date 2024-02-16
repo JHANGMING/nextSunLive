@@ -30,7 +30,7 @@ const LiveChat = () => {
           'chathub'
         ) as unknown as SignalR.Hub.Proxy;
         chatHubProxy.on('receiveMessage', (message) => {
-          console.log('Received message:', message.chatcontent);
+          console.log('Received message:', message);
           setMessages(message.chatcontent);
           // 在這裡處理收到的消息
         });
