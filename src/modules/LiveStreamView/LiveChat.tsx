@@ -154,7 +154,7 @@ const LiveChat = () => {
       return;
     }
 
-    if (chatroomId && newMessage.trim() !== '') {
+    if (newMessage.trim() !== '') {
       console.log('Sending message...', newMessage);
       const chatHubProxy = chatHubProxyRef.current;
       chatHubProxy
