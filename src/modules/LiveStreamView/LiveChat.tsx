@@ -14,8 +14,8 @@ const LiveChat = () => {
   const [isConnected, setIsConnected] = useState(false);
   const chatHubProxyRef = useRef<SignalR.Hub.Proxy | null>(null);
   const messagesEndRef = useRef<HTMLUListElement | null>(null);
-  const token =
-    'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6NiwiVXNlckNhdGVnb3J5IjowLCJJYXQiOiJcL0RhdGUoMTcwODA0NjAwMzMzMilcLyIsIkV4cCI6IjIvMTcvMjAyNCA5OjEzOjIzIEFNIn0.zZv8ssl3W7dB4EYjnEJj50MaGjesLnldywAW0sBBnArKNCXwj5i9H5w4sa_PQDoFZyy_pz4CuPB-t5Fu1PZNfQ';
+  // const token =
+  //   'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6NiwiVXNlckNhdGVnb3J5IjowLCJJYXQiOiJcL0RhdGUoMTcwODA0NjAwMzMzMilcLyIsIkV4cCI6IjIvMTcvMjAyNCA5OjEzOjIzIEFNIn0.zZv8ssl3W7dB4EYjnEJj50MaGjesLnldywAW0sBBnArKNCXwj5i9H5w4sa_PQDoFZyy_pz4CuPB-t5Fu1PZNfQ';
   useEffect(() => {
     if (messagesEndRef.current) {
       const { current: messagesContainer } = messagesEndRef;
