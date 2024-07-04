@@ -17,16 +17,23 @@ const BarcodeScanner: React.FC = () => {
   const html5QrCodeRef = useRef<Html5Qrcode | null>(null);
 
   const startScanning = async () => {
-    // 每次開始掃描時創建新的 Html5Qrcode 實例
+    // 如果已經在掃描，先停止
+    if (isScanning) {
+      await stopScanning();
+    }
+
+    // 重置掃描結果
+    setScannedData('Scanning...');
+
     const html5QrCode = new Html5Qrcode('reader');
     html5QrCodeRef.current = html5QrCode;
 
-    const qrCodeSuccessCallback = (decodedText: any, decodedResult: any) => {
+    const qrCodeSuccessCallback = async (decodedText: string) => {
       setScannedData(decodedText);
-      // 偵測到條碼後不自動停止掃描，而是繼續掃描
+      await stopScanning(); // 掃描到結果後停止
     };
 
-    const qrCodeErrorCallback = (errorMessage: any) => {
+    const qrCodeErrorCallback = (errorMessage: string) => {
       console.error(`QR Code Error: ${errorMessage}`);
     };
 
@@ -45,6 +52,7 @@ const BarcodeScanner: React.FC = () => {
       setIsScanning(true);
     } catch (err) {
       console.error('Failed to start html5QrCode', err);
+      setScannedData('Failed to start scanning');
     }
   };
 
@@ -53,7 +61,7 @@ const BarcodeScanner: React.FC = () => {
       try {
         await html5QrCodeRef.current.stop();
         html5QrCodeRef.current.clear();
-        html5QrCodeRef.current = null; // 清除引用
+        html5QrCodeRef.current = null;
         setIsScanning(false);
       } catch (err) {
         console.error('Failed to stop html5QrCode', err);
@@ -79,12 +87,12 @@ const BarcodeScanner: React.FC = () => {
         }}></div>
       <button
         className="bg-slate-400 p-4 rounded-md hover:text-white"
-        onClick={isScanning ? stopScanning : startScanning}
+        onClick={startScanning}
         style={{ marginTop: '20px' }}>
-        {isScanning ? 'Stop Scanning' : 'Start Scanning'}
+        Start Scanning
       </button>
       <p style={{ marginTop: '20px', fontSize: '20px', fontWeight: 'bold' }}>
-        {scannedData}
+        Result: {scannedData}
       </p>
     </div>
   );
