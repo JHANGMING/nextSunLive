@@ -51,7 +51,7 @@ const LocationSelect = ({
     if (districtOptions.length > 0 && !selectedDistrict) {
       setSelectedDistrict(districtOptions[0].value);
     }
-  }, [districtOptions]);
+  }, [districtOptions, selectedDistrict]);
 
   const customStyles: StylesConfig<string | OptionType, false> = {
     control: (provided, state) => ({
