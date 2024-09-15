@@ -7,7 +7,7 @@ import { useState } from 'react';
 const ContactService = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isChatExpanded, setIsChatExpanded] = useState(false);
-  const toggleExpand = () => {
+  var toggleExpand = () => {
     setIsExpanded(!isExpanded);
     if (isChatExpanded) {
       setIsChatExpanded(false);
